@@ -106,8 +106,8 @@
 				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="..\..\..\Runtime\bin\release\Widgets.xgdw" prefix_auto="1" extension_auto="0" />
-				<Option object_output="obj\Release\" />
+				<Option output="..\build\release\Widgets.xgdw" prefix_auto="1" extension_auto="0" />
+				<Option object_output="..\build\obj\Release\" />
 				<Option type="3" />
 				<Option compiler="mingw_452" />
 				<Option createStaticLib="1" />
@@ -139,8 +139,8 @@
 				</Linker>
 			</Target>
 			<Target title="Release - Edittime">
-				<Option output="..\..\..\IDE\bin\release\Extensions\Widgets.xgdwe" prefix_auto="1" extension_auto="0" />
-				<Option object_output="obj\Release Edittime\" />
+				<Option output="..\build\releaseedittime\Widgets.xgdwe" prefix_auto="1" extension_auto="0" />
+				<Option object_output="..\build\obj\Release Edittime\" />
 				<Option type="3" />
 				<Option compiler="mingw_452" />
 				<Option createStaticLib="1" />
