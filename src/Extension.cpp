@@ -17,7 +17,7 @@ Extension::Extension()
 						  _("Extension Widgets"),
 						  _("Extension permettant d'utiliser des widgets\nVersion : " + WE_VERSION + " (SFGUI Version : " + SFGUI_VERSION + ")"),
 						  "Victor Levasseur",
-						  "Gratuit (SFGUI licence zlib)")
+						  "LGPLv3 (SFGUI licence zlib)")
 
     DeclareTextBox();
     DeclareButton();

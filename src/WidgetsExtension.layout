@@ -65,7 +65,7 @@
 		<Cursor position="763" topLine="10" />
 	</File>
 	<File name="combobox\ComboBoxObject.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="32170" topLine="944" />
+		<Cursor position="32217" topLine="944" />
 	</File>
 	<File name="combobox\ComboBoxObject.h" open="0" top="0" tabpos="2">
 		<Cursor position="5296" topLine="138" />
@@ -107,7 +107,7 @@
 		<Cursor position="9131" topLine="106" />
 	</File>
 	<File name="subdeclarations\WidgetsDeclareComboBox.cpp" open="1" top="1" tabpos="3">
-		<Cursor position="2936" topLine="45" />
+		<Cursor position="4442" topLine="62" />
 	</File>
 	<File name="subdeclarations\WidgetsDeclareMacros.h" open="0" top="0" tabpos="4">
 		<Cursor position="411" topLine="0" />
