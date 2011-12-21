@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Game>
+    <GDVersion Major="2" Minor="0" Build="10538" Revision="53165" />
+    <Info winExecutableFilename="" winExecutableIconFile="" linuxExecutableFilename="" macExecutableFilename="" useExternalSourceFiles="false">
+        <Nom value="Scale &amp; Progress Bar" />
+        <Auteur value="" />
+        <WindowW value="800" />
+        <WindowH value="600" />
+        <Portable value="false" />
+        <Extensions>
+            <Extension name="BuiltinObject" />
+            <Extension name="BuiltinAudio" />
+            <Extension name="BuiltinVariables" />
+            <Extension name="BuiltinTime" />
+            <Extension name="BuiltinMouse" />
+            <Extension name="BuiltinKeyboard" />
+            <Extension name="BuiltinJoystick" />
+            <Extension name="BuiltinCamera" />
+            <Extension name="BuiltinWindow" />
+            <Extension name="BuiltinFile" />
+            <Extension name="BuiltinNetwork" />
+            <Extension name="BuiltinScene" />
+            <Extension name="BuiltinAdvanced" />
+            <Extension name="Sprite" />
+            <Extension name="BuiltinCommonInstructions" />
+            <Extension name="BuiltinCommonConversions" />
+            <Extension name="BuiltinStringInstructions" />
+            <Extension name="Widgets" />
+            <Extension name="TextObject" />
+        </Extensions>
+        <FPSmax value="-1" />
+        <FPSmin value="10" />
+        <verticalSync value="false" />
+        <Chargement>
+            <Afficher value="true" />
+            <Border value="true" />
+            <Smooth value="true" />
+            <Width value="170.000000" />
+            <Height value="50.000000" />
+            <TexteAfficher value="true" />
+            <TexteXPos value="0.000000" />
+            <TexteYPos value="5.000000" />
+            <Texte value="Chargement" />
+            <PourcentAfficher value="false" />
+            <PourcentXPos value="0.000000" />
+            <PourcentYPos value="0.000000" />
+            <ImageAfficher value="false" />
+            <Image value="" />
+        </Chargement>
+    </Info>
+    <Resources>
+        <Resources>
+            <Resource kind="image" name="WidgetsLogo.png" alwaysLoaded="false" smoothed="true" userAdded="true" file="D:\Développement\GD2\GDLSDK\Extensions\Widgets\examples\release\WidgetsLogo.png" />
+        </Resources>
+    </Resources>
+    <Objects />
+    <ObjectGroups />
+    <Variables />
+    <Scenes>
+        <Scene nom="Nouvelle scène" r="225.000000" v="225.000000" b="225.000000" titre="" oglFOV="90.000000" oglZNear="1.000000" oglZFar="500.000000" standardSortMethod="true" stopSoundsOnStartup="true" gridWidth="32.000000" grid="false" snap="true" gridHeight="32.000000" gridR="158.000000" gridG="180.000000" gridB="255.000000" windowMask="true">
+            <GroupesObjets />
+            <Objets>
+                <Objet nom="WidgetExtension" type="Sprite">
+                    <Variables />
+                    <Animations>
+                        <Animation typeNormal="true">
+                            <Direction boucle="false" tempsEntre="1.000000">
+                                <Sprites>
+                                    <Sprite image="WidgetsLogo.png">
+                                        <Points />
+                                        <PointOrigine nom="origine" X="0.000000" Y="0.000000" />
+                                        <PointCentre nom="centre" X="273.000000" Y="81.000000" automatic="true" />
+                                        <CustomCollisionMask custom="false" />
+                                    </Sprite>
+                                </Sprites>
+                            </Direction>
+                            <Direction boucle="false" tempsEntre="1.000000">
+                                <Sprites />
+                            </Direction>
+                            <Direction boucle="false" tempsEntre="1.000000">
+                                <Sprites />
+                            </Direction>
+                            <Direction boucle="false" tempsEntre="1.000000">
+                                <Sprites />
+                            </Direction>
+                            <Direction boucle="false" tempsEntre="1.000000">
+                                <Sprites />
+                            </Direction>
+                            <Direction boucle="false" tempsEntre="1.000000">
+                                <Sprites />
+                            </Direction>
+                            <Direction boucle="false" tempsEntre="1.000000">
+                                <Sprites />
+                            </Direction>
+                            <Direction boucle="false" tempsEntre="1.000000">
+                                <Sprites />
+                            </Direction>
+                        </Animation>
+                    </Animations>
+                </Objet>
+                <Objet nom="Description" type="TextObject::Text" smoothed="false">
+                    <Variables />
+                    <String value="Bougez le curseur pour changer la valeur de la barre de progression :&#x0A;Move the slider in order to change the progress bar&apos;s value :" />
+                    <Font value="" />
+                    <CharacterSize value="15" />
+                    <Color r="0" g="0" b="0" />
+                </Objet>
+                <Objet nom="slider" type="Widgets::Scale" Minimum="0.000000" Maximum="100.000000" Increment="1.000000" TroughWidth="5.000000" Orientation="0.000000">
+                    <Variables />
+                    <Value value="100" />
+                    <TroughColorScheme>
+                        <FocusedColor r="255" g="255" b="255" />
+                        <UnfocusedColor r="201" g="201" b="201" />
+                        <HoveredColor r="230" g="230" b="230" />
+                        <DisabledColor r="140" g="140" b="140" />
+                    </TroughColorScheme>
+                    <BorderColorScheme>
+                        <FocusedColor r="146" g="147" b="151" />
+                        <UnfocusedColor r="146" g="147" b="151" />
+                        <HoveredColor r="146" g="147" b="151" />
+                        <DisabledColor r="173" g="173" b="173" />
+                    </BorderColorScheme>
+                    <SliderColorScheme>
+                        <FocusedColor r="100" g="100" b="100" />
+                        <UnfocusedColor r="100" g="100" b="100" />
+                        <HoveredColor r="100" g="100" b="100" />
+                        <DisabledColor r="150" g="150" b="150" />
+                    </SliderColorScheme>
+                    <BorderWidth value="1" />
+                </Objet>
+                <Objet nom="progressBar" type="Widgets::ProgressBar" Orientation="0.000000">
+                    <Variables />
+                    <Value value="1" />
+                    <BackgroundColorScheme>
+                        <FocusedColor r="255" g="255" b="255" />
+                        <UnfocusedColor r="255" g="255" b="255" />
+                        <HoveredColor r="255" g="255" b="255" />
+                        <DisabledColor r="140" g="140" b="140" />
+                    </BackgroundColorScheme>
+                    <BorderColorScheme>
+                        <FocusedColor r="146" g="147" b="151" />
+                        <UnfocusedColor r="146" g="147" b="151" />
+                        <HoveredColor r="146" g="147" b="151" />
+                        <DisabledColor r="173" g="173" b="173" />
+                    </BorderColorScheme>
+                    <BarColorScheme>
+                        <FocusedColor r="100" g="100" b="100" />
+                        <UnfocusedColor r="0" g="255" b="0" />
+                        <HoveredColor r="100" g="100" b="100" />
+                        <DisabledColor r="150" g="150" b="150" />
+                    </BarColorScheme>
+                    <BorderWidth value="1" />
+                    <BarBorderWidth value="1" />
+                </Objet>
+            </Objets>
+            <Layers>
+                <Layer Name="" Visibility="true">
+                    <Camera DefaultSize="true" Width="0.000000" Height="0.000000" DefaultViewport="true" ViewportLeft="0.000000" ViewportTop="0.000000" ViewportRight="1.000000" ViewportBottom="1.000000" />
+                </Layer>
+            </Layers>
+            <Variables />
+            <AutomatismsSharedDatas />
+            <Positions>
+                <Objet nom="slider" x="256.000000" y="352.000000" plan="0" layer="" angle="0.000000" personalizedSize="true" width="255.000000" height="24.000000">
+                    <floatInfos />
+                    <stringInfos />
+                </Objet>
+                <Objet nom="progressBar" x="256.000000" y="416.000000" plan="0" layer="" angle="0.000000" personalizedSize="true" width="255.000000" height="24.000000">
+                    <floatInfos />
+                    <stringInfos />
+                </Objet>
+                <Objet nom="Description" x="161.000000" y="279.000000" plan="0" layer="" angle="0.000000" personalizedSize="false" width="0.000000" height="0.000000">
+                    <floatInfos />
+                    <stringInfos />
+                </Objet>
+                <Objet nom="WidgetExtension" x="118.000000" y="41.000000" plan="0" layer="" angle="0.000000" personalizedSize="false" width="0.000000" height="0.000000">
+                    <floatInfos />
+                    <stringInfos />
+                </Objet>
+            </Positions>
+            <Events>
+                <Event disabled="false">
+                    <Type value="BuiltinCommonInstructions::Comment" />
+                    <Couleur r="0.000000" v="128.000000" b="255.000000" textR="255.000000" textG="255.000000" textB="255.000000" />
+                    <Com1 value="FRANCAIS&#x0A;&#x0A;Exemple Scale&amp;ProgressBar de l&apos;extension Widgets (Glissière et Barre de progression)&#x0A;&#x0A;Cet exemple montre le fonctionnement d&apos;une glissière qui modifie en temps réel la valeur d&apos;une barre de progression. Cette barre de progression change de couleur en fonction de la valeur." />
+                    <Com2 value="ENGLISH&#x0A;&#x0A;Scale&amp;ProgressBar Example of the Widgets extension (Scale and Progress Bar)&#x0A;&#x0A;This example shows a scale which modifies in real time the value of a progress bar. This progress bar changes its color depending of its value." />
+                </Event>
+                <Event disabled="false">
+                    <Type value="BuiltinCommonInstructions::Comment" />
+                    <Couleur r="255.000000" v="230.000000" b="109.000000" textR="0.000000" textG="0.000000" textB="0.000000" />
+                    <Com1 value="Modification de la couleur en fonction de la valeur." />
+                    <Com2 value="Modification of the bar color depending of the value." />
+                </Event>
+                <Event disabled="false">
+                    <Type value="BuiltinCommonInstructions::Standard" />
+                    <Conditions>
+                        <Condition>
+                            <Type value="Widgets::ProgressBar-Value" loc="true" Contraire="false" />
+                            <Parametre value="progressBar" />
+                            <Parametre value="0.5" />
+                            <Parametre value="&gt;=" />
+                        </Condition>
+                    </Conditions>
+                    <Actions>
+                        <Action>
+                            <Type value="Widgets::ProgressBar-Color-BarScheme" loc="true" />
+                            <Parametre value="progressBar" />
+                            <Parametre value="" />
+                            <Parametre value="" />
+                            <Parametre value='&quot;0;255;0&quot;' />
+                            <Parametre value="" />
+                        </Action>
+                    </Actions>
+                </Event>
+                <Event disabled="false">
+                    <Type value="BuiltinCommonInstructions::Standard" />
+                    <Conditions>
+                        <Condition>
+                            <Type value="Widgets::ProgressBar-Value" loc="true" Contraire="false" />
+                            <Parametre value="progressBar" />
+                            <Parametre value="0.5" />
+                            <Parametre value="&lt;" />
+                        </Condition>
+                        <Condition>
+                            <Type value="Widgets::ProgressBar-Value" loc="true" Contraire="false" />
+                            <Parametre value="progressBar" />
+                            <Parametre value="0.2" />
+                            <Parametre value="&gt;=" />
+                        </Condition>
+                    </Conditions>
+                    <Actions>
+                        <Action>
+                            <Type value="Widgets::ProgressBar-Color-BarScheme" loc="true" />
+                            <Parametre value="progressBar" />
+                            <Parametre value="" />
+                            <Parametre value="" />
+                            <Parametre value='&quot;255;255;0&quot;' />
+                            <Parametre value="" />
+                        </Action>
+                    </Actions>
+                </Event>
+                <Event disabled="false">
+                    <Type value="BuiltinCommonInstructions::Standard" />
+                    <Conditions>
+                        <Condition>
+                            <Type value="Widgets::ProgressBar-Value" loc="true" Contraire="false" />
+                            <Parametre value="progressBar" />
+                            <Parametre value="0.2" />
+                            <Parametre value="&lt;" />
+                        </Condition>
+                    </Conditions>
+                    <Actions>
+                        <Action>
+                            <Type value="Widgets::ProgressBar-Color-BarScheme" loc="true" />
+                            <Parametre value="progressBar" />
+                            <Parametre value="" />
+                            <Parametre value="" />
+                            <Parametre value='&quot;255;0;0&quot;' />
+                            <Parametre value="" />
+                        </Action>
+                    </Actions>
+                </Event>
+                <Event disabled="false">
+                    <Type value="BuiltinCommonInstructions::Comment" />
+                    <Couleur r="255.000000" v="230.000000" b="109.000000" textR="0.000000" textG="0.000000" textB="0.000000" />
+                    <Com1 value="Change la valeur de la barre de progression.&#x0A;&#x0A;Remarque : Les barres de progression utilisent des valeurs comprise entre 0 et 1." />
+                    <Com2 value="Set the value of the progress bar.&#x0A;&#x0A;Note : Progress Bars use values between 0 and 1." />
+                </Event>
+                <Event disabled="false">
+                    <Type value="BuiltinCommonInstructions::Standard" />
+                    <Conditions />
+                    <Actions>
+                        <Action>
+                            <Type value="Widgets::ProgressBar-Value" loc="true" />
+                            <Parametre value="progressBar" />
+                            <Parametre value="slider.Scale::Value() / 100" />
+                            <Parametre value="=" />
+                        </Action>
+                    </Actions>
+                </Event>
+                <Event disabled="false">
+                    <Type value="BuiltinCommonInstructions::Comment" />
+                    <Couleur r="255.000000" v="230.000000" b="109.000000" textR="0.000000" textG="0.000000" textB="0.000000" />
+                    <Com1 value="Affichage du FPS" />
+                    <Com2 value="Show the FPS" />
+                </Event>
+                <Event disabled="false">
+                    <Type value="BuiltinCommonInstructions::Standard" />
+                    <Conditions />
+                    <Actions>
+                        <Action>
+                            <Type value="ModVarScene" loc="true" />
+                            <Parametre value="" />
+                            <Parametre value="frameSinceStart" />
+                            <Parametre value="1" />
+                            <Parametre value="+" />
+                        </Action>
+                        <Action>
+                            <Type value="EcrireTexte" loc="true" />
+                            <Parametre value="" />
+                            <Parametre value='&quot;Current FPS : &quot; + ToString(1/TimeDelta()) + &quot;&#x0A;FPS Average : &quot; + ToString(Variable(frameSinceStart) / TimeFromStart())' />
+                            <Parametre value="10" />
+                            <Parametre value="10" />
+                            <Parametre value='&quot;0;0;0&quot;' />
+                            <Parametre value="15" />
+                            <Parametre value="" />
+                            <Parametre value="" />
+                        </Action>
+                    </Actions>
+                </Event>
+            </Events>
+        </Scene>
+    </Scenes>
+    <ExternalEvents />
+    <ExternalSourceFiles />
+</Game>

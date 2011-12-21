@@ -1,0 +1,1 @@
+copy "D:\D‚veloppement\GD2\GDLSDK\Extensions\Widgets\installer\qtInstaller\WidgetsInstaller\release\WidgetsInstaller.exe" "D:\D‚veloppement\GD2\GDLSDK\Extensions\Widgets\installer\buildTools\WidgetsInstaller.exe"

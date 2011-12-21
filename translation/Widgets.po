@@ -1,0 +1,1284 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WidgetsExtension\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-30 18:36+0100\n"
+"PO-Revision-Date: 2011-11-30 18:37+0100\n"
+"Last-Translator: Victor Levasseur <victorlevasseur01@orange.fr>\n"
+"Language-Team: Victor Levasseur\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: ../src/\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED KINGDOM\n"
+"Plural-Forms: s\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: Extension.cpp:13
+msgid "Extension Widgets"
+msgstr "Widgets extension"
+
+#: Extension.cpp:14
+#, fuzzy
+msgid ""
+"Extension permettant d'utiliser des widgets\n"
+"Version : "
+msgstr "Extension allowing you to use graphical interface controls."
+
+#: button/ButtonObject.cpp:442
+#: button/ButtonObjectEditor.cpp:202
+#: checkbox/CheckBoxObject.cpp:532
+#: subdeclarations/WidgetsDeclareButton.cpp:28
+#: subdeclarations/WidgetsDeclareButton.cpp:202
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:30
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:53
+msgid "Texte"
+msgstr "Text"
+
+#: button/ButtonObject.cpp:445
+#: checkbox/CheckBoxObject.cpp:535
+#: scale/ScaleObject.cpp:464
+msgid "Etat"
+msgstr "State"
+
+#: button/ButtonObject.cpp:447
+#: button/ButtonObjectEditor.cpp:154
+#: button/ButtonObjectEditor.cpp:164
+#: button/ButtonObjectEditor.cpp:174
+#: checkbox/CheckBoxObject.cpp:537
+#: checkbox/CheckBoxObjectEditor.cpp:168
+#: checkbox/CheckBoxObjectEditor.cpp:178
+#: checkbox/CheckBoxObjectEditor.cpp:188
+#: checkbox/CheckBoxObjectEditor.cpp:198
+#: progressbar/ProgressBarObjectEditor.cpp:149
+#: progressbar/ProgressBarObjectEditor.cpp:163
+#: progressbar/ProgressBarObjectEditor.cpp:177
+#: scale/ScaleObject.cpp:466
+#: scale/ScaleObjectEditor.cpp:170
+#: scale/ScaleObjectEditor.cpp:184
+#: scale/ScaleObjectEditor.cpp:198
+#: subdeclarations/WidgetsDeclareButton.cpp:60
+#: subdeclarations/WidgetsDeclareButton.cpp:78
+#: subdeclarations/WidgetsDeclareButton.cpp:96
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:103
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:121
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:139
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:157
+msgid "Actif"
+msgstr "Active"
+
+#: button/ButtonObject.cpp:449
+#: button/ButtonObjectEditor.cpp:156
+#: button/ButtonObjectEditor.cpp:166
+#: button/ButtonObjectEditor.cpp:176
+#: checkbox/CheckBoxObject.cpp:539
+#: checkbox/CheckBoxObjectEditor.cpp:170
+#: checkbox/CheckBoxObjectEditor.cpp:180
+#: checkbox/CheckBoxObjectEditor.cpp:190
+#: checkbox/CheckBoxObjectEditor.cpp:200
+#: progressbar/ProgressBarObjectEditor.cpp:153
+#: progressbar/ProgressBarObjectEditor.cpp:167
+#: progressbar/ProgressBarObjectEditor.cpp:181
+#: scale/ScaleObject.cpp:468
+#: scale/ScaleObjectEditor.cpp:174
+#: scale/ScaleObjectEditor.cpp:188
+#: scale/ScaleObjectEditor.cpp:202
+msgid "Survolé"
+msgstr "Hovered"
+
+#: button/ButtonObject.cpp:451
+#: button/ButtonObjectEditor.cpp:158
+#: button/ButtonObjectEditor.cpp:168
+#: button/ButtonObjectEditor.cpp:178
+#: checkbox/CheckBoxObject.cpp:541
+#: checkbox/CheckBoxObjectEditor.cpp:172
+#: checkbox/CheckBoxObjectEditor.cpp:182
+#: checkbox/CheckBoxObjectEditor.cpp:192
+#: checkbox/CheckBoxObjectEditor.cpp:202
+#: progressbar/ProgressBarObjectEditor.cpp:157
+#: progressbar/ProgressBarObjectEditor.cpp:171
+#: progressbar/ProgressBarObjectEditor.cpp:185
+#: scale/ScaleObject.cpp:470
+#: scale/ScaleObjectEditor.cpp:178
+#: scale/ScaleObjectEditor.cpp:192
+#: scale/ScaleObjectEditor.cpp:206
+msgid "Normal"
+msgstr "Normal"
+
+#: button/ButtonObject.cpp:453
+#: button/ButtonObjectEditor.cpp:160
+#: button/ButtonObjectEditor.cpp:170
+#: button/ButtonObjectEditor.cpp:180
+#: checkbox/CheckBoxObject.cpp:543
+#: checkbox/CheckBoxObjectEditor.cpp:174
+#: checkbox/CheckBoxObjectEditor.cpp:184
+#: checkbox/CheckBoxObjectEditor.cpp:194
+#: checkbox/CheckBoxObjectEditor.cpp:204
+#: progressbar/ProgressBarObjectEditor.cpp:159
+#: progressbar/ProgressBarObjectEditor.cpp:173
+#: progressbar/ProgressBarObjectEditor.cpp:187
+#: scale/ScaleObject.cpp:472
+#: scale/ScaleObjectEditor.cpp:180
+#: scale/ScaleObjectEditor.cpp:194
+#: scale/ScaleObjectEditor.cpp:208
+#: subdeclarations/WidgetsDeclareButton.cpp:63
+#: subdeclarations/WidgetsDeclareButton.cpp:81
+#: subdeclarations/WidgetsDeclareButton.cpp:99
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:106
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:124
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:142
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:160
+msgid "Désactivé"
+msgstr "Disabled"
+
+#: button/ButtonObject.cpp:455
+#: checkbox/CheckBoxObject.cpp:545
+#: scale/ScaleObject.cpp:474
+msgid "Inconnu"
+msgstr "Unknown"
+
+#: button/ButtonObject.cpp:457
+#: checkbox/CheckBoxObject.cpp:547
+msgid "Taille du texte"
+msgstr "Text size"
+
+#: button/ButtonObjectEditor.cpp:108
+msgid "Editer le bouton"
+msgstr "Edit the button"
+
+#: button/ButtonObjectEditor.cpp:113
+#: subdeclarations/WidgetsDeclareButton.cpp:8
+#: subdeclarations/WidgetsDeclareButton.cpp:23
+#: subdeclarations/WidgetsDeclareButton.cpp:39
+#: subdeclarations/WidgetsDeclareButton.cpp:55
+#: subdeclarations/WidgetsDeclareButton.cpp:73
+#: subdeclarations/WidgetsDeclareButton.cpp:91
+#: subdeclarations/WidgetsDeclareButton.cpp:109
+#: subdeclarations/WidgetsDeclareButton.cpp:124
+#: subdeclarations/WidgetsDeclareButton.cpp:138
+#: subdeclarations/WidgetsDeclareButton.cpp:156
+#: subdeclarations/WidgetsDeclareButton.cpp:172
+#: subdeclarations/WidgetsDeclareButton.cpp:189
+#: subdeclarations/WidgetsDeclareButton.cpp:202
+msgid "Bouton"
+msgstr "Button"
+
+#: button/ButtonObjectEditor.cpp:117
+msgid "Permet de capter le clic de l'utilisateur sur ce dernier."
+msgstr "Allows the game to receive a click from the player"
+
+#: button/ButtonObjectEditor.cpp:126
+#: checkbox/CheckBoxObjectEditor.cpp:218
+msgid "Police :"
+msgstr "Font"
+
+#: button/ButtonObjectEditor.cpp:132
+#: checkbox/CheckBoxObjectEditor.cpp:224
+msgid "Choisir la police"
+msgstr "Choose the font"
+
+#: button/ButtonObjectEditor.cpp:135
+#: checkbox/CheckBoxObjectEditor.cpp:227
+msgid "Taille :"
+msgstr "Size :"
+
+#: button/ButtonObjectEditor.cpp:152
+#: checkbox/CheckBoxObjectEditor.cpp:166
+#: progressbar/ProgressBarObjectEditor.cpp:147
+msgid "Fond :"
+msgstr "Background :"
+
+#: button/ButtonObjectEditor.cpp:162
+#: checkbox/CheckBoxObjectEditor.cpp:176
+#: progressbar/ProgressBarObjectEditor.cpp:161
+#: scale/ScaleObjectEditor.cpp:182
+msgid "Bordure :"
+msgstr "Border :"
+
+#: button/ButtonObjectEditor.cpp:172
+#: checkbox/CheckBoxObjectEditor.cpp:135
+#: checkbox/CheckBoxObjectEditor.cpp:186
+#: scale/ScaleObjectEditor.cpp:196
+msgid "Texte :"
+msgstr "Text :"
+
+#: button/ButtonObjectEditor.cpp:189
+#: checkbox/CheckBoxObjectEditor.cpp:143
+#: progressbar/ProgressBarObjectEditor.cpp:196
+#: scale/ScaleObjectEditor.cpp:217
+msgid "Epaisseur de la bordure:"
+msgstr "Border width :"
+
+#: button/ButtonObjectEditor.cpp:194
+#: checkbox/CheckBoxObjectEditor.cpp:213
+#: scale/ScaleObjectEditor.cpp:227
+msgid "Marges internes :"
+msgstr "Internal padding :"
+
+#: button/ButtonObjectEditor.cpp:203
+#: checkbox/CheckBoxObjectEditor.cpp:239
+#: progressbar/ProgressBarObjectEditor.cpp:210
+#: scale/ScaleObjectEditor.cpp:236
+msgid "Couleurs"
+msgstr "Colors"
+
+#: button/ButtonObjectEditor.cpp:204
+#: progressbar/ProgressBarObjectEditor.cpp:211
+#: scale/ScaleObjectEditor.cpp:237
+msgid "Tailles"
+msgstr "Sizes"
+
+#: button/ButtonObjectEditor.cpp:209
+#: checkbox/CheckBoxObjectEditor.cpp:245
+#: progressbar/ProgressBarObjectEditor.cpp:216
+#: scale/ScaleObjectEditor.cpp:242
+msgid "Aide sur ce widget"
+msgstr "Help about this widget (French)"
+
+#: button/ButtonObjectEditor.cpp:211
+#: checkbox/CheckBoxObjectEditor.cpp:247
+#: progressbar/ProgressBarObjectEditor.cpp:218
+#: scale/ScaleObjectEditor.cpp:244
+msgid "Ok"
+msgstr "Ok"
+
+#: button/ButtonObjectEditor.cpp:318
+#: checkbox/CheckBoxObjectEditor.cpp:382
+msgid "Choisissez une police de caractère ( fichiers ttf, ttc )"
+msgstr "Choose a font (ttf or ttc file)"
+
+#: checkbox/CheckBoxObject.cpp:531
+msgid "Coché"
+msgstr "Checked"
+
+#: checkbox/CheckBoxObjectEditor.cpp:118
+msgid "Editer la case à cocher"
+msgstr "Edit the check box"
+
+#: checkbox/CheckBoxObjectEditor.cpp:123
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:8
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:25
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:41
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:53
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:63
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:78
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:88
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:98
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:116
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:134
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:152
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:170
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:188
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:204
+msgid "Case à cocher"
+msgstr "Check Box"
+
+#: checkbox/CheckBoxObjectEditor.cpp:127
+msgid "Permet à l'utilisateur de choisir \"oui\" ou \"non\"."
+msgstr "Allows the player to choose between 2 choices : \"yes\" or \"no\"."
+
+#: checkbox/CheckBoxObjectEditor.cpp:140
+msgid "La case est cochée"
+msgstr "The check box is checked"
+
+#: checkbox/CheckBoxObjectEditor.cpp:148
+msgid "Taille de la case :"
+msgstr "Box size :"
+
+#: checkbox/CheckBoxObjectEditor.cpp:153
+msgid "Taille du signe coché :"
+msgstr "Size of check :"
+
+#: checkbox/CheckBoxObjectEditor.cpp:196
+msgid "Couleur de la case :"
+msgstr "Box color :"
+
+#: checkbox/CheckBoxObjectEditor.cpp:238
+msgid "Case à cocher et texte"
+msgstr "Check Box and text"
+
+#: checkbox/CheckBoxObjectEditor.cpp:240
+msgid "Police et marges"
+msgstr "Font and margins"
+
+#: progressbar/ProgressBarObject.cpp:420
+#: scale/ScaleObject.cpp:458
+#: subdeclarations/WidgetsDeclareButton.cpp:177
+msgid "Valeur"
+msgstr "Value"
+
+#: progressbar/ProgressBarObjectEditor.cpp:108
+msgid "Editer la barre de progression"
+msgstr "Edit the progress bar"
+
+#: progressbar/ProgressBarObjectEditor.cpp:113
+msgid "Barre de progression"
+msgstr "Progress bar"
+
+#: progressbar/ProgressBarObjectEditor.cpp:117
+msgid "Permet d'afficher une progression entre 0 et 100 %."
+msgstr "Allows the game to show a progression between 0 and 100 %."
+
+#: progressbar/ProgressBarObjectEditor.cpp:124
+#: scale/ScaleObjectEditor.cpp:132
+msgid "Orientation :"
+msgstr "Orientation :"
+
+#: progressbar/ProgressBarObjectEditor.cpp:126
+#: scale/ScaleObjectEditor.cpp:134
+msgid "Horizontale"
+msgstr "Horizontal"
+
+#: progressbar/ProgressBarObjectEditor.cpp:128
+#: scale/ScaleObjectEditor.cpp:136
+msgid "Verticale"
+msgstr "Vertical"
+
+#: progressbar/ProgressBarObjectEditor.cpp:132
+#: scale/ScaleObjectEditor.cpp:148
+msgid "Valeur :"
+msgstr "Value :"
+
+#: progressbar/ProgressBarObjectEditor.cpp:134
+#: scale/ScaleObjectEditor.cpp:142
+#: scale/ScaleObjectEditor.cpp:150
+msgid "0"
+msgstr "0"
+
+#: progressbar/ProgressBarObjectEditor.cpp:136
+msgid "Entrez une valeur entre 0 et 1."
+msgstr "Type a value between 0 and 1."
+
+#: progressbar/ProgressBarObjectEditor.cpp:175
+msgid "Barre :"
+msgstr "Bar :"
+
+#: progressbar/ProgressBarObjectEditor.cpp:201
+msgid "Epaisseur de la bordure de la progression :"
+msgstr "Bar border width :"
+
+#: progressbar/ProgressBarObjectEditor.cpp:209
+#: scale/ScaleObjectEditor.cpp:235
+msgid "Valeurs et orientation"
+msgstr "Values and orientation"
+
+#: scale/ScaleObject.cpp:459
+msgid "Minimum"
+msgstr "Minimum"
+
+#: scale/ScaleObject.cpp:460
+msgid "Maximum"
+msgstr "Maximum"
+
+#: scale/ScaleObject.cpp:461
+msgid "Ecart"
+msgstr "Increment"
+
+#: scale/ScaleObjectEditor.cpp:116
+msgid "Editer la glissière"
+msgstr "Edit the scale"
+
+#: scale/ScaleObjectEditor.cpp:121
+msgid "Glissière"
+msgstr "Scale"
+
+#: scale/ScaleObjectEditor.cpp:125
+msgid "Permet de sélectionner un nombre dans un intervalle."
+msgstr "Allows the player to select a value in an interval."
+
+#: scale/ScaleObjectEditor.cpp:140
+msgid "Minimum :"
+msgstr "Minimum :"
+
+#: scale/ScaleObjectEditor.cpp:144
+msgid "Maximum :"
+msgstr "Maximum :"
+
+#: scale/ScaleObjectEditor.cpp:146
+msgid "100"
+msgstr "100"
+
+#: scale/ScaleObjectEditor.cpp:153
+msgid ""
+"Il est préférable de rentrer\n"
+"une valeur possible suivant\n"
+"l'écart des valeurs."
+msgstr ""
+"Enter preferably a possible\n"
+"value according to the\n"
+"value increment."
+
+#: scale/ScaleObjectEditor.cpp:155
+msgid "Cran (Ecart) :"
+msgstr "Increment :"
+
+#: scale/ScaleObjectEditor.cpp:157
+msgid "10"
+msgstr "10"
+
+#: scale/ScaleObjectEditor.cpp:168
+msgid "Glissière :"
+msgstr "Scale :"
+
+#: scale/ScaleObjectEditor.cpp:222
+msgid "Epaisseur de la glissière :"
+msgstr "Trough width :"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:9
+msgid "Objet permettant de capter un clic du joueur sur ce dernier."
+msgstr "Object allowing the game to receive a click from the player."
+
+#: subdeclarations/WidgetsDeclareButton.cpp:20
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:22
+msgid "Modifier le texte"
+msgstr "Modify text"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:21
+msgid "Modifier le texte d'un bouton"
+msgstr "Modify the text of the button"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:22
+msgid "Bouton: Faire _PARAM2__PARAM1_ au texte de _PARAM0_"
+msgstr "Button: Do _PARAM2__PARAM1_ to the text of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:27
+#: subdeclarations/WidgetsDeclareButton.cpp:43
+#: subdeclarations/WidgetsDeclareButton.cpp:59
+#: subdeclarations/WidgetsDeclareButton.cpp:77
+#: subdeclarations/WidgetsDeclareButton.cpp:95
+#: subdeclarations/WidgetsDeclareButton.cpp:113
+#: subdeclarations/WidgetsDeclareButton.cpp:128
+#: subdeclarations/WidgetsDeclareButton.cpp:142
+#: subdeclarations/WidgetsDeclareButton.cpp:160
+#: subdeclarations/WidgetsDeclareButton.cpp:176
+#: subdeclarations/WidgetsDeclareButton.cpp:193
+#: subdeclarations/WidgetsDeclareButton.cpp:203
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:29
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:45
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:54
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:67
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:82
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:89
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:102
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:120
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:138
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:156
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:174
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:192
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:208
+msgid "Objet"
+msgstr "Object"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:29
+#: subdeclarations/WidgetsDeclareButton.cpp:178
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:31
+msgid "Signe de la modification"
+msgstr "Modification operator"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:36
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:38
+msgid "Tester le texte"
+msgstr "Test the text"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:37
+msgid "Teste le texte d'un bouton."
+msgstr "Test the button text."
+
+#: subdeclarations/WidgetsDeclareButton.cpp:38
+msgid "Bouton: Le texte de _PARAM0_ est _PARAM2_ à _PARAM1_"
+msgstr "Button: The text of _PARAM0_ is _PARAM2__PARAM1_"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:44
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:46
+msgid "Texte à tester"
+msgstr "Text to test"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:45
+#: subdeclarations/WidgetsDeclareButton.cpp:195
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:47
+msgid "Signe du test"
+msgstr "Comparision sign"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:52
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:95
+msgid "Modifier la couleur d'arrière-plan"
+msgstr "Modify background color"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:53
+msgid ""
+"Modifier la couleur d'arrière-plan d'un bouton.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the background color of a button.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareButton.cpp:54
+msgid "Bouton: Changer la couleur d'arrière-plan de _PARAM0_"
+msgstr "Button: Modify the background color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:61
+#: subdeclarations/WidgetsDeclareButton.cpp:79
+#: subdeclarations/WidgetsDeclareButton.cpp:97
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:104
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:122
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:140
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:158
+msgid "Survolé (la souris est dessus)"
+msgstr "Hovered (the mouse is on)"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:62
+#: subdeclarations/WidgetsDeclareButton.cpp:80
+#: subdeclarations/WidgetsDeclareButton.cpp:98
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:105
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:123
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:141
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:159
+msgid "Normal (ni actif, ni survolé)"
+msgstr "Normal (not active, not hovered)"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:70
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:113
+msgid "Modifier la couleur de la bordure"
+msgstr "Modify the border color"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:71
+msgid ""
+"Modifier la couleur de la bordure d'un bouton.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the border color of a button.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareButton.cpp:72
+msgid "Bouton: Changer la couleur de la bordure de _PARAM0_"
+msgstr "Button: Modify the border color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:88
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:131
+msgid "Modifier la couleur du texte"
+msgstr "Modify text color"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:89
+msgid ""
+"Modifier la couleur du texte d'un bouton.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the text color of a button.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareButton.cpp:90
+msgid "Bouton: Changer la couleur du texte de _PARAM0_"
+msgstr "Button: Modify the text color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:106
+msgid "Active/Désactive le widget"
+msgstr "Enable or disable the widget"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:107
+msgid "Désactive ou réactive le widget."
+msgstr "Disable or re-enable the widget."
+
+#: subdeclarations/WidgetsDeclareButton.cpp:108
+msgid "Bouton: Désactiver le widget _PARAM0_ ? _PARAM1_ "
+msgstr "Button: Disable the widget _PARAM0_ ? _PARAM1_"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:114
+msgid "Oui pour le désactiver, Non pour l'activer"
+msgstr "Yes to disable it, no otherwise"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:121
+msgid "Tester si le widget est désactivé"
+msgstr "Test whether the widget is disabled"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:122
+msgid "Teste si le widget est désactivé."
+msgstr "Test whether the widget is disabled."
+
+#: subdeclarations/WidgetsDeclareButton.cpp:123
+msgid "Bouton: _PARAM0_ est désactivé"
+msgstr "Button: _PARAM0_ is disabled"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:135
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:167
+msgid "Un clic a eu lieu"
+msgstr "A click happened"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:136
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:168
+msgid "Est valide uniquement lorsqu'un clic a été perçu par le widget."
+msgstr "Is valid only when a click was received by the widget."
+
+#: subdeclarations/WidgetsDeclareButton.cpp:137
+msgid "Bouton: Un clic a été perçu par _PARAM0_"
+msgstr "Button: A click was made on _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:143
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:175
+msgid "Variable où stocker le bouton appuyé (\"Left\", \"Right\" ou \"Middle\")"
+msgstr "Variable which will store the mouse button pressed (\"Left\", \"Right\" or \"Middle\")"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:144
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:176
+msgid "Variable où stocker la position X du clic"
+msgstr "Variable which will store the X position of the mouse click"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:145
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:177
+msgid "Variable où stocker la position Y du clic"
+msgstr "Variable which will store the Y position of the mouse click"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:153
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:185
+msgid "L'état du widget a changé"
+msgstr "The widget's state has changed"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:154
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:186
+msgid "Est valide uniquement lorsque l'état du widget change."
+msgstr "Is valid only when the widget changes its state."
+
+#: subdeclarations/WidgetsDeclareButton.cpp:155
+msgid "Bouton: L'état de _PARAM0_ a changé"
+msgstr "Button: The state of _PARAM0_ was changed"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:161
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:193
+msgid "Variable où stocker le nouvel état du widget (Active = Actif, Hovered = Survolé, Normal, Disabled = Désactivé)"
+msgstr "Variable which will store the new state of the widget (Active, Hovered, Normal, Disabled)"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:169
+#: subdeclarations/WidgetsDeclareButton.cpp:186
+msgid "Taille"
+msgstr "Size :"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:170
+msgid "Modifie la taille du texte."
+msgstr "Modify text size."
+
+#: subdeclarations/WidgetsDeclareButton.cpp:171
+msgid "Bouton: Faire _PARAM2__PARAM1_ à la taille du texte de _PARAM0_"
+msgstr "Button: Do _PARAM2__PARAM1_ to the size of the text of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:187
+msgid "Teste la taille du texte."
+msgstr "Test the text size."
+
+#: subdeclarations/WidgetsDeclareButton.cpp:188
+msgid "Bouton: La taille du texte de _PARAM0_ est _PARAM2_ à _PARAM1_"
+msgstr "Button: The size of the text of _PARAM0_ is _PARAM2__PARAM1_"
+
+#: subdeclarations/WidgetsDeclareButton.cpp:194
+msgid "Taille à tester"
+msgstr "Size to test"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:9
+msgid "Objet permettant à l'utilisateur de sélectionner \"vrai\" ou \"faux\"."
+msgstr "Object allowing the player to choose between \"true\" or \"false\"."
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:23
+msgid "Modifier le texte d'une case à cocher."
+msgstr "Modify text of a check box."
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:24
+msgid "Case à cocher: Faire _PARAM2__PARAM1_ au texte de _PARAM0_"
+msgstr "Check box: Do _PARAM2__PARAM1_ to the text of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:39
+msgid "Teste le texte d'une case à cocher."
+msgstr "Test the text of a check box."
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:40
+msgid "Case à cocher: Le texte de _PARAM0_ est _PARAM2_ à _PARAM1_"
+msgstr "Check box: The text of _PARAM0_ is _PARAM2__PARAM1_"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:60
+msgid "Cocher/Décocher"
+msgstr "Check/Uncheck"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:61
+msgid "Coche ou décoche la case à cocher."
+msgstr "Check or uncheck the check box."
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:62
+msgid "Case à cocher: Cocher _PARAM0_ ? _PARAM1_"
+msgstr "Check box: Check _PARAM0_ ? _PARAM1_"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:68
+msgid "Coché ou pas"
+msgstr "Checked or not"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:75
+msgid "Tester si cochée"
+msgstr "Test if checked"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:76
+msgid "Teste si une case à cocher est cochée."
+msgstr "Test whether a check box is checked."
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:77
+msgid "Case à cocher: La case _PARAM0_ est cochée"
+msgstr "Check Box: The check box _PARAM0_ is checked"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:88
+msgid "Cochée ?"
+msgstr "Checked ?"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:96
+msgid ""
+"Modifier la couleur d'arrière-plan d'un case à cocher.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the background color of a check box.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:97
+msgid "Case à cocher: Changer la couleur d'arrière-plan de _PARAM0_"
+msgstr "Check box: Modify background color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:114
+msgid ""
+"Modifier la couleur de la bordure d'un case à cocher.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the border color of a check box.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:115
+msgid "Case à cocher: Changer la couleur de la bordure de _PARAM0_"
+msgstr "Check box: Modify the border color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:132
+msgid ""
+"Modifier la couleur du texte d'un case à cocher.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the text color of a check box.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:133
+msgid "Case à cocher: Changer la couleur du texte de _PARAM0_"
+msgstr "Check box: Modify the text color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:149
+msgid "Modifier la couleur du signe coché"
+msgstr "Modify check color"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:150
+msgid ""
+"Modifier la couleur du signe coché d'un case à cocher.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the check color of a check box.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:151
+msgid "Case à cocher: Changer la couleur du signe coché de _PARAM0_"
+msgstr "Check box: Modify the check color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:169
+msgid "Case à cocher: Un clic a été perçu par _PARAM0_"
+msgstr "Check box: A click was made on _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:187
+msgid "Case à cocher: L'état de _PARAM0_ a changé"
+msgstr "Check box: The state of _PARAM0_ was changed"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:201
+msgid "La case à cocher a été cochée/décochée"
+msgstr "The check box has been check/uncheck"
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:202
+msgid "Est valide uniquement lorsque la case à cocher vient d'être cochée ou décochée."
+msgstr "Is valid only when the check box was checked or unchecked."
+
+#: subdeclarations/WidgetsDeclareCheckBox.cpp:203
+msgid "Case à cocher: _PARAM0_ a été cochée ou décochée"
+msgstr "Check box: _PARAM0_ was checked or unchecked"
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:10
+msgid "Objet permattant au jeu d'afficher une progression."
+msgstr "Objects allowing the game to show a progression."
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:21
+#: subdeclarations/WidgetsDeclareScale.cpp:20
+msgid "Modifier la valeur"
+msgstr "Modify the value"
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:22
+msgid ""
+"Modifier la valeur de la barre de progression.\n"
+"Doit être comprise entre 0 et 1."
+msgstr ""
+"Modify the value of the progress bar.\n"
+"Have to be between 0 and 1."
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:23
+msgid "Barre de progression: Faire _PARAM2__PARAM1_ à la valeur de _PARAM0_"
+msgstr "Progress bar: Do _PARAM2__PARAM1_ to the value of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:37
+#: subdeclarations/WidgetsDeclareScale.cpp:36
+msgid "Tester la valeur"
+msgstr "Test the value"
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:38
+msgid "Teste la valeur comprise entre 0 et 1 d'une barre de progression."
+msgstr "Test the value of a progress bar."
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:39
+msgid "Barre de progression: La valeur sélectionnée de _PARAM0_ est _PARAM2_ à _PARAM1_"
+msgstr "Progress bar: The selected value of _PARAM0_ is _PARAM2__PARAM1_"
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:45
+#: subdeclarations/WidgetsDeclareScale.cpp:44
+msgid "Valeur à tester"
+msgstr "Value to test"
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:61
+msgid "Barre de progression: Désactiver le widget _PARAM0_ ? _PARAM1_ "
+msgstr "Progress bar: Disable the widget _PARAM0_ ? _PARAM1_"
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:76
+msgid "Barre de progression: _PARAM0_ est désactivé"
+msgstr "Progress bar: _PARAM0_ is disabled"
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:89
+msgid ""
+"Modifier la couleur d'arrière-plan d'une barre de progression.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the background color of a progress bar.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:90
+msgid "Barre de progression: Changer la couleur d'arrière-plan de _PARAM0_"
+msgstr "Progress bar: Modify the background color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:107
+msgid ""
+"Modifier la couleur de la bordure d'une barre de progression.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the border color of a progress bar.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:108
+msgid "Barre de progression: Changer la couleur de la bordure de _PARAM0_"
+msgstr "Progress bar: Modify the border color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:124
+msgid "Modifier la couleur de la barre"
+msgstr "Modify the bar color"
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:125
+msgid ""
+"Modifier la couleur de la barre (partie indiquant la progression) d'une barre de progression.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the bar color of a progress bar.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:126
+msgid "Barre de progression: Changer la couleur de la barre de _PARAM0_"
+msgstr "Progress bar: Modify the bar color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:144
+msgid "Barre de progression: Un clic a été perçu par _PARAM0_"
+msgstr "Progress bar: A click was made on _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareProgressBar.cpp:162
+msgid "Barre de progression: L'état de _PARAM0_ a changé"
+msgstr "Progress bar: The state of _PARAM0_ was changed"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:9
+msgid "Objet permettant de sélectionner un nombre sur une glissière dans un intervalle."
+msgstr "Object allowing the player to select a number with a slider in an interval."
+
+#: subdeclarations/WidgetsDeclareScale.cpp:21
+msgid "Modifier la valeur sélectionnée de la glissière."
+msgstr "Modify the selected value on the scale."
+
+#: subdeclarations/WidgetsDeclareScale.cpp:22
+msgid "Glissière: Faire _PARAM2__PARAM1_ à la valeur de _PARAM0_"
+msgstr "Scale: Do _PARAM2__PARAM1_ to the value of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:37
+msgid "Teste la valeur sélectionnée d'une glissière."
+msgstr "Test the selected value of a scale."
+
+#: subdeclarations/WidgetsDeclareScale.cpp:38
+msgid "Glissière: La valeur sélectionnée de _PARAM0_ est _PARAM2_ à _PARAM1_"
+msgstr "Scale: The selected value of _PARAM0_ is _PARAM2__PARAM1_"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:59
+msgid "Modifier le maximum"
+msgstr "Modify the maximum"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:60
+msgid "Modifier le maximum de la glissière."
+msgstr "Modify the maximum value of the scale."
+
+#: subdeclarations/WidgetsDeclareScale.cpp:61
+msgid "Glissière: Faire _PARAM2__PARAM1_ au maximum de _PARAM0_"
+msgstr "Glissière: To _PARAM2__PARAM1_ to the maximum of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:75
+msgid "Tester le maximum"
+msgstr "Test the maximum"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:76
+msgid "Teste le maximum d'une glissière."
+msgstr "Test the maximum of a scale."
+
+#: subdeclarations/WidgetsDeclareScale.cpp:77
+msgid "Glissière: Le maximum de _PARAM0_ est _PARAM2_ à _PARAM1_"
+msgstr "Scale: The maximum of _PARAM0_ is _PARAM2__PARAM1_"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:83
+msgid "Maximum à tester"
+msgstr "Maximum to test"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:97
+msgid "Modifier le minimum"
+msgstr "Modify the minimum"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:98
+msgid "Modifier le minimum de la glissière."
+msgstr "Modify the minimum value of the scale."
+
+#: subdeclarations/WidgetsDeclareScale.cpp:99
+msgid "Glissière: Faire _PARAM2__PARAM1_ au minimum de _PARAM0_"
+msgstr "Scale: Do _PARAM2__PARAM1_ to the minimum of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:113
+msgid "Tester le minimum"
+msgstr "Test the minimum"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:114
+msgid "Teste le minimum d'une glissière."
+msgstr "Test the minimum of a scale."
+
+#: subdeclarations/WidgetsDeclareScale.cpp:115
+msgid "Glissière: Le minimum de _PARAM0_ est _PARAM2_ à _PARAM1_"
+msgstr "Scale: The minimum of _PARAM0_ is _PARAM2__PARAM1_"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:121
+msgid "Minimum à tester"
+msgstr "Minimum to test"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:135
+msgid "Modifier l'écart"
+msgstr "Modify the increment"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:136
+msgid "Modifier l'écart entre les valeurs de la glissière."
+msgstr "Modify the increment between different values of the scale."
+
+#: subdeclarations/WidgetsDeclareScale.cpp:137
+msgid "Glissière: Faire _PARAM2__PARAM1_ à l'écart entre les valeurs de _PARAM0_"
+msgstr "Scale: Do _PARAM2__PARAM1_ to the increment of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:143
+msgid "Ecart entre les valeurs"
+msgstr "Increment between values"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:151
+msgid "Tester l'écart entre les valeurs"
+msgstr "Test the increment between different values"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:152
+msgid "Teste l'écart entre les valeurs possibles d'une glissière."
+msgstr "Test the increment between different possible values of the scale."
+
+#: subdeclarations/WidgetsDeclareScale.cpp:153
+msgid "Glissière: L'écart entre les valeurs de _PARAM0_ est _PARAM2_ à _PARAM1_"
+msgstr "Scale: The increment of _PARAM0_ is _PARAM2__PARAM1_"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:159
+msgid "Ecart à tester"
+msgstr "Increment to test"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:166
+msgid "Ecart entre valeurs"
+msgstr "Increment between values"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:175
+msgid "Glissière: Un clic a été perçu par _PARAM0_"
+msgstr "Scale: A click was made on _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:193
+msgid "Glissière: L'état de _PARAM0_ a changé"
+msgstr "Scale: The state of _PARAM0_ was changed"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:209
+msgid "Glissière: Désactiver le widget _PARAM0_ ? _PARAM1_ "
+msgstr "Scale: Disable _PARAM0_ ? _PARAM1_"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:224
+msgid "Glissière: _PARAM0_ est désactivé"
+msgstr "Scale: _PARAM0_ is disabled"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:236
+msgid "Modifier la couleur de la glissière"
+msgstr "Modify the trough color"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:237
+msgid ""
+"Modifier la couleur de la glissière.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the trough color.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareScale.cpp:238
+msgid "Glissière: Changer la couleur de la glissière de _PARAM0_"
+msgstr "Scale: Modify the trough color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:255
+msgid ""
+"Modifier la couleur de la bordure d'une glissière.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the border color of the scale.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareScale.cpp:256
+msgid "Glissière: Changer la couleur de la bordure de _PARAM0_"
+msgstr "Scale: Modify the border color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:272
+msgid "Modifier la couleur du curseur"
+msgstr "Modify slider color"
+
+#: subdeclarations/WidgetsDeclareScale.cpp:273
+msgid ""
+"Modifier la couleur du curseur d'une glissière.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the slider color of a scale.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareScale.cpp:274
+msgid "Glissière: Changer la couleur du curseur de _PARAM0_"
+msgstr "Scale: Modify the slider color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:9
+#: subdeclarations/WidgetsDeclareTextBox.cpp:24
+#: subdeclarations/WidgetsDeclareTextBox.cpp:40
+#: subdeclarations/WidgetsDeclareTextBox.cpp:56
+#: subdeclarations/WidgetsDeclareTextBox.cpp:74
+#: subdeclarations/WidgetsDeclareTextBox.cpp:92
+#: subdeclarations/WidgetsDeclareTextBox.cpp:110
+#: subdeclarations/WidgetsDeclareTextBox.cpp:125
+#: subdeclarations/WidgetsDeclareTextBox.cpp:139
+#: subdeclarations/WidgetsDeclareTextBox.cpp:154
+#: subdeclarations/WidgetsDeclareTextBox.cpp:168
+#: subdeclarations/WidgetsDeclareTextBox.cpp:183
+#: subdeclarations/WidgetsDeclareTextBox.cpp:201
+#: subdeclarations/WidgetsDeclareTextBox.cpp:233
+#: subdeclarations/WidgetsDeclareTextBox.cpp:250
+#: subdeclarations/WidgetsDeclareTextBox.cpp:264
+msgid "Zone de texte"
+msgstr "Text area"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:10
+msgid "Objet permettant la saisie d'un texte par le joueur en cours de jeu."
+msgstr "Object allowing the player text taping"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:22
+msgid "Modifier le texte d'une zone de texte."
+msgstr "Modify text of an text box."
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:23
+msgid "Zone de texte: Faire _PARAM2__PARAM1_ au texte de _PARAM0_"
+msgstr "Text box: Do _PARAM2__PARAM1_ to the text of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:38
+msgid "Teste le texte d'une zone de texte."
+msgstr "Test the text of a text box."
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:39
+msgid "Zone de texte: Le texte de _PARAM0_ est _PARAM2_ à _PARAM1_"
+msgstr "Text box: The text of _PARAM0_ is _PARAM2__PARAM1_"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:54
+msgid ""
+"Modifier la couleur d'arrière-plan d'une zone de texte.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the background color of a text box.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:55
+msgid "Zone de texte: Changer la couleur d'arrière-plan de _PARAM0_"
+msgstr "Text box: Modify background color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:72
+msgid ""
+"Modifier la couleur de la bordure de la zone de texte.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr ""
+"Modify the border color of the text box.\n"
+"The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:73
+msgid "Zone de texte: Changer la couleur de la bordure de _PARAM0_"
+msgstr "Text box: Modify the border color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:90
+msgid ""
+"Modifier la couleur du texte de la zone de texte.\n"
+"Les 4 couleurs correspondent aux 4 état possibles du widget, cochez uniquement celle(s) que vous souhaitez modifier."
+msgstr "Modify the text color of the text box.The four colors correspond to the four possible states of the widget, check only those you want to change."
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:91
+msgid "Zone de texte: Changer la couleur du texte de _PARAM0_"
+msgstr "Text box: Modify the text color of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:107
+msgid "Donne/Enlève le focus"
+msgstr "Grab/Lost widget's focus"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:108
+msgid "Donne ou enlève le focus à un widget."
+msgstr "Grab or lost the widget's focus."
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:109
+msgid "Zone de texte: Donner le focus à _PARAM0_ ? _PARAM1_ "
+msgstr "Text box: Grab focus to _PARAM0_ ? _PARAM1_"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:115
+msgid "Oui pour donner le focus, Non pour lui enlever"
+msgstr "Yes to give the focus to the widget, no otherwise"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:122
+msgid "Tester si le widget a le focus"
+msgstr "Test whether the widget has the focus"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:123
+msgid "Teste si le widget a le focus."
+msgstr "Test whether the widget has the focus."
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:124
+msgid "Zone de texte: _PARAM0_ a le focus"
+msgstr "Text box: _PARAM0_ has the focus"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:138
+msgid "Zone de texte: Désactiver le widget _PARAM0_ ? _PARAM1_ "
+msgstr "Text box: Disable the widget _PARAM0_ ? _PARAM1_"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:153
+msgid "Zone de texte: _PARAM0_ est désactivé"
+msgstr "Text box: _PARAM0_ is disabled"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:165
+msgid "Du texte a été entré"
+msgstr "Some text has been entered"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:166
+msgid "Est valide uniquement lorsque du texte vient d'être entré."
+msgstr "Is valid only when text has been entered."
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:167
+msgid "Zone de texte: Du texte vient d'être entré dans _PARAM0_"
+msgstr "Text box: Some text has been entered in _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:182
+msgid "Zone de texte: Un clic a été perçu par _PARAM0_"
+msgstr "Text box: A click was made on _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:200
+msgid "Zone de texte: L'état de _PARAM0_ a changé"
+msgstr "Text box: The state of _PARAM0_ was changed"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:232
+msgid "Zone de texte: Faire _PARAM2__PARAM1_ à la taille du texte de _PARAM0_"
+msgstr "Text box: Do _PARAM2__PARAM1_ to the size of the text of _PARAM0_"
+
+#: subdeclarations/WidgetsDeclareTextBox.cpp:249
+msgid "Zone de texte: La taille du texte de _PARAM0_ est _PARAM2_ à _PARAM1_"
+msgstr "Text box: The size of the text of _PARAM0_ is _PARAM2__PARAM1_"
+
+#: textbox/TextAreaInitialPositionPanel.cpp:42
+msgid "Angle"
+msgstr "Angle"
+
+#: textbox/TextAreaInitialPositionPanel.cpp:45
+msgid "Yaw :"
+msgstr ""
+
+#: textbox/TextAreaInitialPositionPanel.cpp:49
+#: textbox/TextAreaInitialPositionPanel.cpp:57
+#: textbox/TextAreaInitialPositionPanel.cpp:65
+msgid "°"
+msgstr "°"
+
+#: textbox/TextAreaInitialPositionPanel.cpp:53
+msgid "Pitch :"
+msgstr ""
+
+#: textbox/TextAreaInitialPositionPanel.cpp:61
+msgid "Roll :"
+msgstr ""
+
+#: textbox/TextAreaInitialPositionPanel.cpp:70
+msgid "Coordonnée Z"
+msgstr ""
+
+#: textbox/TextAreaInitialPositionPanel.cpp:72
+msgid "Hauteur initiale :"
+msgstr ""
+
+#: textbox/TextAreaObjectEditor.cpp:113
+msgid "Editer la zone de texte"
+msgstr "Edit the text area"
+
+#: textbox/TextAreaObjectEditor.cpp:118
+msgid "Zone de texte d'une seule ligne."
+msgstr "Text box with one line."
+
+#: textbox/TextAreaObjectEditor.cpp:122
+msgid "Permet de saisir du texte sur une seule ligne."
+msgstr "Allows the player to enter a text on one line."
+
+#: textbox/TextAreaObjectEditor.cpp:131
+msgid "Masquer les caractères par"
+msgstr "Hide characters with"
+
+#: textbox/TextAreaObjectEditor.cpp:134
+msgid "*"
+msgstr ""
+
+#: textbox/TextAreaObjectEditor.cpp:137
+msgid "Limiter la taille à"
+msgstr "Limit the size to"
+
+#~ msgid "Autres propriétés"
+#~ msgstr "Other properties"
+
+#~ msgid "Orientation de la glissière"
+#~ msgstr "Scale orientation"
+
+#~ msgid "Valeurs"
+#~ msgstr "Values"
+
+#~ msgid "Police"
+#~ msgstr "Police"
+
+#~ msgid "Départ de la sélection"
+#~ msgstr "Selection starting"
+
+#~ msgid "Fin de la sélection"
+#~ msgstr "Selection ending"
+
+#~ msgid "Dernier caractère"
+#~ msgstr "Last character"
+
+#~ msgid "Non"
+#~ msgstr "No"
+
+#~ msgid "Contrôles d'interface graphique"
+#~ msgstr "Graphical interface controls"
