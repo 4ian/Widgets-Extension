@@ -69,7 +69,7 @@ void Extension::DeclareComboBox()
             DECLARE_END_OBJECT_STR_EXPRESSION()
 
             DECLARE_OBJECT_ACTION("ComboBox-AddElement",
-					   _("Ajoute un élément"),
+					   _("Ajouter un élément"),
 					   _("Ajoute un élément à la position voulue et décale les éléments suivants.\nAttention : le 1er élément est numéroté 0."),
 					   _("Liste déroulante: Ajoute un élément (_PARAM2_) à l'index _PARAM1_ de _PARAM0_"),
 					   _("Liste déroulante"),
@@ -81,6 +81,21 @@ void Extension::DeclareComboBox()
                 instrInfo.AddParameter("string", _("Texte de l'élément"), "", false);
 
                 instrInfo.cppCallingInformation.SetFunctionName("AddElement");
+
+            DECLARE_END_OBJECT_ACTION()
+
+            DECLARE_OBJECT_ACTION("ComboBox-DeleteElement",
+					   _("Supprime un élément"),
+					   _("Supprime un élément.\nAttention : le 1er élément est numéroté 0."),
+					   _("Liste déroulante: Supprime l'élément n°_PARAM1_ de _PARAM0_"),
+					   _("Liste déroulante"),
+					   "res/actions/text24.png",
+					   "res/actions/text.png");
+
+                instrInfo.AddParameter("object", _("Objet"), "ComboBox", false);
+                instrInfo.AddParameter("expression", _("Position (index)"), "", false);
+
+                instrInfo.cppCallingInformation.SetFunctionName("DeleteElement");
 
             DECLARE_END_OBJECT_ACTION()
 

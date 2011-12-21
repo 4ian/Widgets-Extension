@@ -961,7 +961,8 @@ int ComboBoxObject::GetElementsCount() const
 
 void ComboBoxObject::AddElement(int index, const std::string &str)
 {
-    obje->Get()->InsertItem(index, sf::String(str));
+    if(index <= obje->Get()->GetItemCount())
+        obje->Get()->InsertItem(index, sf::String(str));
 }
 
 void ComboBoxObject::DeleteElement(int index)
