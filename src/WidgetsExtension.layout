@@ -4,103 +4,103 @@
 	<File name="Extension.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="61" topLine="0" />
 	</File>
-	<File name="Extension.h" open="1" top="0" tabpos="14">
+	<File name="Extension.h" open="0" top="0" tabpos="14">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="GDResourceLoader.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="957" topLine="0" />
 	</File>
-	<File name="GDResourceLoader.h" open="1" top="0" tabpos="15">
+	<File name="GDResourceLoader.h" open="0" top="0" tabpos="15">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="GettingStartedDialog.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="957" topLine="0" />
 	</File>
-	<File name="GettingStartedDialog.h" open="1" top="0" tabpos="16">
+	<File name="GettingStartedDialog.h" open="0" top="0" tabpos="16">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="Manager.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="Manager.h" open="1" top="0" tabpos="17">
+	<File name="Manager.h" open="0" top="0" tabpos="17">
 		<Cursor position="957" topLine="0" />
 	</File>
-	<File name="WidgetWrapper.h" open="1" top="0" tabpos="18">
+	<File name="WidgetWrapper.h" open="0" top="0" tabpos="18">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="WidgetsCommonTools.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="957" topLine="0" />
 	</File>
-	<File name="WidgetsCommonTools.h" open="1" top="0" tabpos="19">
+	<File name="WidgetsCommonTools.h" open="0" top="0" tabpos="19">
 		<Cursor position="957" topLine="0" />
 	</File>
-	<File name="WidgetsMacros.h" open="1" top="0" tabpos="20">
+	<File name="WidgetsMacros.h" open="0" top="0" tabpos="20">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="button\ButtonObject.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="1087" topLine="0" />
 	</File>
-	<File name="button\ButtonObject.h" open="1" top="0" tabpos="2">
+	<File name="button\ButtonObject.h" open="0" top="0" tabpos="2">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="button\ButtonObjectEditor.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="1015" topLine="0" />
 	</File>
-	<File name="button\ButtonObjectEditor.h" open="1" top="0" tabpos="3">
+	<File name="button\ButtonObjectEditor.h" open="0" top="0" tabpos="3">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="checkbox\CheckBoxObject.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="902" topLine="0" />
 	</File>
-	<File name="checkbox\CheckBoxObject.h" open="1" top="0" tabpos="4">
+	<File name="checkbox\CheckBoxObject.h" open="0" top="0" tabpos="4">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="checkbox\CheckBoxObjectEditor.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="957" topLine="0" />
 	</File>
-	<File name="checkbox\CheckBoxObjectEditor.h" open="1" top="0" tabpos="5">
+	<File name="checkbox\CheckBoxObjectEditor.h" open="0" top="0" tabpos="5">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="colorScheme.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="1294" topLine="0" />
 	</File>
-	<File name="colorScheme.h" open="1" top="0" tabpos="21">
+	<File name="colorScheme.h" open="0" top="0" tabpos="21">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="combobox\ComboBoxObject.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="980" topLine="0" />
 	</File>
-	<File name="combobox\ComboBoxObject.h" open="1" top="0" tabpos="6">
+	<File name="combobox\ComboBoxObject.h" open="0" top="0" tabpos="6">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="combobox\ComboBoxObjectEditor.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="957" topLine="0" />
 	</File>
-	<File name="combobox\ComboBoxObjectEditor.h" open="1" top="0" tabpos="7">
+	<File name="combobox\ComboBoxObjectEditor.h" open="0" top="0" tabpos="7">
 		<Cursor position="1049" topLine="0" />
 	</File>
 	<File name="progressbar\ProgressBarObject.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="1019" topLine="0" />
 	</File>
-	<File name="progressbar\ProgressBarObject.h" open="1" top="0" tabpos="8">
+	<File name="progressbar\ProgressBarObject.h" open="0" top="0" tabpos="8">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="progressbar\ProgressBarObjectEditor.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="985" topLine="0" />
 	</File>
-	<File name="progressbar\ProgressBarObjectEditor.h" open="1" top="0" tabpos="9">
+	<File name="progressbar\ProgressBarObjectEditor.h" open="0" top="0" tabpos="9">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="scale\ScaleObject.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="957" topLine="0" />
 	</File>
-	<File name="scale\ScaleObject.h" open="1" top="0" tabpos="10">
+	<File name="scale\ScaleObject.h" open="0" top="0" tabpos="10">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="scale\ScaleObjectEditor.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="1206" topLine="0" />
 	</File>
-	<File name="scale\ScaleObjectEditor.h" open="1" top="0" tabpos="11">
+	<File name="scale\ScaleObjectEditor.h" open="0" top="0" tabpos="11">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="subdeclarations\WidgetsDeclareButton.cpp" open="0" top="0" tabpos="5">
@@ -112,7 +112,7 @@
 	<File name="subdeclarations\WidgetsDeclareComboBox.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="1047" topLine="0" />
 	</File>
-	<File name="subdeclarations\WidgetsDeclareMacros.h" open="1" top="0" tabpos="1">
+	<File name="subdeclarations\WidgetsDeclareMacros.h" open="0" top="0" tabpos="1">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="subdeclarations\WidgetsDeclareProgressBar.cpp" open="0" top="0" tabpos="5">
@@ -127,16 +127,16 @@
 	<File name="textbox\TextAreaObject.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="957" topLine="0" />
 	</File>
-	<File name="textbox\TextAreaObject.h" open="1" top="0" tabpos="12">
+	<File name="textbox\TextAreaObject.h" open="0" top="0" tabpos="12">
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="textbox\TextAreaObjectEditor.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="336" topLine="0" />
 	</File>
-	<File name="textbox\TextAreaObjectEditor.h" open="1" top="0" tabpos="13">
+	<File name="textbox\TextAreaObjectEditor.h" open="0" top="0" tabpos="13">
 		<Cursor position="957" topLine="0" />
 	</File>
-	<File name="version.h" open="1" top="1" tabpos="22">
+	<File name="version.h" open="0" top="0" tabpos="22">
 		<Cursor position="132" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>
