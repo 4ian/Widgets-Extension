@@ -10339,3 +10339,684 @@
 	<wx/image.h>
 	<wx/string.h>
 
+1324463911 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\extension.cpp
+	"Extension.h"
+	"GettingStartedDialog.h"
+
+1324193744 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\extension.h
+	"GDL/ExtensionBase.h"
+	"GDL/Version.h"
+	"textbox/TextAreaObject.h"
+	"button/ButtonObject.h"
+	"checkbox/CheckBoxObject.h"
+	"scale/ScaleObject.h"
+	"progressbar/ProgressBarObject.h"
+	"combobox/ComboBoxObject.h"
+	"Manager.h"
+	"GDResourceLoader.h"
+	"SFGUI/Context.hpp"
+	"SFGUI/Engine.hpp"
+	<boost/version.hpp>
+	"version.h"
+
+1320852033 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\textbox\textareaobject.h
+	"GDL/Object.h"
+	"GDL/ResourceWrapper.h"
+	"SFML/Config.hpp"
+	"SFML/System/Vector2.hpp"
+
+1323593625 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\button\buttonobject.h
+	"GDL/Object.h"
+	"GDL/ResourceWrapper.h"
+	"SFML/Config.hpp"
+	"SFML/System/Vector2.hpp"
+
+1322592110 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\checkbox\checkboxobject.h
+	"GDL/Object.h"
+	"GDL/ResourceWrapper.h"
+	"SFML/Config.hpp"
+	"SFML/System/Vector2.hpp"
+
+1320687805 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\scale\scaleobject.h
+	"GDL/Object.h"
+	"SFML/Config.hpp"
+	"SFML/System/Vector2.hpp"
+
+1322592047 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\progressbar\progressbarobject.h
+	"GDL/Object.h"
+	"SFML/Config.hpp"
+	"SFML/System/Vector2.hpp"
+
+1324322925 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobject.h
+	<vector>
+	"GDL/Object.h"
+	"GDL/ResourceWrapper.h"
+	"SFML/Config.hpp"
+	"SFML/System/Vector2.hpp"
+
+1320480804 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\manager.h
+	"SFGUI/Box.hpp"
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\box.hpp
+	<SFGUI/Container.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<list>
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\container.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<vector>
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\config.hpp
+	<iostream>
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\widget.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Object.hpp>
+	<SFGUI/Signal.hpp>
+	<SFGUI/CullingTarget.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Window/Event.hpp>
+	<map>
+	<string>
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\object.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/NonCopyable.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\noncopyable.hpp
+	<SFGUI/Config.hpp>
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\sharedptr.hpp
+	<SFGUI/NonCopyable.hpp>
+	<cassert>
+	<functional>
+	"SharedPtr.inl"
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\sharedptr.inl
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\signal.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/FastDelegate.hpp>
+	<map>
+	"Signal.inl"
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\fastdelegate.hpp
+	<memory.h>
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\signal.inl
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\cullingtarget.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/RenderQueue.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<vector>
+	<deque>
+	<map>
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\renderqueue.hpp
+	<SFGUI/Config.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/Text.hpp>
+	<SFML/OpenGL.hpp>
+	<vector>
+	<SFGUI/SharedPtr.hpp>
+
+1321464377 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\gdresourceloader.h
+	"SFGUI/ResourceLoader.hpp"
+	<string>
+	<map>
+	<boost/shared_ptr.hpp>
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\resourceloader.hpp
+	<SFGUI/Config.hpp>
+	<string>
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\context.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\engine.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/Selector.hpp>
+	<SFGUI/ResourceManager.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<string>
+	<map>
+	<list>
+	<stdexcept>
+	"Engine.inl"
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\selector.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<string>
+	<stdexcept>
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\resourcemanager.hpp
+	<SFGUI/Config.hpp>
+	<map>
+	<string>
+	"ResourceManager.inl"
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\resourcemanager.inl
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\engine.inl
+	<sstream>
+	<iomanip>
+	<typeinfo>
+
+1324317516 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\version.h
+
+1324194476 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\gettingstarteddialog.h
+	<wx/notebook.h>
+	<wx/sizer.h>
+	<wx/stattext.h>
+	<wx/statline.h>
+	<wx/panel.h>
+	<wx/bmpbuttn.h>
+	<wx/statbmp.h>
+	<wx/button.h>
+	<wx/dialog.h>
+
+1321795592 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\gdresourceloader.cpp
+	"GDResourceLoader.h"
+	"GDL/RuntimeScene.h"
+	"GDL/RessourcesLoader.h"
+
+1324194476 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\gettingstarteddialog.cpp
+	"GettingStartedDialog.h"
+	"version.h"
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/image.h>
+	<wx/string.h>
+
+1318430656 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\manager.cpp
+	"Manager.h"
+
+1322313736 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\widgetscommontools.cpp
+	"WidgetsCommonTools.h"
+	<string>
+	<vector>
+	"GDL/CommonTools.h"
+	"GDL/RuntimeScene.h"
+	"SFML/Graphics/Color.hpp"
+	"SFML/Graphics.hpp"
+	"wx/colour.h"
+
+1324247728 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\widgetscommontools.h
+	<string>
+	<vector>
+	"SFML/Graphics/Color.hpp"
+	"SFML/System/Vector2.hpp"
+	"GDL/RuntimeGame.h"
+
+1323757266 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\button\buttonobject.cpp
+	<iostream>
+	<cmath>
+	<SFML/Graphics.hpp>
+	"GDL/Object.h"
+	"GDL/ImageManager.h"
+	"GDL/tinyxml.h"
+	"GDL/FontManager.h"
+	"GDL/Position.h"
+	"GDL/RotatedRectangle.h"
+	"GDL/RuntimeScene.h"
+	"GDL/CommonTools.h"
+	"GDL/XmlMacros.h"
+	"GDL/RessourcesLoader.h"
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Color.hpp>
+	"SFGUI/Button.hpp"
+	"SFGUI/Image.hpp"
+	"SFGUI/Engine.hpp"
+	"SFGUI/Context.hpp"
+	"../WidgetWrapper.h"
+	<string>
+	"ButtonObject.h"
+	"../colorScheme.h"
+	"../Manager.h"
+	"../WidgetsCommonTools.h"
+	<wx/wx.h>
+	"GDL/ArbitraryResourceWorker.h"
+	"GDL/MainEditorCommand.h"
+	"ButtonObjectEditor.h"
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\button.hpp
+	<SFGUI/Bin.hpp>
+	<SFGUI/Image.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System/String.hpp>
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\bin.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Container.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\image.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/Misc.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/Graphics/Image.hpp>
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\misc.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System.hpp>
+
+1322509698 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\widgetwrapper.h
+	"SFGUI/SharedPtr.hpp"
+
+1320956245 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\colorscheme.h
+	"SFML/Graphics/Color.hpp"
+
+1323623519 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\button\buttonobjecteditor.h
+	<wx/notebook.h>
+	<wx/sizer.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	<wx/spinctrl.h>
+	<wx/panel.h>
+	<wx/bmpbuttn.h>
+	<wx/button.h>
+	<wx/dialog.h>
+	<wx/aui/aui.h>
+
+1324475325 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\button\buttonobjecteditor.cpp
+	"ButtonObjectEditor.h"
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/image.h>
+	<wx/string.h>
+	<wx/colordlg.h>
+	<wx/filedlg.h>
+	<wx/msgdlg.h>
+	"GDL/Game.h"
+	"ButtonObject.h"
+	"GDL/MainEditorCommand.h"
+	"GDL/CommonTools.h"
+	"GDL/ResourcesEditor.h"
+	<boost/shared_ptr.hpp>
+	"../WidgetsCommonTools.h"
+	"../colorScheme.h"
+
+1323716346 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\checkbox\checkboxobject.cpp
+	<iostream>
+	<cmath>
+	<SFML/Graphics.hpp>
+	"GDL/Object.h"
+	"GDL/ImageManager.h"
+	"GDL/tinyxml.h"
+	"GDL/FontManager.h"
+	"GDL/Position.h"
+	"GDL/RotatedRectangle.h"
+	"GDL/RuntimeScene.h"
+	"GDL/CommonTools.h"
+	"GDL/XmlMacros.h"
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Color.hpp>
+	"SFGUI/CheckButton.hpp"
+	"SFGUI/Engine.hpp"
+	"SFGUI/Context.hpp"
+	"../WidgetWrapper.h"
+	<string>
+	"CheckBoxObject.h"
+	"../colorScheme.h"
+	"../Manager.h"
+	"../WidgetsCommonTools.h"
+	<wx/wx.h>
+	"GDL/ArbitraryResourceWorker.h"
+	"GDL/MainEditorCommand.h"
+	"CheckBoxObjectEditor.h"
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\checkbutton.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/ToggleButton.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\togglebutton.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Button.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1321638679 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\checkbox\checkboxobjecteditor.h
+	<wx/notebook.h>
+	<wx/sizer.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	<wx/checkbox.h>
+	<wx/spinctrl.h>
+	<wx/statline.h>
+	<wx/panel.h>
+	<wx/button.h>
+	<wx/dialog.h>
+
+1324475363 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\checkbox\checkboxobjecteditor.cpp
+	"CheckBoxObjectEditor.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+	<wx/colordlg.h>
+	<wx/filedlg.h>
+	"GDL/Game.h"
+	"CheckBoxObject.h"
+	"GDL/MainEditorCommand.h"
+	"GDL/CommonTools.h"
+	"../WidgetsCommonTools.h"
+	"../colorScheme.h"
+
+1320956244 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\colorscheme.cpp
+	<iostream>
+	"colorScheme.h"
+	"GDL/tinyxml.h"
+
+1324375317 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobject.cpp
+	<iostream>
+	<SFML/Graphics.hpp>
+	"GDL/Object.h"
+	"GDL/ImageManager.h"
+	"GDL/tinyxml.h"
+	"GDL/FontManager.h"
+	"GDL/Position.h"
+	"GDL/RotatedRectangle.h"
+	"GDL/RuntimeScene.h"
+	"GDL/CommonTools.h"
+	"GDL/XmlMacros.h"
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Color.hpp>
+	"SFGUI/ComboBox.hpp"
+	"SFGUI/Engine.hpp"
+	"SFGUI/Context.hpp"
+	"../WidgetWrapper.h"
+	<string>
+	"ComboBoxObject.h"
+	"../colorScheme.h"
+	"../Manager.h"
+	"../WidgetsCommonTools.h"
+	<wx/wx.h>
+	"GDL/ArbitraryResourceWorker.h"
+	"GDL/MainEditorCommand.h"
+	"ComboBoxObjectEditor.h"
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\combobox.hpp
+	<SFGUI/Bin.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System/String.hpp>
+	<vector>
+
+1323801692 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobjecteditor.h
+	<wx/notebook.h>
+	<wx/sizer.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	<wx/spinctrl.h>
+	<wx/statline.h>
+	<wx/panel.h>
+	<wx/button.h>
+	<wx/dialog.h>
+	"../WidgetsMacros.h"
+
+1323109906 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\widgetsmacros.h
+
+1324475269 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobjecteditor.cpp
+	"ComboBoxObjectEditor.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+	<wx/colordlg.h>
+	<wx/filedlg.h>
+	<wx/utils.h>
+	<string>
+	"GDL/Game.h"
+	"ComboBoxObject.h"
+	"GDL/MainEditorCommand.h"
+	"GDL/CommonTools.h"
+	"../WidgetsCommonTools.h"
+	"../colorScheme.h"
+
+1323716117 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\progressbar\progressbarobject.cpp
+	<iostream>
+	<memory>
+	<cmath>
+	<SFML/Graphics.hpp>
+	"GDL/Object.h"
+	"GDL/ImageManager.h"
+	"GDL/tinyxml.h"
+	"GDL/FontManager.h"
+	"GDL/Position.h"
+	"GDL/RotatedRectangle.h"
+	"GDL/RuntimeScene.h"
+	"GDL/CommonTools.h"
+	"GDL/ResourceWrapper.h"
+	"GDL/XmlMacros.h"
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Color.hpp>
+	"SFGUI/ProgressBar.hpp"
+	"SFGUI/Engine.hpp"
+	"SFGUI/Context.hpp"
+	"SFGUI/CullingTarget.hpp"
+	"../WidgetWrapper.h"
+	<string>
+	"ProgressBarObject.h"
+	"../colorScheme.h"
+	"../Manager.h"
+	"../WidgetsCommonTools.h"
+	<wx/wx.h>
+	"GDL/ArbitraryResourceWorker.h"
+	"GDL/MainEditorCommand.h"
+	"ProgressBarObjectEditor.h"
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\progressbar.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System/String.hpp>
+
+1322509978 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\progressbar\progressbarobjecteditor.h
+	<wx/notebook.h>
+	<wx/sizer.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	<wx/spinctrl.h>
+	<wx/statline.h>
+	<wx/radiobut.h>
+	<wx/panel.h>
+	<wx/button.h>
+	<wx/dialog.h>
+
+1324475421 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\progressbar\progressbarobjecteditor.cpp
+	"ProgressBarObjectEditor.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+	<wx/colordlg.h>
+	<wx/filedlg.h>
+	<wx/msgdlg.h>
+	"GDL/Game.h"
+	"ProgressBarObject.h"
+	"GDL/MainEditorCommand.h"
+	"GDL/CommonTools.h"
+	"../WidgetsCommonTools.h"
+	"../colorScheme.h"
+
+1323716406 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\scale\scaleobject.cpp
+	<iostream>
+	<memory>
+	<cmath>
+	<SFML/Graphics.hpp>
+	"GDL/Object.h"
+	"GDL/ImageManager.h"
+	"GDL/tinyxml.h"
+	"GDL/FontManager.h"
+	"GDL/Position.h"
+	"GDL/RotatedRectangle.h"
+	"GDL/RuntimeScene.h"
+	"GDL/CommonTools.h"
+	"GDL/ResourceWrapper.h"
+	"GDL/XmlMacros.h"
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Color.hpp>
+	"SFGUI/Scale.hpp"
+	"SFGUI/Engine.hpp"
+	"SFGUI/Context.hpp"
+	"../WidgetWrapper.h"
+	<string>
+	"ScaleObject.h"
+	"../colorScheme.h"
+	"../Manager.h"
+	"../WidgetsCommonTools.h"
+	<wx/wx.h>
+	"GDL/ArbitraryResourceWorker.h"
+	"GDL/MainEditorCommand.h"
+	"ScaleObjectEditor.h"
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\scale.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Range.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\range.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/Adjustment.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1323611837 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\adjustment.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Object.hpp>
+	<SFGUI/Signal.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1321700569 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\scale\scaleobjecteditor.h
+	<wx/notebook.h>
+	<wx/sizer.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	<wx/spinctrl.h>
+	<wx/statline.h>
+	<wx/radiobut.h>
+	<wx/panel.h>
+	<wx/button.h>
+	<wx/dialog.h>
+
+1324475727 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\scale\scaleobjecteditor.cpp
+	"ScaleObjectEditor.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+	<wx/colordlg.h>
+	<wx/filedlg.h>
+	<wx/msgdlg.h>
+	"GDL/Game.h"
+	"ScaleObject.h"
+	"GDL/MainEditorCommand.h"
+	"GDL/CommonTools.h"
+	"../WidgetsCommonTools.h"
+	"../colorScheme.h"
+
+1321723825 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclarebutton.cpp
+	"GDL/ExtensionBase.h"
+	"GDL/Version.h"
+	"../Extension.h"
+
+1321780498 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclarecheckbox.cpp
+	"GDL/ExtensionBase.h"
+	"GDL/Version.h"
+	"../Extension.h"
+
+1324375630 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclarecombobox.cpp
+	"GDL/ExtensionBase.h"
+	"GDL/Version.h"
+	"../Extension.h"
+	"WidgetsDeclareMacros.h"
+
+1324041194 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclaremacros.h
+
+1322334269 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclareprogressbar.cpp
+	"GDL/ExtensionBase.h"
+	"GDL/Version.h"
+	"../Extension.h"
+
+1321724808 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclarescale.cpp
+	"GDL/ExtensionBase.h"
+	"GDL/Version.h"
+	"../Extension.h"
+
+1321725150 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclaretextbox.cpp
+	"GDL/ExtensionBase.h"
+	"GDL/Version.h"
+	"../Extension.h"
+
+1323716441 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\textbox\textareaobject.cpp
+	<iostream>
+	<SFML/Graphics.hpp>
+	"GDL/Object.h"
+	"GDL/ImageManager.h"
+	"GDL/tinyxml.h"
+	"GDL/FontManager.h"
+	"GDL/Position.h"
+	"GDL/RotatedRectangle.h"
+	"GDL/RuntimeScene.h"
+	"GDL/CommonTools.h"
+	"GDL/XmlMacros.h"
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Color.hpp>
+	"SFGUI/Entry.hpp"
+	"SFGUI/Engine.hpp"
+	"SFGUI/Context.hpp"
+	"../WidgetWrapper.h"
+	<string>
+	"TextAreaObject.h"
+	"../colorScheme.h"
+	"../Manager.h"
+	"../WidgetsCommonTools.h"
+	<wx/wx.h>
+	"GDL/ArbitraryResourceWorker.h"
+	"GDL/MainEditorCommand.h"
+	"TextAreaObjectEditor.h"
+
+1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\entry.hpp
+	<SFGUI/Widget.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Clock.hpp>
+
+1321552407 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\textbox\textareaobjecteditor.h
+	<wx/notebook.h>
+	<wx/sizer.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	<wx/checkbox.h>
+	<wx/spinctrl.h>
+	<wx/statline.h>
+	<wx/panel.h>
+	<wx/button.h>
+	<wx/dialog.h>
+
+1324475546 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\textbox\textareaobjecteditor.cpp
+	"TextAreaObjectEditor.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+	<wx/colordlg.h>
+	<wx/filedlg.h>
+	<wx/utils.h>
+	"GDL/Game.h"
+	"TextAreaObject.h"
+	"GDL/MainEditorCommand.h"
+	"GDL/CommonTools.h"
+	"../WidgetsCommonTools.h"
+	"../colorScheme.h"
+
