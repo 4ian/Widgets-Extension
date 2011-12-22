@@ -4,13 +4,13 @@
 	<Project>
 		<Option title="Widgets" />
 		<Option pch_mode="2" />
-		<Option compiler="mingw_452" />
+		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
 				<Option output="..\..\..\Runtime\bin\debug\Widgets.xgdw" prefix_auto="1" extension_auto="0" />
 				<Option object_output="obj\Debug\" />
 				<Option type="3" />
-				<Option compiler="mingw_452" />
+				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-Wall" />
@@ -40,7 +40,7 @@
 				<Option output="..\..\..\IDE\bin\debug\Extensions\Widgets.xgdwe" prefix_auto="1" extension_auto="0" />
 				<Option object_output="obj\Debug Edittime\" />
 				<Option type="3" />
-				<Option compiler="mingw_452" />
+				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-Wall" />
@@ -109,7 +109,7 @@
 				<Option output="..\build\release\Widgets.xgdw" prefix_auto="1" extension_auto="0" />
 				<Option object_output="..\build\obj\Release\" />
 				<Option type="3" />
-				<Option compiler="mingw_452" />
+				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-O2" />
@@ -142,7 +142,7 @@
 				<Option output="..\build\releaseedittime\Widgets.xgdwe" prefix_auto="1" extension_auto="0" />
 				<Option object_output="..\build\obj\Release Edittime\" />
 				<Option type="3" />
-				<Option compiler="mingw_452" />
+				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-O2" />
@@ -217,7 +217,7 @@
 				<Option output="..\..\..\Runtime\bin\dev\Widgets.xgdw" prefix_auto="1" extension_auto="0" />
 				<Option object_output="obj\Dev\" />
 				<Option type="3" />
-				<Option compiler="mingw_452" />
+				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-O2" />
@@ -247,7 +247,7 @@
 				<Option output="..\..\..\IDE\bin\dev\Extensions\Widgets.xgdwe" prefix_auto="1" extension_auto="0" />
 				<Option object_output="obj\Dev Edittime\" />
 				<Option type="3" />
-				<Option compiler="mingw_452" />
+				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-O2" />
@@ -442,7 +442,7 @@
 				<Option output="..\..\..\Runtime\bin\debug\Widgets.xgdl" prefix_auto="1" extension_auto="0" />
 				<Option object_output="obj\Debug\" />
 				<Option type="3" />
-				<Option compiler="mingw_452" />
+				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-Wall" />

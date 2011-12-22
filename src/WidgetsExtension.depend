@@ -10339,11 +10339,11 @@
 	<wx/image.h>
 	<wx/string.h>
 
-1324463911 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\extension.cpp
+1324495924 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\extension.cpp
 	"Extension.h"
 	"GettingStartedDialog.h"
 
-1324193744 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\extension.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\extension.h
 	"GDL/ExtensionBase.h"
 	"GDL/Version.h"
 	"textbox/TextAreaObject.h"
@@ -10359,42 +10359,42 @@
 	<boost/version.hpp>
 	"version.h"
 
-1320852033 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\textbox\textareaobject.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\textbox\textareaobject.h
 	"GDL/Object.h"
 	"GDL/ResourceWrapper.h"
 	"SFML/Config.hpp"
 	"SFML/System/Vector2.hpp"
 
-1323593625 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\button\buttonobject.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\button\buttonobject.h
 	"GDL/Object.h"
 	"GDL/ResourceWrapper.h"
 	"SFML/Config.hpp"
 	"SFML/System/Vector2.hpp"
 
-1322592110 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\checkbox\checkboxobject.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\checkbox\checkboxobject.h
 	"GDL/Object.h"
 	"GDL/ResourceWrapper.h"
 	"SFML/Config.hpp"
 	"SFML/System/Vector2.hpp"
 
-1320687805 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\scale\scaleobject.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\scale\scaleobject.h
 	"GDL/Object.h"
 	"SFML/Config.hpp"
 	"SFML/System/Vector2.hpp"
 
-1322592047 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\progressbar\progressbarobject.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\progressbar\progressbarobject.h
 	"GDL/Object.h"
 	"SFML/Config.hpp"
 	"SFML/System/Vector2.hpp"
 
-1324322925 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobject.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobject.h
 	<vector>
 	"GDL/Object.h"
 	"GDL/ResourceWrapper.h"
 	"SFML/Config.hpp"
 	"SFML/System/Vector2.hpp"
 
-1320480804 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\manager.h
+1324496295 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\manager.h
 	"SFGUI/Box.hpp"
 
 1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\box.hpp
@@ -10467,7 +10467,7 @@
 	<vector>
 	<SFGUI/SharedPtr.hpp>
 
-1321464377 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\gdresourceloader.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\gdresourceloader.h
 	"SFGUI/ResourceLoader.hpp"
 	<string>
 	<map>
@@ -10514,9 +10514,9 @@
 	<iomanip>
 	<typeinfo>
 
-1324317516 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\version.h
+1324496295 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\version.h
 
-1324194476 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\gettingstarteddialog.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\gettingstarteddialog.h
 	<wx/notebook.h>
 	<wx/sizer.h>
 	<wx/stattext.h>
@@ -10527,12 +10527,12 @@
 	<wx/button.h>
 	<wx/dialog.h>
 
-1321795592 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\gdresourceloader.cpp
+1324496154 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\gdresourceloader.cpp
 	"GDResourceLoader.h"
 	"GDL/RuntimeScene.h"
 	"GDL/RessourcesLoader.h"
 
-1324194476 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\gettingstarteddialog.cpp
+1324496154 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\gettingstarteddialog.cpp
 	"GettingStartedDialog.h"
 	"version.h"
 	<wx/bitmap.h>
@@ -10541,10 +10541,10 @@
 	<wx/image.h>
 	<wx/string.h>
 
-1318430656 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\manager.cpp
+1324496154 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\manager.cpp
 	"Manager.h"
 
-1322313736 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\widgetscommontools.cpp
+1324496154 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\widgetscommontools.cpp
 	"WidgetsCommonTools.h"
 	<string>
 	<vector>
@@ -10554,14 +10554,14 @@
 	"SFML/Graphics.hpp"
 	"wx/colour.h"
 
-1324247728 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\widgetscommontools.h
+1324496295 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\widgetscommontools.h
 	<string>
 	<vector>
 	"SFML/Graphics/Color.hpp"
 	"SFML/System/Vector2.hpp"
 	"GDL/RuntimeGame.h"
 
-1323757266 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\button\buttonobject.cpp
+1324495979 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\button\buttonobject.cpp
 	<iostream>
 	<cmath>
 	<SFML/Graphics.hpp>
@@ -10615,13 +10615,13 @@
 	<SFGUI/SharedPtr.hpp>
 	<SFML/System.hpp>
 
-1322509698 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\widgetwrapper.h
+1324496295 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\widgetwrapper.h
 	"SFGUI/SharedPtr.hpp"
 
-1320956245 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\colorscheme.h
+1324496295 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\colorscheme.h
 	"SFML/Graphics/Color.hpp"
 
-1323623519 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\button\buttonobjecteditor.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\button\buttonobjecteditor.h
 	<wx/notebook.h>
 	<wx/sizer.h>
 	<wx/stattext.h>
@@ -10633,7 +10633,7 @@
 	<wx/dialog.h>
 	<wx/aui/aui.h>
 
-1324475325 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\button\buttonobjecteditor.cpp
+1324495988 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\button\buttonobjecteditor.cpp
 	"ButtonObjectEditor.h"
 	<wx/bitmap.h>
 	<wx/font.h>
@@ -10652,7 +10652,7 @@
 	"../WidgetsCommonTools.h"
 	"../colorScheme.h"
 
-1323716346 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\checkbox\checkboxobject.cpp
+1324495999 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\checkbox\checkboxobject.cpp
 	<iostream>
 	<cmath>
 	<SFML/Graphics.hpp>
@@ -10691,7 +10691,7 @@
 	<SFGUI/Button.hpp>
 	<SFGUI/SharedPtr.hpp>
 
-1321638679 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\checkbox\checkboxobjecteditor.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\checkbox\checkboxobjecteditor.h
 	<wx/notebook.h>
 	<wx/sizer.h>
 	<wx/stattext.h>
@@ -10703,7 +10703,7 @@
 	<wx/button.h>
 	<wx/dialog.h>
 
-1324475363 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\checkbox\checkboxobjecteditor.cpp
+1324496009 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\checkbox\checkboxobjecteditor.cpp
 	"CheckBoxObjectEditor.h"
 	<wx/font.h>
 	<wx/intl.h>
@@ -10717,12 +10717,12 @@
 	"../WidgetsCommonTools.h"
 	"../colorScheme.h"
 
-1320956244 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\colorscheme.cpp
+1324496154 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\colorscheme.cpp
 	<iostream>
 	"colorScheme.h"
 	"GDL/tinyxml.h"
 
-1324488848 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobject.cpp
+1324495969 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobject.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"GDL/Object.h"
@@ -10756,7 +10756,7 @@
 	<SFML/System/String.hpp>
 	<vector>
 
-1323801692 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobjecteditor.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobjecteditor.h
 	<wx/notebook.h>
 	<wx/sizer.h>
 	<wx/stattext.h>
@@ -10768,9 +10768,9 @@
 	<wx/dialog.h>
 	"../WidgetsMacros.h"
 
-1323109906 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\widgetsmacros.h
+1324496295 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\widgetsmacros.h
 
-1324475269 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobjecteditor.cpp
+1324496016 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobjecteditor.cpp
 	"ComboBoxObjectEditor.h"
 	<wx/font.h>
 	<wx/intl.h>
@@ -10786,7 +10786,7 @@
 	"../WidgetsCommonTools.h"
 	"../colorScheme.h"
 
-1323716117 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\progressbar\progressbarobject.cpp
+1324496023 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\progressbar\progressbarobject.cpp
 	<iostream>
 	<memory>
 	<cmath>
@@ -10824,7 +10824,7 @@
 	<SFGUI/SharedPtr.hpp>
 	<SFML/System/String.hpp>
 
-1322509978 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\progressbar\progressbarobjecteditor.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\progressbar\progressbarobjecteditor.h
 	<wx/notebook.h>
 	<wx/sizer.h>
 	<wx/stattext.h>
@@ -10836,7 +10836,7 @@
 	<wx/button.h>
 	<wx/dialog.h>
 
-1324475421 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\progressbar\progressbarobjecteditor.cpp
+1324496030 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\progressbar\progressbarobjecteditor.cpp
 	"ProgressBarObjectEditor.h"
 	<wx/font.h>
 	<wx/intl.h>
@@ -10851,7 +10851,7 @@
 	"../WidgetsCommonTools.h"
 	"../colorScheme.h"
 
-1323716406 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\scale\scaleobject.cpp
+1324496058 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\scale\scaleobject.cpp
 	<iostream>
 	<memory>
 	<cmath>
@@ -10899,7 +10899,7 @@
 	<SFGUI/Signal.hpp>
 	<SFGUI/SharedPtr.hpp>
 
-1321700569 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\scale\scaleobjecteditor.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\scale\scaleobjecteditor.h
 	<wx/notebook.h>
 	<wx/sizer.h>
 	<wx/stattext.h>
@@ -10911,7 +10911,7 @@
 	<wx/button.h>
 	<wx/dialog.h>
 
-1324475727 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\scale\scaleobjecteditor.cpp
+1324496058 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\scale\scaleobjecteditor.cpp
 	"ScaleObjectEditor.h"
 	<wx/font.h>
 	<wx/intl.h>
@@ -10926,40 +10926,40 @@
 	"../WidgetsCommonTools.h"
 	"../colorScheme.h"
 
-1321723825 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclarebutton.cpp
+1324496084 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclarebutton.cpp
 	"GDL/ExtensionBase.h"
 	"GDL/Version.h"
 	"../Extension.h"
 
-1321780498 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclarecheckbox.cpp
+1324496091 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclarecheckbox.cpp
 	"GDL/ExtensionBase.h"
 	"GDL/Version.h"
 	"../Extension.h"
 
-1324489140 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclarecombobox.cpp
+1324560312 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclarecombobox.cpp
 	"GDL/ExtensionBase.h"
 	"GDL/Version.h"
 	"../Extension.h"
 	"WidgetsDeclareMacros.h"
 
-1324041194 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclaremacros.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclaremacros.h
 
-1322334269 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclareprogressbar.cpp
+1324496115 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclareprogressbar.cpp
 	"GDL/ExtensionBase.h"
 	"GDL/Version.h"
 	"../Extension.h"
 
-1321724808 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclarescale.cpp
+1324496115 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclarescale.cpp
 	"GDL/ExtensionBase.h"
 	"GDL/Version.h"
 	"../Extension.h"
 
-1321725150 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclaretextbox.cpp
+1324496115 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclaretextbox.cpp
 	"GDL/ExtensionBase.h"
 	"GDL/Version.h"
 	"../Extension.h"
 
-1323716441 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\textbox\textareaobject.cpp
+1324496074 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\textbox\textareaobject.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"GDL/Object.h"
@@ -10993,7 +10993,7 @@
 	<SFML/System/String.hpp>
 	<SFML/System/Clock.hpp>
 
-1321552407 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\textbox\textareaobjecteditor.h
+1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\textbox\textareaobjecteditor.h
 	<wx/notebook.h>
 	<wx/sizer.h>
 	<wx/stattext.h>
@@ -11005,7 +11005,7 @@
 	<wx/button.h>
 	<wx/dialog.h>
 
-1324475546 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\textbox\textareaobjecteditor.cpp
+1324496074 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\textbox\textareaobjecteditor.cpp
 	"TextAreaObjectEditor.h"
 	<wx/font.h>
 	<wx/intl.h>

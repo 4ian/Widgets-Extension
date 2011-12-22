@@ -74,6 +74,23 @@ void Extension::DeclareComboBox()
                 instrInfo.cppCallingInformation.SetFunctionName("GetElementsCount");
             DECLARE_END_OBJECT_EXPRESSION()
 
+            DECLARE_OBJECT_ACTION("ComboBox-IndexString",
+					   _("Changer le texte d'un élément"),
+					   _("Change le texte d'un élément.\nAttention : le 1er élément est numéroté 0."),
+					   _("Liste déroulante: Faire _PARAM3__PARAM2_ au texte de l'élément n°_PARAM1_ de _PARAM0_"),
+					   _("Liste déroulante"),
+					   "res/actions/text24.png",
+					   "res/actions/text.png");
+
+                instrInfo.AddParameter("object", _("Objet"), "ComboBox", false);
+                instrInfo.AddParameter("expression", _("Elément (index)"), "", false);
+                instrInfo.AddParameter("string", _("Texte"), "", false);
+                instrInfo.AddParameter("operator", _("Signe de la modification"), "", false);
+
+                instrInfo.cppCallingInformation.SetFunctionName("SetElementString").SetManipulatedType("string").SetAssociatedGetter("GetElementString");
+
+            DECLARE_END_OBJECT_ACTION()
+
             DECLARE_OBJECT_STR_EXPRESSION("ComboBox::IndexString", _("Texte d'un index"), _("Texte d'un index"), _("Liste déroulante"), "res/texteicon.png")
                 instrInfo.AddParameter("object", _("Objet"), "ComboBox", false);
                 instrInfo.AddParameter("expression", _("Index"), "", false);
