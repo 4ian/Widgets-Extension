@@ -560,7 +560,6 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-std=c++0x" />
 			<Add option="-DIS_COMPILE_TIME" />
 			<Add directory="..\..\..\GDL" />
 			<Add directory="..\..\..\ExtLibs\SFML\include" />

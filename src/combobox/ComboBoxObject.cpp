@@ -964,7 +964,11 @@ std::string ComboBoxObject::GetElementString(int ele) const
 
 void ComboBoxObject::SetElementString(int ele, const std::string &str)
 {
+    if(ele == -1 || ele >= obje->Get()->GetItemCount())
+        return;
+
     obje->Get()->ChangeItem(ele, sf::String(str));
+    obje->Get()->Refresh();
 }
 
 int ComboBoxObject::GetElementsCount() const
