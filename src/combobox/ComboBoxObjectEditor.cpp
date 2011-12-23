@@ -345,8 +345,7 @@ object(object_)
     ElementList listOfElement = object.GetAllElements();
     textEdit->Clear();
 
-    int a = 0;
-    for(a = 0; a < listOfElement.size(); a++)
+    for(unsigned int a = 0; a < listOfElement.size(); a++)
     {
         if(a > 0)
             textEdit->AppendText("\n");
