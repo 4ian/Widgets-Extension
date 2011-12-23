@@ -950,35 +950,35 @@ int ComboBoxObject::GetSelectedElement() const
     return obje->Get()->GetSelectedItem() != sfg::ComboBox::NONE ? obje->Get()->GetSelectedItem() : -1;
 }
 
-void ComboBoxObject::SelectElement(int ele)
+void ComboBoxObject::SelectElement(unsigned int ele)
 {
     obje->Get()->SelectItem(ele);
 }
 
-std::string ComboBoxObject::GetElementString(int ele) const
+std::string ComboBoxObject::GetElementString(unsigned int ele) const
 {
     return obje->Get()->GetItem(ele).ToAnsiString();
 }
 
-void ComboBoxObject::SetElementString(int ele, const std::string &str)
+void ComboBoxObject::SetElementString(unsigned int ele, const std::string &str)
 {
     obje->Get()->ChangeItem(ele, sf::String(str));
 }
 
-int ComboBoxObject::GetElementsCount() const
+unsigned int ComboBoxObject::GetElementsCount() const
 {
     return obje->Get()->GetItemCount();
 }
 
-void ComboBoxObject::AddElement(int index, const std::string &str)
+void ComboBoxObject::AddElement(unsigned int index, const std::string &str)
 {
     if(index <= obje->Get()->GetItemCount())
         obje->Get()->InsertItem(index, sf::String(str));
 }
 
-void ComboBoxObject::DeleteElement(int index)
+void ComboBoxObject::DeleteElement(unsigned int index)
 {
-    if(index >= 0 && index < obje->Get()->GetItemCount())
+    if(index < obje->Get()->GetItemCount())
         obje->Get()->RemoveItem(index);
 }
 

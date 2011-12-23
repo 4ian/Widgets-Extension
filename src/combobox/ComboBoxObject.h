@@ -164,15 +164,15 @@ class GD_EXTENSION_API ComboBoxObject : public Object
         void SaveElementsToXml(TiXmlElement*);
 
         int GetSelectedElement() const;
-        void SelectElement(int);
+        void SelectElement(unsigned int);
 
-        std::string GetElementString(int) const;
-        void SetElementString(int, const std::string&);
+        std::string GetElementString(unsigned int) const;
+        void SetElementString(unsigned int, const std::string&);
 
-        int GetElementsCount() const;
+        unsigned int GetElementsCount() const;
 
-        void AddElement(int, const std::string&);
-        void DeleteElement(int);
+        void AddElement(unsigned int, const std::string&);
+        void DeleteElement(unsigned int);
 
         //Signals (use by conditions)
         bool SIG_OnClick(const std::string&, const std::string&, const std::string&, RuntimeScene&);

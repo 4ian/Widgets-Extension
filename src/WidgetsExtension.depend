@@ -10339,11 +10339,11 @@
 	<wx/image.h>
 	<wx/string.h>
 
-1324495924 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\extension.cpp
+1324635197 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\extension.cpp
 	"Extension.h"
 	"GettingStartedDialog.h"
 
-1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\extension.h
+1324635197 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\extension.h
 	"GDL/ExtensionBase.h"
 	"GDL/Version.h"
 	"textbox/TextAreaObject.h"
@@ -10387,7 +10387,7 @@
 	"SFML/Config.hpp"
 	"SFML/System/Vector2.hpp"
 
-1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobject.h
+1324635300 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobject.h
 	<vector>
 	"GDL/Object.h"
 	"GDL/ResourceWrapper.h"
@@ -10722,7 +10722,7 @@
 	"colorScheme.h"
 	"GDL/tinyxml.h"
 
-1324495969 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobject.cpp
+1324634673 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobject.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"GDL/Object.h"
@@ -10770,7 +10770,7 @@
 
 1324496295 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\widgetsmacros.h
 
-1324496016 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobjecteditor.cpp
+1324634673 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobjecteditor.cpp
 	"ComboBoxObjectEditor.h"
 	<wx/font.h>
 	<wx/intl.h>
@@ -10936,7 +10936,7 @@
 	"GDL/Version.h"
 	"../Extension.h"
 
-1324560312 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclarecombobox.cpp
+1324634673 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\subdeclarations\widgetsdeclarecombobox.cpp
 	"GDL/ExtensionBase.h"
 	"GDL/Version.h"
 	"../Extension.h"
