@@ -935,9 +935,7 @@ void ComboBoxObject::LoadElementsFromXml(const TiXmlElement *elem)
 
 void ComboBoxObject::SaveElementsToXml(TiXmlElement *elem)
 {
-    int a = 0;
-
-    for(a = 0; a < obje->Get()->GetItemCount(); a++)
+    for(unsigned int a = 0; a < obje->Get()->GetItemCount(); a++)
     {
         TiXmlElement *subElem = new TiXmlElement("Element");
         TiXmlText *textElem = new TiXmlText(obje->Get()->GetItem(a).ToAnsiString().c_str());
