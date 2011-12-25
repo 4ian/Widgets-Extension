@@ -1,4 +1,4 @@
-build/*
-addWidgetsToGD.bat
-src/WidgetsExtension.depend
-src/WidgetsExtension.layout
+/build/*
+/addWidgetsToGD.bat
+/src/WidgetsExtension.depend
+/src/WidgetsExtension.layout
