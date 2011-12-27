@@ -15,9 +15,9 @@ AppSupportURL=http://www.levasseursoftware.net/index.php/extension-widgets
 AppUpdatesURL=http://www.levasseursoftware.net/index.php/extension-widgets
 DefaultDirName={pf}\Compil Games\Game Develop
 DefaultGroupName=Extension Widget
-LicenseFile=D:\Développement\GD2\GDLSDK\Extensions\Widgets\installer\LICENSE-WIDGETEXTENSION-EN.txt
-OutputDir=D:\Développement\GD2\GDLSDK\Extensions\Widgets\installer\build
-OutputBaseFilename=Install-Widget-Extension-1.1RC
+LicenseFile=D:\Développement\GD2\GDLSDK\Extensions\WidgetsExtension\tools\windows-installer\LICENSE-WIDGETEXTENSION-EN.txt
+OutputDir=D:\Développement\GD2\GDLSDK\Extensions\WidgetsExtension\tools\windows-installer\dataInstaller
+OutputBaseFilename=Data-WidgetsExtension-1.1RC
 WizardImageFile=WidgetsLogo.bmp
 WizardSmallImageFile=WidgetsLogoSmall.bmp
 
@@ -29,8 +29,8 @@ Name: "french"; MessagesFile: "French_WIDGET.isl"
 Name: "english"; MessagesFile: "Default_WIDGET.isl"
 
 [Files]
-Source: "D:\Développement\GD2\GDLSDK\Extensions\Widgets\installer\final\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "D:\Développement\GD2\GDLSDK\Extensions\Widgets\installer\LICENSE-WIDGETEXTENSION-FR.txt"; DestDir: "{app}";
-Source: "D:\Développement\GD2\GDLSDK\Extensions\Widgets\installer\LICENSE-WIDGETEXTENSION-EN.txt"; DestDir: "{app}";
+Source: "D:\Développement\GD2\GDLSDK\Extensions\WidgetsExtension\tools\windows-installer\final\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\Développement\GD2\GDLSDK\Extensions\WidgetsExtension\tools\windows-installer\LICENSE-WIDGETEXTENSION-FR.txt"; DestDir: "{app}";
+Source: "D:\Développement\GD2\GDLSDK\Extensions\WidgetsExtension\tools\windows-installer\LICENSE-WIDGETEXTENSION-EN.txt"; DestDir: "{app}";
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
