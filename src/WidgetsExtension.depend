@@ -10394,10 +10394,9 @@
 	"SFML/Config.hpp"
 	"SFML/System/Vector2.hpp"
 
-1324841894 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\manager.h
+1324904182 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\manager.h
 	<map>
 	"WidgetWrapper.h"
-	"SFGUI/Fixed.hpp"
 	"GDL/RuntimeScene.h"
 
 1323714209 d:\développement\gd2\gdlsdk\extensions\widgetsextension\extlibs\sfgui\include\sfgui\box.hpp
@@ -10544,7 +10543,7 @@
 	<wx/image.h>
 	<wx/string.h>
 
-1324744887 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\manager.cpp
+1324841894 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\manager.cpp
 	"Manager.h"
 	"WidgetsCommonTools.h"
 

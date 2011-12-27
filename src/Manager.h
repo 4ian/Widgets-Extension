@@ -14,7 +14,6 @@ Permission is granted to anyone to use this software for any purpose, including 
 #include <map>
 
 #include "WidgetWrapper.h"
-#include "SFGUI/Fixed.hpp"
 #include "GDL/RuntimeScene.h"
 
 #ifndef WIDGETMANAGER_H
@@ -52,9 +51,6 @@ class GD_EXTENSION_API WidgetManager
 
     };
     ~WidgetManager() {};
-
-    std::map<RuntimeScene*, WidgetWrapper<sfg::Fixed>* > parents;
-    std::map<RuntimeScene*, int> timesFromStart;
 
 };
 
