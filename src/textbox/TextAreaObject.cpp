@@ -657,17 +657,6 @@ void TextAreaObject::UpdateTime(float ElapsedTime)
         {
             obje->Get()->SetState(sfg::Widget::NORMAL);
         }
-        if(widgetPos.Contains(sf::Vector2f(mouseX, mouseY)) && obje->Get()->GetState() != sfg::Widget::INSENSITIVE && obje->Get()->GetState() != sfg::Widget::ACTIVE)
-        {
-            obje->Get()->SetState(sfg::Widget::ACTIVE);
-
-            sf::Event event;
-            event.Type = sf::Event::MouseButtonPressed;
-            event.MouseButton.Button = sf::Mouse::Left;
-            event.MouseButton.X = mouseX;
-            event.MouseButton.Y = mouseY;
-            obje->Get()->HandleEvent(event);
-        }
     }
 
     //Process all events received by the window

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <Game>
-    <GDVersion Major="2" Minor="0" Build="10538" Revision="53165" />
+    <GDVersion Major="2" Minor="0" Build="10541" Revision="53179" />
     <Info winExecutableFilename="" winExecutableIconFile="" linuxExecutableFilename="" macExecutableFilename="" useExternalSourceFiles="false">
         <Nom value="Scale &amp; Progress Bar" />
         <Auteur value="" />
@@ -28,7 +28,7 @@
             <Extension name="Widgets" />
             <Extension name="TextObject" />
         </Extensions>
-        <FPSmax value="-1" />
+        <FPSmax value="60" />
         <FPSmin value="10" />
         <verticalSync value="false" />
         <Chargement>
@@ -52,6 +52,7 @@
         <Resources>
             <Resource kind="image" name="WidgetsLogo.png" alwaysLoaded="false" smoothed="true" userAdded="true" file="D:\Développement\GD2\GDLSDK\Extensions\Widgets\examples\release\WidgetsLogo.png" />
         </Resources>
+        <ResourceFolders />
     </Resources>
     <Objects />
     <ObjectGroups />

@@ -21,7 +21,7 @@ void Extension::DeclareComboBox()
 {
     DECLARE_OBJECT("ComboBox",
 				   _("Liste déroulante"),
-				   _("Objet au joueur de choisir parmi plusieurs choix."),
+				   _("Objet permettant au joueur de choisir parmi plusieurs choix."),
 				   "res/Widgets/ComboBox_logo_smallO.png",
 				   &CreateComboBoxObject,
 				   &DestroyComboBoxObject,

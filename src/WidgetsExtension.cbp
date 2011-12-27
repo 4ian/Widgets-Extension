@@ -146,7 +146,6 @@
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add option="-Wall" />
 					<Add option="-m32" />
 					<Add option="-DGD_IDE_ONLY" />
 					<Add option="-DGD_API=__declspec(dllimport)" />
