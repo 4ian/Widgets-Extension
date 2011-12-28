@@ -22,7 +22,7 @@
 	<File name="Manager.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="799" topLine="0" />
 	</File>
-	<File name="Manager.h" open="1" top="0" tabpos="6">
+	<File name="Manager.h" open="1" top="0" tabpos="5">
 		<Cursor position="933" topLine="0" />
 	</File>
 	<File name="WidgetWrapper.h" open="0" top="0" tabpos="23">
@@ -109,7 +109,7 @@
 	<File name="subdeclarations\WidgetsDeclareCheckBox.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="1044" topLine="0" />
 	</File>
-	<File name="subdeclarations\WidgetsDeclareComboBox.cpp" open="1" top="1" tabpos="7">
+	<File name="subdeclarations\WidgetsDeclareComboBox.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="1295" topLine="0" />
 	</File>
 	<File name="subdeclarations\WidgetsDeclareMacros.h" open="0" top="0" tabpos="1">
@@ -124,17 +124,17 @@
 	<File name="subdeclarations\WidgetsDeclareTextBox.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="959" topLine="0" />
 	</File>
-	<File name="textbox\TextAreaObject.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="20722" topLine="655" />
+	<File name="textbox\TextAreaObject.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="1813" topLine="21" />
 	</File>
 	<File name="textbox\TextAreaObject.h" open="0" top="0" tabpos="12">
 		<Cursor position="957" topLine="0" />
 	</File>
-	<File name="textbox\TextAreaObjectEditor.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="336" topLine="0" />
+	<File name="textbox\TextAreaObjectEditor.cpp" open="1" top="1" tabpos="6">
+		<Cursor position="20901" topLine="275" />
 	</File>
-	<File name="textbox\TextAreaObjectEditor.h" open="0" top="0" tabpos="13">
-		<Cursor position="957" topLine="0" />
+	<File name="textbox\TextAreaObjectEditor.h" open="1" top="0" tabpos="7">
+		<Cursor position="1158" topLine="0" />
 	</File>
 	<File name="version.h" open="0" top="0" tabpos="22">
 		<Cursor position="1093" topLine="0" />

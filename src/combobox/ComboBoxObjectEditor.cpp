@@ -109,7 +109,7 @@ object(object_)
 	wxFlexGridSizer* FlexGridSizer6;
 	wxFlexGridSizer* FlexGridSizer1;
 	wxFlexGridSizer* FlexGridSizer11;
-	
+
 	Create(parent, wxID_ANY, _("Editer la liste déroulante"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxMAXIMIZE_BOX, _T("wxID_ANY"));
 	FlexGridSizer1 = new wxFlexGridSizer(0, 1, 0, 0);
 	FlexGridSizer1->AddGrowableCol(0);
@@ -260,7 +260,7 @@ object(object_)
 	SetSizer(FlexGridSizer1);
 	FlexGridSizer1->Fit(this);
 	FlexGridSizer1->SetSizeHints(this);
-	
+
 	Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ComboBoxObjectEditor::OnfontBtClick);
 	Connect(ID_SPINCTRL1,wxEVT_COMMAND_SPINCTRL_UPDATED,(wxObjectEventFunction)&ComboBoxObjectEditor::OnSizeEditChange);
 	Connect(ID_BUTTON5,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ComboBoxObjectEditor::OnfocusedBackgroundBtClick);
@@ -638,7 +638,7 @@ COLOR_BUTTON_FUNCTION_IMPLEMENT(dsiabledHighlightBt, ComboBoxObjectEditor, Ondsi
 
 void ComboBoxObjectEditor::OnButton1Click(wxCommandEvent& event)
 {
-    wxLaunchDefaultBrowser("http://www.wiki.compilgames.net/doku.php/game_develop/articles/widgets/liste_des_widgets/zone_de_texte_monoligne");
+    wxLaunchDefaultBrowser("http://www.wiki.compilgames.net/doku.php/game_develop/articles/widgets/liste_des_widgets/liste_deroulante");
 }
 
 #endif
