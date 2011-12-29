@@ -590,6 +590,8 @@
 		<Unit filename="checkbox\CheckBoxObjectEditor.h" />
 		<Unit filename="colorScheme.cpp" />
 		<Unit filename="colorScheme.h" />
+		<Unit filename="colorSchemePanel.cpp" />
+		<Unit filename="colorSchemePanel.h" />
 		<Unit filename="combobox\ComboBoxObject.cpp" />
 		<Unit filename="combobox\ComboBoxObject.h" />
 		<Unit filename="combobox\ComboBoxObjectEditor.cpp" />

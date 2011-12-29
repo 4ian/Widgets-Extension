@@ -35,6 +35,8 @@ Permission is granted to anyone to use this software for any purpose, including 
 
 #include "../colorScheme.h"
 
+#include "../ColorSchemePanel.h"
+
 //(*IdInit(ComboBoxObjectEditor)
 const long ComboBoxObjectEditor::ID_STATICTEXT6 = wxNewId();
 const long ComboBoxObjectEditor::ID_STATICTEXT7 = wxNewId();
@@ -355,6 +357,15 @@ object(object_)
     }
 
     selectedItemSpinCtrl->SetValue(object.GetSelectedElement());
+
+    colorsPanel = new ColorSchemePanel(Notebook1, wxID_ANY);
+    colorsPanel->AddColorScheme("background", _("Fond"), object.GetBackgroundColorScheme());
+    colorsPanel->AddColorScheme("border", _("Bordure"), object.GetBorderColorScheme());
+    colorsPanel->AddColorScheme("text", _("Texte"), object.GetTextColorScheme());
+    colorsPanel->AddColorScheme("arrow", _("Flèche"), object.GetArrowColorScheme());
+    colorsPanel->AddColorScheme("highlight", _("Sélection"), object.GetHighlightColorScheme(), CSP_HasAlwaysColorBt);
+
+    Notebook1->AddPage(colorsPanel, "Couleurs");
 }
 
 ComboBoxObjectEditor::~ComboBoxObjectEditor()
@@ -377,35 +388,15 @@ void ComboBoxObjectEditor::OnokBtClick(wxCommandEvent& event)
     object.SetFont(std::string(ToString(fontEdit->GetValue())));
     object.SetCharacterSize(sizeEdit->GetValue());
 
-    ColorScheme backgroundColorScheme(WidgetsCommonTools::GetSfColorFromWxColour(focusedBackgroundBt->GetBackgroundColour()),
+    /*ColorScheme backgroundColorScheme(WidgetsCommonTools::GetSfColorFromWxColour(focusedBackgroundBt->GetBackgroundColour()),
                                       WidgetsCommonTools::GetSfColorFromWxColour(normalBackgroundBt->GetBackgroundColour()),
                                       WidgetsCommonTools::GetSfColorFromWxColour(hoveredBackgroundBt->GetBackgroundColour()),
-                                      WidgetsCommonTools::GetSfColorFromWxColour(disabledBackgroundBt->GetBackgroundColour()));
-    object.SetBackgroundColorScheme(backgroundColorScheme);
-
-    ColorScheme borderColorScheme(WidgetsCommonTools::GetSfColorFromWxColour(focusedBorderBt->GetBackgroundColour()),
-                                  WidgetsCommonTools::GetSfColorFromWxColour(normalBorderBt->GetBackgroundColour()),
-                                  WidgetsCommonTools::GetSfColorFromWxColour(hoveredBorderBt->GetBackgroundColour()),
-                                  WidgetsCommonTools::GetSfColorFromWxColour(disabledBorderBt->GetBackgroundColour()));
-    object.SetBorderColorScheme(borderColorScheme);
-
-    ColorScheme textColorScheme(WidgetsCommonTools::GetSfColorFromWxColour(focusedTextBt->GetBackgroundColour()),
-                                WidgetsCommonTools::GetSfColorFromWxColour(normalTextBt->GetBackgroundColour()),
-                                WidgetsCommonTools::GetSfColorFromWxColour(hoveredTextBt->GetBackgroundColour()),
-                                WidgetsCommonTools::GetSfColorFromWxColour(disabledTextBt->GetBackgroundColour()));
-    object.SetTextColorScheme(textColorScheme);
-
-    ColorScheme arrowColorScheme(WidgetsCommonTools::GetSfColorFromWxColour(focusedArrowBt->GetBackgroundColour()),
-                                WidgetsCommonTools::GetSfColorFromWxColour(normalArrowBt->GetBackgroundColour()),
-                                WidgetsCommonTools::GetSfColorFromWxColour(hoveredArrowBt->GetBackgroundColour()),
-                                WidgetsCommonTools::GetSfColorFromWxColour(disabledArrowBt->GetBackgroundColour()));
-    object.SetArrowColorScheme(arrowColorScheme);
-
-    ColorScheme highlightColorScheme(WidgetsCommonTools::GetSfColorFromWxColour(focusedHighlightBt->GetBackgroundColour()),
-                                WidgetsCommonTools::GetSfColorFromWxColour(normalHighlightBt->GetBackgroundColour()),
-                                WidgetsCommonTools::GetSfColorFromWxColour(hoveredHighlightBt->GetBackgroundColour()),
-                                WidgetsCommonTools::GetSfColorFromWxColour(dsiabledHighlightBt->GetBackgroundColour()));
-    object.SetHighlightColorScheme(highlightColorScheme);
+                                      WidgetsCommonTools::GetSfColorFromWxColour(disabledBackgroundBt->GetBackgroundColour()));*/
+    object.SetBackgroundColorScheme(colorsPanel->GetColorScheme("background"));
+    object.SetBorderColorScheme(colorsPanel->GetColorScheme("border"));
+    object.SetTextColorScheme(colorsPanel->GetColorScheme("text"));
+    object.SetArrowColorScheme(colorsPanel->GetColorScheme("arrow"));
+    object.SetHighlightColorScheme(colorsPanel->GetColorScheme("highlight"));
 
     object.SetBorderWidth(borderWidthSpinCtrl->GetValue());
     object.SetPadding(paddingSpinCtrl->GetValue());

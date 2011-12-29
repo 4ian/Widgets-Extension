@@ -29,6 +29,7 @@ Permission is granted to anyone to use this software for any purpose, including 
 //*)
 
 #include "../WidgetsMacros.h"
+#include "../ColorSchemePanel.h"
 
 class Game;
 class ComboBoxObject;
@@ -180,6 +181,8 @@ class ComboBoxObjectEditor: public wxDialog
 		Game & game;
 		MainEditorCommand & mainEditorCommand;
 		ComboBoxObject & object;
+
+		ColorSchemePanel *colorsPanel;
 
 		void UseCorrectForeground(wxButton*);
 

@@ -10706,7 +10706,7 @@
 	<wx/button.h>
 	<wx/dialog.h>
 
-1324496009 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\checkbox\checkboxobjecteditor.cpp
+1325060322 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\checkbox\checkboxobjecteditor.cpp
 	"CheckBoxObjectEditor.h"
 	<wx/font.h>
 	<wx/intl.h>
@@ -10759,7 +10759,7 @@
 	<SFML/System/String.hpp>
 	<vector>
 
-1324496294 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobjecteditor.h
+1325188285 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobjecteditor.h
 	<wx/notebook.h>
 	<wx/sizer.h>
 	<wx/stattext.h>
@@ -10770,10 +10770,11 @@
 	<wx/button.h>
 	<wx/dialog.h>
 	"../WidgetsMacros.h"
+	"../ColorSchemePanel.h"
 
 1324496295 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\widgetsmacros.h
 
-1324977192 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobjecteditor.cpp
+1325189100 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\combobox\comboboxobjecteditor.cpp
 	"ComboBoxObjectEditor.h"
 	<wx/font.h>
 	<wx/intl.h>
@@ -10788,6 +10789,7 @@
 	"GDL/CommonTools.h"
 	"../WidgetsCommonTools.h"
 	"../colorScheme.h"
+	"../ColorSchemePanel.h"
 
 1324496023 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\progressbar\progressbarobject.cpp
 	<iostream>
@@ -11008,7 +11010,7 @@
 	<wx/button.h>
 	<wx/dialog.h>
 
-1324496074 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\textbox\textareaobjecteditor.cpp
+1325100605 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\textbox\textareaobjecteditor.cpp
 	"TextAreaObjectEditor.h"
 	<wx/font.h>
 	<wx/intl.h>
@@ -11027,4 +11029,19 @@
 	<SFGUI/Container.hpp>
 	<SFGUI/SharedPtr.hpp>
 	<map>
+
+1325188806 source:d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\colorschemepanel.cpp
+	"colorSchemePanel.h"
+	"WidgetsCommonTools.h"
+	<wx/colordlg.h>
+
+1325189193 d:\développement\gd2\gdlsdk\extensions\widgetsextension\src\colorschemepanel.h
+	<wx/panel.h>
+	<wx/button.h>
+	<wx/stattext.h>
+	<wx/sizer.h>
+	<string>
+	<map>
+	<vector>
+	"colorScheme.h"
 

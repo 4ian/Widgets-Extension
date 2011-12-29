@@ -2,7 +2,7 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Release - Edittime" />
 	<File name="Extension.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="969" topLine="0" />
+		<Cursor position="2460" topLine="39" />
 	</File>
 	<File name="Extension.h" open="1" top="0" tabpos="2">
 		<Cursor position="902" topLine="0" />
@@ -22,14 +22,14 @@
 	<File name="Manager.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="799" topLine="0" />
 	</File>
-	<File name="Manager.h" open="1" top="0" tabpos="5">
+	<File name="Manager.h" open="0" top="0" tabpos="5">
 		<Cursor position="933" topLine="0" />
 	</File>
 	<File name="WidgetWrapper.h" open="0" top="0" tabpos="23">
 		<Cursor position="1443" topLine="12" />
 	</File>
-	<File name="WidgetsCommonTools.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="959" topLine="0" />
+	<File name="WidgetsCommonTools.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="3508" topLine="50" />
 	</File>
 	<File name="WidgetsCommonTools.h" open="0" top="0" tabpos="19">
 		<Cursor position="1671" topLine="12" />
@@ -56,7 +56,7 @@
 		<Cursor position="957" topLine="0" />
 	</File>
 	<File name="checkbox\CheckBoxObjectEditor.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="957" topLine="0" />
+		<Cursor position="35870" topLine="628" />
 	</File>
 	<File name="checkbox\CheckBoxObjectEditor.h" open="0" top="0" tabpos="5">
 		<Cursor position="957" topLine="0" />
@@ -65,19 +65,25 @@
 		<Cursor position="1197" topLine="69" />
 	</File>
 	<File name="colorScheme.h" open="0" top="0" tabpos="21">
-		<Cursor position="1045" topLine="15" />
+		<Cursor position="1045" topLine="12" />
 	</File>
-	<File name="combobox\ComboBoxObject.cpp" open="1" top="0" tabpos="3">
+	<File name="colorSchemePanel.cpp" open="1" top="1" tabpos="6">
+		<Cursor position="3791" topLine="87" />
+	</File>
+	<File name="colorSchemePanel.h" open="1" top="0" tabpos="5">
+		<Cursor position="1152" topLine="42" />
+	</File>
+	<File name="combobox\ComboBoxObject.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="19515" topLine="616" />
 	</File>
-	<File name="combobox\ComboBoxObject.h" open="1" top="0" tabpos="4">
+	<File name="combobox\ComboBoxObject.h" open="0" top="0" tabpos="4">
 		<Cursor position="6503" topLine="141" />
 	</File>
-	<File name="combobox\ComboBoxObjectEditor.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="957" topLine="0" />
+	<File name="combobox\ComboBoxObjectEditor.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="27576" topLine="362" />
 	</File>
-	<File name="combobox\ComboBoxObjectEditor.h" open="0" top="0" tabpos="7">
-		<Cursor position="1049" topLine="0" />
+	<File name="combobox\ComboBoxObjectEditor.h" open="1" top="0" tabpos="4">
+		<Cursor position="5692" topLine="150" />
 	</File>
 	<File name="progressbar\ProgressBarObject.cpp" open="0" top="0" tabpos="31">
 		<Cursor position="1988" topLine="404" />
@@ -130,11 +136,11 @@
 	<File name="textbox\TextAreaObject.h" open="0" top="0" tabpos="12">
 		<Cursor position="957" topLine="0" />
 	</File>
-	<File name="textbox\TextAreaObjectEditor.cpp" open="1" top="1" tabpos="6">
-		<Cursor position="20901" topLine="275" />
+	<File name="textbox\TextAreaObjectEditor.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="20939" topLine="275" />
 	</File>
-	<File name="textbox\TextAreaObjectEditor.h" open="1" top="0" tabpos="7">
-		<Cursor position="1158" topLine="0" />
+	<File name="textbox\TextAreaObjectEditor.h" open="0" top="0" tabpos="7">
+		<Cursor position="1111" topLine="0" />
 	</File>
 	<File name="version.h" open="0" top="0" tabpos="22">
 		<Cursor position="1093" topLine="0" />
