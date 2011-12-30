@@ -10,7 +10,7 @@
 
 #include <wx/colordlg.h>
 
-void ColorSchemePanel::AddColorScheme(const std::string &name, const wxString &label, const ColorScheme &defautColor, ColorSchemeProperties properties)
+void ColorSchemePanel::AddColorScheme(const std::string &name, const wxString &label, const ColorScheme &defautColor, int properties)
 {
     listOfProperties[name] = properties;
     listOfButtons[name].clear();
@@ -18,13 +18,14 @@ void ColorSchemePanel::AddColorScheme(const std::string &name, const wxString &l
     wxFlexGridSizer *colorSchemeSizer = new wxFlexGridSizer(0, 0, 0, 0);
 
     wxStaticText *label_ = new wxStaticText(this, wxID_ANY, label + " :");
-    colorSchemeSizer->Add(label_, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+    mainGrid->Add(label_, 1, wxALL|wxEXPAND|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
 
     if((properties & CSP_HasFocusedColorBt) != 0)
     {
         long buttonID = wxNewId();
         wxButton *button = new wxButton(this, buttonID, _("Actif"));
         button->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(defautColor.focusedColor));
+        AdaptFontColor(button);
 
 
         Connect(buttonID,
@@ -40,6 +41,7 @@ void ColorSchemePanel::AddColorScheme(const std::string &name, const wxString &l
         long buttonID = wxNewId();
         wxButton *button = new wxButton(this, buttonID, _("Survolé"));
         button->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(defautColor.hoveredColor));
+        AdaptFontColor(button);
 
 
         Connect(buttonID,
@@ -55,6 +57,7 @@ void ColorSchemePanel::AddColorScheme(const std::string &name, const wxString &l
         long buttonID = wxNewId();
         wxButton *button = new wxButton(this, buttonID, _("Normal"));
         button->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(defautColor.unfocusedColor));
+        AdaptFontColor(button);
 
 
         Connect(buttonID,
@@ -70,6 +73,7 @@ void ColorSchemePanel::AddColorScheme(const std::string &name, const wxString &l
         long buttonID = wxNewId();
         wxButton *button = new wxButton(this, buttonID, _("Désactivé"));
         button->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(defautColor.disabledColor));
+        AdaptFontColor(button);
 
 
         Connect(buttonID,
@@ -85,14 +89,17 @@ void ColorSchemePanel::AddColorScheme(const std::string &name, const wxString &l
         long buttonID = wxNewId();
         wxButton *button = new wxButton(this, buttonID, _("Tout le temps"));
         button->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(defautColor.unfocusedColor));
+        AdaptFontColor(button);
 
 
         Connect(buttonID,
                 wxEVT_COMMAND_BUTTON_CLICKED,
                 (wxObjectEventFunction)&ColorSchemePanel::SetNewColorToButton);
 
-        colorSchemeSizer->Add(button, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+        colorSchemeSizer->Add(button, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxEXPAND, 5);
         listOfButtons[name]["always"] = button;
+
+        colorSchemeSizer->AddGrowableRow(0);
     }
 
     mainGrid->Add(colorSchemeSizer);
@@ -110,18 +117,25 @@ void ColorSchemePanel::SetNewColorToButton(wxCommandEvent& event)
 
     if ( color.IsOk() )
     {
-        if(color.Red() < 128 && color.Green() < 128 && color.Blue() < 128)
-            button->SetForegroundColour(wxColour(255, 255, 255));
-        else
-            button->SetForegroundColour(wxColour(0, 0, 0));
+        AdaptFontColor(button);
     }
+}
+
+void ColorSchemePanel::AdaptFontColor(wxButton *button)
+{
+    wxColor color = button->GetBackgroundColour();
+
+    if(color.Red() < 128 && color.Green() < 128 && color.Blue() < 128)
+        button->SetForegroundColour(wxColour(255, 255, 255));
+    else
+        button->SetForegroundColour(wxColour(0, 0, 0));
 }
 
 ColorScheme& ColorSchemePanel::GetColorScheme(const std::string &name)
 {
     static ColorScheme newColorScheme(sf::Color(255, 255, 255, 255));
 
-    ColorSchemeProperties properties = listOfProperties[name];
+    int properties = listOfProperties[name];
 
     if((properties & CSP_HasAlwaysColorBt) != 0)
     {

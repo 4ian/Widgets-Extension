@@ -47,14 +47,14 @@ public:
 
     virtual ~ColorSchemePanel() {};
 
-    void AddColorScheme(const std::string &name, const wxString &label, const ColorScheme &defautColor, ColorSchemeProperties properties = CSP_DefautColorBt);
+    void AddColorScheme(const std::string &name, const wxString &label, const ColorScheme &defautColor, int properties = CSP_DefautColorBt);
     ColorScheme& GetColorScheme(const std::string &name);
 
 protected:
 
     virtual void Init()
     {
-        mainGrid = new wxFlexGridSizer(0, 1, 0, 0);
+        mainGrid = new wxFlexGridSizer(0, 2, 0, 0);
         SetSizer(mainGrid);
     }
 
@@ -69,11 +69,12 @@ protected:
     }
 
     void SetNewColorToButton(wxCommandEvent& event);
+    void AdaptFontColor(wxButton *button);
 
 private:
 
     std::map< std::string, std::map< std::string, wxButton* > > listOfButtons; ///< Contain the list of buttons. The order is ActiveBt, HoveredBt, NormalBt, DisabledBt
-    std::map< std::string, ColorSchemeProperties> listOfProperties;
+    std::map< std::string, int> listOfProperties;
 
     wxFlexGridSizer *mainGrid;
 };

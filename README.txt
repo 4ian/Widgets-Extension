@@ -6,9 +6,9 @@ It allows the user to add widgets (entry, progressbar, buttons, scale...) to its
 
 COMPILE
 =======
-To compile this extension, you need the GDLSDK (http://www.en.compilgames.net/index.php?file=kop15.php).
+To compile this extension, you need the GDLSDK (http://www.en.compilgames.net/index.php?file=kop7.php).
 Then, place the extension in a sub-folder of GDLSDK/Extensions/.
-Download all libraries of the webpage http://www.en.compilgames.net/index.php?file=kop15.php and place the downloaded libraries in GDLSDK/Extlibs
+Download all libraries of the webpage http://www.en.compilgames.net/index.php?file=kop7.php and place the downloaded libraries in GDLSDK/Extlibs
 
 LICENSE
 =======

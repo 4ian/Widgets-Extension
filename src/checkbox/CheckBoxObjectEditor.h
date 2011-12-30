@@ -28,6 +28,9 @@ Permission is granted to anyone to use this software for any purpose, including 
 #include <wx/button.h>
 #include <wx/dialog.h>
 //*)
+
+#include "../colorSchemePanel.h"
+
 class Game;
 class CheckBoxObject;
 class MainEditorCommand;
@@ -40,51 +43,30 @@ class CheckBoxObjectEditor: public wxDialog
 		virtual ~CheckBoxObjectEditor();
 
 		//(*Declarations(CheckBoxObjectEditor)
-		wxStaticText* StaticText10;
-		wxButton* normalCheckBt;
 		wxStaticText* StaticText9;
 		wxSpinCtrl* sizeEdit;
-		wxButton* hoveredBackgroundBt;
-		wxButton* hoveredTextBt;
-		wxButton* focusedTextBt;
 		wxNotebook* Notebook1;
 		wxSpinCtrl* paddingSpinCtrl;
-		wxButton* normalBackgroundBt;
 		wxSpinCtrl* checkSignSizeSpinCtrl;
 		wxStaticText* StaticText2;
 		wxSpinCtrl* boxSizeSpinCtrl;
 		wxPanel* Panel4;
 		wxStaticText* StaticText14;
-		wxButton* hoveredBorderBt;
 		wxTextCtrl* textEdit;
 		wxButton* Button1;
 		wxStaticText* StaticText6;
-		wxButton* focusedBorderBt;
 		wxSpinCtrl* borderWidthSpinCtrl;
-		wxStaticText* StaticText8;
 		wxStaticText* StaticText11;
-		wxButton* focusedCheckBt;
 		wxCheckBox* isCheckedCheckBox;
 		wxStaticText* StaticText1;
-		wxStaticText* StaticText3;
-		wxPanel* Panel3;
 		wxButton* fontBt;
-		wxButton* disabledBorderBt;
-		wxButton* disabledTextBt;
-		wxStaticText* StaticText5;
 		wxStaticText* StaticText7;
 		wxStaticLine* StaticLine1;
-		wxButton* focusedBackgroundBt;
-		wxButton* normalBorderBt;
 		wxStaticText* StaticText12;
-		wxButton* disabledCheckBt;
 		wxPanel* Panel2;
-		wxButton* hoveredCheckBt;
 		wxTextCtrl* fontEdit;
 		wxStaticText* StaticText4;
-		wxButton* normalTextBt;
 		wxButton* okBt;
-		wxButton* disabledBackgroundBt;
 		//*)
 
 	protected:
@@ -102,27 +84,6 @@ class CheckBoxObjectEditor: public wxDialog
 		static const long ID_STATICTEXT12;
 		static const long ID_SPINCTRL5;
 		static const long ID_PANEL2;
-		static const long ID_STATICTEXT3;
-		static const long ID_BUTTON5;
-		static const long ID_BUTTON2;
-		static const long ID_BUTTON7;
-		static const long ID_BUTTON6;
-		static const long ID_STATICTEXT5;
-		static const long ID_BUTTON8;
-		static const long ID_BUTTON9;
-		static const long ID_BUTTON10;
-		static const long ID_BUTTON11;
-		static const long ID_STATICTEXT8;
-		static const long ID_BUTTON12;
-		static const long ID_BUTTON13;
-		static const long ID_BUTTON14;
-		static const long ID_BUTTON15;
-		static const long ID_STATICTEXT10;
-		static const long ID_BUTTON3;
-		static const long ID_BUTTON16;
-		static const long ID_BUTTON17;
-		static const long ID_BUTTON18;
-		static const long ID_PANEL3;
 		static const long ID_STATICTEXT9;
 		static const long ID_SPINCTRL3;
 		static const long ID_STATICTEXT2;
@@ -144,22 +105,6 @@ class CheckBoxObjectEditor: public wxDialog
 		void OnfontBtClick(wxCommandEvent& event);
 		void OnSizeEditChange(wxSpinEvent& event);
 		void OncancelBtClick(wxCommandEvent& event);
-		void OnfocusedBackgroundBtClick(wxCommandEvent& event);
-		void OnhoveredBackgroundBtClick(wxCommandEvent& event);
-		void OnnormalBackgroundBtClick(wxCommandEvent& event);
-		void OndisabledBackgroundBtClick(wxCommandEvent& event);
-		void OnfocusedBorderBtClick(wxCommandEvent& event);
-		void OnhoveredBorderBtClick(wxCommandEvent& event);
-		void OnnormalBorderBtClick(wxCommandEvent& event);
-		void OndisabledBorderBtClick(wxCommandEvent& event);
-		void OnfocusedTextBtClick(wxCommandEvent& event);
-		void OnhoveredTextBtClick(wxCommandEvent& event);
-		void OnnormalTextBtClick(wxCommandEvent& event);
-		void OndisabledTextBtClick(wxCommandEvent& event);
-		void OnfocusedCheckBtClick(wxCommandEvent& event);
-		void OnhoveredCheckBtClick(wxCommandEvent& event);
-		void OnnormalCheckBtClick(wxCommandEvent& event);
-		void OndisabledCheckBtClick(wxCommandEvent& event);
 		void OnButton1Click(wxCommandEvent& event);
 		//*)
 
@@ -167,7 +112,7 @@ class CheckBoxObjectEditor: public wxDialog
 		MainEditorCommand & mainEditorCommand;
 		CheckBoxObject & object;
 
-		void UseCorrectForeground(wxButton*);
+		ColorSchemePanel *colorsPanel;
 
 		DECLARE_EVENT_TABLE()
 };
