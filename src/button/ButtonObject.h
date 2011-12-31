@@ -18,6 +18,7 @@ Permission is granted to anyone to use this software for any purpose, including 
 #include "GDL/ResourceWrapper.h"
 #include "SFML/Config.hpp"
 #include "SFML/System/Vector2.hpp"
+#include "SFGUI/SharedPtr.hpp"
 
 //GD Classes
 class ImageManager;
@@ -199,11 +200,11 @@ class GD_EXTENSION_API ButtonObject : public Object
         sf::Vector2f position; ///< Contains the position
 
         //Object
-        WidgetWrapper<sfg::Button> *obje; ///< SFGUI widget stored in a Wrapper using itself std::shared_ptr
+        sfg::SharedPtr<sfg::Button> obj;
 
         //Image Object
         std::string imageName;
-        WidgetWrapper<sfg::Image> *buttonPic;
+        sfg::SharedPtr<sfg::Image> buttonPic;
 
         //Size
         float width; ///< Width of the widget

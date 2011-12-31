@@ -18,6 +18,7 @@ Permission is granted to anyone to use this software for any purpose, including 
 
 #include "SFML/Config.hpp"
 #include "SFML/System/Vector2.hpp"
+#include "SFGUI/SharedPtr.hpp"
 
 //GD Classes
 class ImageManager;
@@ -44,9 +45,6 @@ namespace sfg
     class Scale;
     class Widget;
 }
-
-template<class T>
-class WidgetWrapper;
 
 #if defined(GD_IDE_ONLY)
 class wxBitmap;
@@ -204,7 +202,7 @@ class GD_EXTENSION_API ScaleObject : public Object
         sf::Vector2f position; ///< Contains the position
 
         //Object
-        WidgetWrapper<sfg::Scale> *obje; ///< SFGUI widget stored in a Wrapper using itself std::shared_ptr
+        sfg::SharedPtr<sfg::Scale> obj;
 
         //Orientation
         int orientation;

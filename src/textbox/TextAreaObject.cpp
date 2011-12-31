@@ -55,10 +55,9 @@ borderWidth(1),
 padding(5)
 {
     //Create the SFGUI Entry object
-    sfg::Entry::Ptr tmpObj = sfg::Entry::Create("Texte");
-    obje = new WidgetWrapper<sfg::Entry>(tmpObj);
+    obj = sfg::Entry::Create("Texte");
 
-    //WidgetManager::getInstance()->mainWidget->Pack(obje->Get());
+    //WidgetManager::getInstance()->mainWidget->Pack(obj);
 
     SetString("Tapez du texte");
 
@@ -84,9 +83,9 @@ padding(5)
                                 sf::Color(0, 0, 0, 255),
                                 sf::Color(100, 100, 100, 255));
 
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
 
-    obje->Get()->SetId(ToString<void*>(this));
+    obj->SetId(ToString<void*>(this));
 
     ConnectSignals();
     ResetEventInformations();
@@ -113,8 +112,7 @@ void TextAreaObject::Init(const TextAreaObject &other)
 {
     position = other.position;
     fontName = other.fontName;
-    sfg::Entry::Ptr tmpObj = sfg::Entry::Create(other.obje->Get()->GetText());
-    obje = new WidgetWrapper<sfg::Entry>(tmpObj);
+    obj = sfg::Entry::Create(other.obj->GetText());
     backgroundColor = new ColorScheme(*(other.backgroundColor));
     borderColor = new ColorScheme(*(other.borderColor));
     textColor = new ColorScheme(*(other.textColor));
@@ -124,7 +122,7 @@ void TextAreaObject::Init(const TextAreaObject &other)
     borderWidth = other.borderWidth;
     padding = other.padding;
 
-    obje->Get()->SetId(ToString<void*>(this));
+    obj->SetId(ToString<void*>(this));
     SetHideCharacter(other.GetHideCharacter());
     SetMaximumLength(other.GetMaximumLength());
 
@@ -137,16 +135,15 @@ void TextAreaObject::Init(const TextAreaObject &other)
 
 void TextAreaObject::ConnectSignals()
 {
-    obje->Get()->OnText.Connect(&TextAreaObject::OnTextEntered, this);
-    obje->Get()->OnMouseButtonRelease.Connect(&TextAreaObject::OnMouseClick, this);
-    obje->Get()->OnStateChange.Connect(&TextAreaObject::OnStateChanged, this);
+    obj->OnText.Connect(&TextAreaObject::OnTextEntered, this);
+    obj->OnMouseButtonRelease.Connect(&TextAreaObject::OnMouseClick, this);
+    obj->OnStateChange.Connect(&TextAreaObject::OnStateChanged, this);
 }
 
 bool TextAreaObject::SIG_OnTextEntered(RuntimeScene &scene)
 {
     if(eventsInformations.textEntered.fired)
     {
-
         return true;
     }
     else
@@ -163,13 +160,13 @@ bool TextAreaObject::SIG_OnStateChanged(const std::string &newStateVar, RuntimeS
         if(newStateVar != "")
         {
             std::string newStateStr = "";
-            if(obje->Get()->GetState() == sfg::Widget::ACTIVE)
+            if(obj->GetState() == sfg::Widget::ACTIVE)
                 newStateStr = "Active";
-            else if(obje->Get()->GetState() == sfg::Widget::PRELIGHT)
+            else if(obj->GetState() == sfg::Widget::PRELIGHT)
                 newStateStr = "Hovered";
-            else if(obje->Get()->GetState() == sfg::Widget::NORMAL)
+            else if(obj->GetState() == sfg::Widget::NORMAL)
                 newStateStr = "Normal";
-            else if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+            else if(obj->GetState() == sfg::Widget::INSENSITIVE)
                 newStateStr = "Disabled";
             else
                 newStateStr = "Unknown";
@@ -253,15 +250,13 @@ TextAreaObject::~TextAreaObject()
     delete borderColor;
     delete backgroundColor;
     delete textColor;
-
-    delete obje;
 }
 
 void TextAreaObject::UpdateSize()
 {
-    obje->Get()->SetRequisition();
-    obje->Get()->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
-    obje->Get()->SetAllocation(sf::FloatRect(GetX(), GetY(), GetWidth(), GetHeight()));
+    obj->SetRequisition();
+    obj->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
+    obj->SetAllocation(sf::FloatRect(GetX(), GetY(), GetWidth(), GetHeight()));
 }
 
 void TextAreaObject::LoadFromXml(const TiXmlElement * elem)
@@ -462,7 +457,7 @@ bool TextAreaObject::Draw( sf::RenderTarget & renderTarget )
     sfg::CullingTarget renderer(renderTarget);
     renderer.Cull(false);
 
-    obje->Get()->Expose(renderer);
+    obj->Expose(renderer);
 
     return true;
 }
@@ -476,7 +471,7 @@ bool TextAreaObject::DrawEdittime(sf::RenderTarget & renderTarget)
     sfg::CullingTarget renderer(renderTarget);
     renderer.Cull(false);
 
-    obje->Get()->Expose(renderer);
+    obj->Expose(renderer);
 
     return true;
 }
@@ -517,13 +512,13 @@ void TextAreaObject::GetPropertyForDebugger(unsigned int propertyNb, string & na
     else if ( propertyNb == 1 )
     {
         name = _("Etat");
-        if(obje->Get()->GetState() == sfg::Widget::ACTIVE)
+        if(obj->GetState() == sfg::Widget::ACTIVE)
             value = _("Actif");
-        else if(obje->Get()->GetState() == sfg::Widget::PRELIGHT)
+        else if(obj->GetState() == sfg::Widget::PRELIGHT)
             value = _("Survolé");
-        else if(obje->Get()->GetState() == sfg::Widget::NORMAL)
+        else if(obj->GetState() == sfg::Widget::NORMAL)
             value = _("Normal");
-        else if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+        else if(obj->GetState() == sfg::Widget::INSENSITIVE)
             value = _("Désactivé");
         else
             value = _("Inconnu");
@@ -547,18 +542,18 @@ unsigned int TextAreaObject::GetNumberOfProperties() const
 
 void TextAreaObject::OnPositionChanged()
 {
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
-    obje->Get()->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
 }
 
 void TextAreaObject::SetString(const std::string &str)
 {
-    obje->Get()->SetText(str);
+    obj->SetText(str);
 }
 
 std::string TextAreaObject::GetString() const
 {
-    return obje->Get()->GetText().ToAnsiString();
+    return obj->GetText().ToAnsiString();
 }
 
 /**
@@ -641,7 +636,7 @@ void TextAreaObject::UpdateTime(float ElapsedTime)
 {
     ResetEventInformations();
 
-    if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+    if(obj->GetState() == sfg::Widget::INSENSITIVE)
         return;
 
     //Manual Management of focus because doesn't use any containers
@@ -653,9 +648,9 @@ void TextAreaObject::UpdateTime(float ElapsedTime)
         float mouseX = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Mouse::GetPosition(*(m_scene->renderWindow)), GetLayer()).x;
         float mouseY = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Mouse::GetPosition(*(m_scene->renderWindow)), GetLayer()).y;
 
-        if(!(widgetPos.Contains(sf::Vector2f(mouseX, mouseY))) && obje->Get()->GetState() == sfg::Widget::ACTIVE)
+        if(!(widgetPos.Contains(sf::Vector2f(mouseX, mouseY))) && obj->GetState() == sfg::Widget::ACTIVE)
         {
-            obje->Get()->SetState(sfg::Widget::NORMAL);
+            obj->SetState(sfg::Widget::NORMAL);
         }
     }
 
@@ -672,7 +667,7 @@ void TextAreaObject::UpdateTime(float ElapsedTime)
             event.MouseButton.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).x;
             event.MouseButton.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else if(events[i].Type == sf::Event::MouseButtonReleased)
         {
@@ -682,7 +677,7 @@ void TextAreaObject::UpdateTime(float ElapsedTime)
             event.MouseButton.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).x;
             event.MouseButton.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else if(events[i].Type == sf::Event::MouseMoved)
         {
@@ -691,10 +686,10 @@ void TextAreaObject::UpdateTime(float ElapsedTime)
             event.MouseMove.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseMove.X, events[i].MouseMove.Y), GetLayer()).x;
             event.MouseMove.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseMove.X, events[i].MouseMove.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else
-            obje->Get()->HandleEvent(events[i]);
+            obj->HandleEvent(events[i]);
     }
 
 
@@ -704,57 +699,57 @@ void TextAreaObject::UpdateTime(float ElapsedTime)
 void TextAreaObject::UpdateProperties()
 {
     //Update BackgroundColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obje->Get()->GetId(), "BackgroundColor", backgroundColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obje->Get()->GetId() + ":PRELIGHT", "BackgroundColor", backgroundColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obje->Get()->GetId() + ":ACTIVE", "BackgroundColor", backgroundColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obje->Get()->GetId() + ":INSENSITIVE", "BackgroundColor", backgroundColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obj->GetId(), "BackgroundColor", backgroundColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obj->GetId() + ":PRELIGHT", "BackgroundColor", backgroundColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obj->GetId() + ":ACTIVE", "BackgroundColor", backgroundColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obj->GetId() + ":INSENSITIVE", "BackgroundColor", backgroundColor->disabledColor );
 
     //Update BorderColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obje->Get()->GetId(), "BorderColor", borderColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obje->Get()->GetId() + ":PRELIGHT", "BorderColor", borderColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obje->Get()->GetId() + ":ACTIVE", "BorderColor", borderColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obje->Get()->GetId() + ":INSENSITIVE", "BorderColor", borderColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obj->GetId(), "BorderColor", borderColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obj->GetId() + ":PRELIGHT", "BorderColor", borderColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obj->GetId() + ":ACTIVE", "BorderColor", borderColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obj->GetId() + ":INSENSITIVE", "BorderColor", borderColor->disabledColor );
 
     //Update TextColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obje->Get()->GetId(), "Color", textColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obje->Get()->GetId() + ":PRELIGHT", "Color", textColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obje->Get()->GetId() + ":ACTIVE", "Color", textColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obje->Get()->GetId() + ":INSENSITIVE", "Color", textColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obj->GetId(), "Color", textColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obj->GetId() + ":PRELIGHT", "Color", textColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obj->GetId() + ":ACTIVE", "Color", textColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Entry#" + obj->GetId() + ":INSENSITIVE", "Color", textColor->disabledColor );
 
     //Update font size
-    sfg::Context::Get().GetEngine().SetProperty<unsigned int>("Entry#" + obje->Get()->GetId(), "FontSize", GetCharacterSize());
-    sfg::Context::Get().GetEngine().SetProperty<std::string>("Entry#" + obje->Get()->GetId(), "FontName", std::string("gdres:") + GetFont());
+    sfg::Context::Get().GetEngine().SetProperty<unsigned int>("Entry#" + obj->GetId(), "FontSize", GetCharacterSize());
+    sfg::Context::Get().GetEngine().SetProperty<std::string>("Entry#" + obj->GetId(), "FontName", std::string("gdres:") + GetFont());
 
     //Update border width and padding
-    sfg::Context::Get().GetEngine().SetProperty<float>("Entry#" + obje->Get()->GetId(), "BorderWidth", static_cast<float>(GetBorderWidth()));
-    sfg::Context::Get().GetEngine().SetProperty<float>("Entry#" + obje->Get()->GetId(), "Padding", static_cast<float>(GetPadding()));
+    sfg::Context::Get().GetEngine().SetProperty<float>("Entry#" + obj->GetId(), "BorderWidth", static_cast<float>(GetBorderWidth()));
+    sfg::Context::Get().GetEngine().SetProperty<float>("Entry#" + obj->GetId(), "Padding", static_cast<float>(GetPadding()));
 
 }
 
 void TextAreaObject::SetActive(bool is)
 {
-    if(obje->Get()->GetState() != sfg::Widget::INSENSITIVE && is)
-        obje->Get()->SetState(sfg::Widget::ACTIVE);
-    else if(obje->Get()->GetState() != sfg::Widget::INSENSITIVE && !is)
-        obje->Get()->SetState(sfg::Widget::NORMAL);
+    if(obj->GetState() != sfg::Widget::INSENSITIVE && is)
+        obj->SetState(sfg::Widget::ACTIVE);
+    else if(obj->GetState() != sfg::Widget::INSENSITIVE && !is)
+        obj->SetState(sfg::Widget::NORMAL);
 }
 
 bool TextAreaObject::IsActive()
 {
-    return (obje->Get()->GetState() == sfg::Widget::ACTIVE);
+    return (obj->GetState() == sfg::Widget::ACTIVE);
 }
 
 void TextAreaObject::SetDisabled(bool is)
 {
     if(is)
-        obje->Get()->SetState(sfg::Widget::INSENSITIVE);
+        obj->SetState(sfg::Widget::INSENSITIVE);
     else
-        obje->Get()->SetState(sfg::Widget::NORMAL);
+        obj->SetState(sfg::Widget::NORMAL);
 }
 
 bool TextAreaObject::IsDisabled()
 {
-    return (obje->Get()->GetState() == sfg::Widget::INSENSITIVE);
+    return (obj->GetState() == sfg::Widget::INSENSITIVE);
 }
 
 
@@ -847,22 +842,22 @@ void TextAreaObject::SetTextColorScheme(const std::string &focused, const std::s
 
 sf::Uint32 TextAreaObject::GetHideCharacter() const
 {
-    return obje->Get()->GetHideCharacter();
+    return obj->GetHideCharacter();
 }
 
 void TextAreaObject::SetHideCharacter(sf::Uint32 charac)
 {
-    obje->Get()->HideText(charac);
+    obj->HideText(charac);
 }
 
 int TextAreaObject::GetMaximumLength() const
 {
-    return obje->Get()->GetMaximumLength();
+    return obj->GetMaximumLength();
 }
 
 void TextAreaObject::SetMaximumLength(int s)
 {
-    obje->Get()->SetMaximumLength(s);
+    obj->SetMaximumLength(s);
 }
 
 /**

@@ -17,6 +17,8 @@ Permission is granted to anyone to use this software for any purpose, including 
 
 #include "WidgetsDeclareMacros.h"
 
+#include "../combobox/ComboBoxObject.h"
+
 void Extension::DeclareComboBox()
 {
     DECLARE_OBJECT("ComboBox",

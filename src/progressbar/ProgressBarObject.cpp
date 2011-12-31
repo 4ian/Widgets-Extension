@@ -60,10 +60,7 @@ borderWidth(1),
 barBorderWidth(1)
 {
     //Create the SFGUI Button object
-    sfg::ProgressBar::Ptr tmpObj = sfg::ProgressBar::Create(sfg::ProgressBar::HORIZONTAL);
-    obje = new WidgetWrapper<sfg::ProgressBar>(tmpObj);
-
-    //WidgetManager::getInstance()->mainWidget->Pack(obje->Get());
+    obj = sfg::ProgressBar::Create(sfg::ProgressBar::HORIZONTAL);
 
     //Default size of the object
     SetWidth(180);
@@ -85,9 +82,9 @@ barBorderWidth(1)
                                 sf::Color(100, 100, 100, 255),
                                 sf::Color(150, 150, 150, 255));
 
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
 
-    obje->Get()->SetId(ToString<void*>(this));
+    obj->SetId(ToString<void*>(this));
 
     ConnectSignals();
     ResetEventInformations();
@@ -113,8 +110,7 @@ ProgressBarObject& ProgressBarObject::operator=(const ProgressBarObject &other)
 void ProgressBarObject::Init(const ProgressBarObject &other)
 {
     position = other.position;
-    sfg::ProgressBar::Ptr tmpObj = sfg::ProgressBar::Create(other.obje->Get()->GetOrientation());
-    obje = new WidgetWrapper<sfg::ProgressBar>(tmpObj);
+    obj = sfg::ProgressBar::Create(other.obj->GetOrientation());
     backgroundColor = new ColorScheme(*(other.backgroundColor));
     borderColor = new ColorScheme(*(other.borderColor));
     barColor = new ColorScheme(*(other.barColor));
@@ -126,8 +122,8 @@ void ProgressBarObject::Init(const ProgressBarObject &other)
 
     SetValue(other.GetValue());
 
-    obje->Get()->SetId(ToString<void*>(this));
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetId(ToString<void*>(this));
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
 
     ConnectSignals();
     ResetEventInformations();
@@ -138,8 +134,8 @@ void ProgressBarObject::Init(const ProgressBarObject &other)
 
 void ProgressBarObject::ConnectSignals()
 {
-    obje->Get()->OnMouseButtonRelease.Connect(&ProgressBarObject::OnMouseClick, this);
-    obje->Get()->OnStateChange.Connect(&ProgressBarObject::OnStateChanged, this);
+    obj->OnMouseButtonRelease.Connect(&ProgressBarObject::OnMouseClick, this);
+    obj->OnStateChange.Connect(&ProgressBarObject::OnStateChanged, this);
 }
 
 bool ProgressBarObject::SIG_OnStateChanged(const std::string &newStateVar, RuntimeScene &scene)
@@ -150,13 +146,13 @@ bool ProgressBarObject::SIG_OnStateChanged(const std::string &newStateVar, Runti
         if(newStateVar != "")
         {
             std::string newStateStr = "";
-            if(obje->Get()->GetState() == sfg::Widget::ACTIVE)
+            if(obj->GetState() == sfg::Widget::ACTIVE)
                 newStateStr = "Active";
-            else if(obje->Get()->GetState() == sfg::Widget::PRELIGHT)
+            else if(obj->GetState() == sfg::Widget::PRELIGHT)
                 newStateStr = "Hovered";
-            else if(obje->Get()->GetState() == sfg::Widget::NORMAL)
+            else if(obj->GetState() == sfg::Widget::NORMAL)
                 newStateStr = "Normal";
-            else if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+            else if(obj->GetState() == sfg::Widget::INSENSITIVE)
                 newStateStr = "Disabled";
             else
                 newStateStr = "Unknown";
@@ -233,15 +229,13 @@ ProgressBarObject::~ProgressBarObject()
     delete borderColor;
     delete backgroundColor;
     delete barColor;
-
-    delete obje;
 }
 
 void ProgressBarObject::UpdateSize()
 {
-    obje->Get()->SetRequisition();
-    obje->Get()->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
-    obje->Get()->SetAllocation(sf::FloatRect(GetX(), GetY(), GetWidth(), GetHeight()));
+    obj->SetRequisition();
+    obj->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
+    obj->SetAllocation(sf::FloatRect(GetX(), GetY(), GetWidth(), GetHeight()));
 }
 
 void ProgressBarObject::LoadFromXml(const TiXmlElement * elem)
@@ -387,7 +381,7 @@ bool ProgressBarObject::Draw( sf::RenderTarget & renderTarget )
     sfg::CullingTarget renderer(renderTarget);
     renderer.Cull(false);
 
-    obje->Get()->Expose(renderer);
+    obj->Expose(renderer);
 
     return true;
 }
@@ -401,7 +395,7 @@ bool ProgressBarObject::DrawEdittime(sf::RenderTarget & renderTarget)
     sfg::CullingTarget renderer(renderTarget);
     renderer.Cull(false);
 
-    obje->Get()->Expose(renderer);
+    obj->Expose(renderer);
 
     return true;
 }
@@ -455,18 +449,18 @@ unsigned int ProgressBarObject::GetNumberOfProperties() const
 
 void ProgressBarObject::OnPositionChanged()
 {
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
-    obje->Get()->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
 }
 
 void ProgressBarObject::SetValue(float v)
 {
-    obje->Get()->SetFraction(v);
+    obj->SetFraction(v);
 }
 
 double ProgressBarObject::GetValue() const
 {
-    return obje->Get()->GetFraction();
+    return obj->GetFraction();
 }
 
 /**
@@ -538,7 +532,7 @@ void ProgressBarObject::UpdateTime(float ElapsedTime)
 {
     ResetEventInformations();
 
-    if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+    if(obj->GetState() == sfg::Widget::INSENSITIVE)
         return;
 
     //Process all events received by the window
@@ -554,7 +548,7 @@ void ProgressBarObject::UpdateTime(float ElapsedTime)
             event.MouseButton.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).x;
             event.MouseButton.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else if(events[i].Type == sf::Event::MouseButtonReleased)
         {
@@ -564,7 +558,7 @@ void ProgressBarObject::UpdateTime(float ElapsedTime)
             event.MouseButton.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).x;
             event.MouseButton.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else if(events[i].Type == sf::Event::MouseMoved)
         {
@@ -573,10 +567,10 @@ void ProgressBarObject::UpdateTime(float ElapsedTime)
             event.MouseMove.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseMove.X, events[i].MouseMove.Y), GetLayer()).x;
             event.MouseMove.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseMove.X, events[i].MouseMove.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else
-            obje->Get()->HandleEvent(events[i]);
+            obj->HandleEvent(events[i]);
     }
 
 
@@ -586,44 +580,44 @@ void ProgressBarObject::UpdateTime(float ElapsedTime)
 void ProgressBarObject::UpdateProperties()
 {
     //Update BackgroundColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId(), "BackgroundColor", backgroundColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId() + ":PRELIGHT", "BackgroundColor", backgroundColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId() + ":ACTIVE", "BackgroundColor", backgroundColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId() + ":INSENSITIVE", "BackgroundColor", backgroundColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId(), "BackgroundColor", backgroundColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId() + ":PRELIGHT", "BackgroundColor", backgroundColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId() + ":ACTIVE", "BackgroundColor", backgroundColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId() + ":INSENSITIVE", "BackgroundColor", backgroundColor->disabledColor );
 
     //Update BorderColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId(), "BorderColor", borderColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId() + ":PRELIGHT", "BorderColor", borderColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId() + ":ACTIVE", "BorderColor", borderColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId() + ":INSENSITIVE", "BorderColor", borderColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId(), "BorderColor", borderColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId() + ":PRELIGHT", "BorderColor", borderColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId() + ":ACTIVE", "BorderColor", borderColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId() + ":INSENSITIVE", "BorderColor", borderColor->disabledColor );
 
     //Update BarColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId(), "BarColor", barColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId() + ":PRELIGHT", "BarColor", barColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId() + ":ACTIVE", "BarColor", barColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId() + ":INSENSITIVE", "BarColor", barColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId(), "BarColor", barColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId() + ":PRELIGHT", "BarColor", barColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId() + ":ACTIVE", "BarColor", barColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId() + ":INSENSITIVE", "BarColor", barColor->disabledColor );
 
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId(), "BarBorderColor", barColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId() + ":PRELIGHT", "BarBorderColor", barColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId() + ":ACTIVE", "BarBorderColor", barColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obje->Get()->GetId() + ":INSENSITIVE", "BarBorderColor", barColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId(), "BarBorderColor", barColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId() + ":PRELIGHT", "BarBorderColor", barColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId() + ":ACTIVE", "BarBorderColor", barColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ProgressBar#" + obj->GetId() + ":INSENSITIVE", "BarBorderColor", barColor->disabledColor );
 
     //Update border width and padding
-    sfg::Context::Get().GetEngine().SetProperty<float>("ProgressBar#" + obje->Get()->GetId(), "BorderWidth", static_cast<float>(GetBorderWidth()));
-    sfg::Context::Get().GetEngine().SetProperty<float>("ProgressBar#" + obje->Get()->GetId(), "BarBorderWidth", static_cast<float>(GetBarBorderWidth()));
+    sfg::Context::Get().GetEngine().SetProperty<float>("ProgressBar#" + obj->GetId(), "BorderWidth", static_cast<float>(GetBorderWidth()));
+    sfg::Context::Get().GetEngine().SetProperty<float>("ProgressBar#" + obj->GetId(), "BarBorderWidth", static_cast<float>(GetBarBorderWidth()));
 }
 
 void ProgressBarObject::SetDisabled(bool is)
 {
     if(is)
-        obje->Get()->SetState(sfg::Widget::INSENSITIVE);
+        obj->SetState(sfg::Widget::INSENSITIVE);
     else
-        obje->Get()->SetState(sfg::Widget::NORMAL);
+        obj->SetState(sfg::Widget::NORMAL);
 }
 
 bool ProgressBarObject::IsDisabled()
 {
-    return (obje->Get()->GetState() == sfg::Widget::INSENSITIVE);
+    return (obj->GetState() == sfg::Widget::INSENSITIVE);
 }
 
 
@@ -716,12 +710,12 @@ void ProgressBarObject::SetBarColorScheme(const std::string &focused, const std:
 
 void ProgressBarObject::SetOrientation(int ori)
 {
-    obje->Get()->SetOrientation(static_cast<sfg::ProgressBar::Orientation>(ori));
+    obj->SetOrientation(static_cast<sfg::ProgressBar::Orientation>(ori));
 }
 
 int ProgressBarObject::GetOrientation()
 {
-    return static_cast<int>(obje->Get()->GetOrientation());
+    return static_cast<int>(obj->GetOrientation());
 }
 
 /**

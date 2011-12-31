@@ -15,6 +15,8 @@ Permission is granted to anyone to use this software for any purpose, including 
 #include "GDL/Version.h"
 #include "../Extension.h"
 
+#include "../progressbar/ProgressBarObject.h"
+
 void Extension::DeclareProgressBar()
 {
     //Declaration of all objects available

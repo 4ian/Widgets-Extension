@@ -21,12 +21,6 @@ Florian Rival
 
 #include "GDL/ExtensionBase.h"
 #include "GDL/Version.h"
-#include "textbox/TextAreaObject.h"
-#include "button/ButtonObject.h"
-#include "checkbox/CheckBoxObject.h"
-#include "scale/ScaleObject.h"
-#include "progressbar/ProgressBarObject.h"
-#include "combobox/ComboBoxObject.h"
 
 #include "Manager.h"
 #include "GDResourceLoader.h"

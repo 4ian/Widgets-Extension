@@ -59,10 +59,7 @@ borderWidth(1),
 troughWidth(5)
 {
     //Create the SFGUI Button object
-    sfg::Scale::Ptr tmpObj = sfg::Scale::Create(0, 100, 10, sfg::Scale::HORIZONTAL);
-    obje = new WidgetWrapper<sfg::Scale>(tmpObj);
-
-    //WidgetManager::getInstance()->mainWidget->Pack(obje->Get());
+    obj = sfg::Scale::Create(0, 100, 10, sfg::Scale::HORIZONTAL);
 
     //Default size of the object
     SetWidth(180);
@@ -84,9 +81,9 @@ troughWidth(5)
                                 sf::Color(100, 100, 100, 255),
                                 sf::Color(150, 150, 150, 255));
 
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
 
-    obje->Get()->SetId(ToString<void*>(this));
+    obj->SetId(ToString<void*>(this));
 
     ConnectSignals();
     ResetEventInformations();
@@ -112,8 +109,7 @@ ScaleObject& ScaleObject::operator=(const ScaleObject &other)
 void ScaleObject::Init(const ScaleObject &other)
 {
     position = other.position;
-    sfg::Scale::Ptr tmpObj = sfg::Scale::Create(other.obje->Get()->GetAdjustment()->GetLower(), other.obje->Get()->GetAdjustment()->GetUpper(), other.obje->Get()->GetAdjustment()->GetMinorStep(), other.obje->Get()->GetOrientation());
-    obje = new WidgetWrapper<sfg::Scale>(tmpObj);
+    obj = sfg::Scale::Create(other.obj->GetAdjustment()->GetLower(), other.obj->GetAdjustment()->GetUpper(), other.obj->GetAdjustment()->GetMinorStep(), other.obj->GetOrientation());
     troughColor = new ColorScheme(*(other.troughColor));
     borderColor = new ColorScheme(*(other.borderColor));
     sliderColor = new ColorScheme(*(other.sliderColor));
@@ -125,8 +121,8 @@ void ScaleObject::Init(const ScaleObject &other)
 
     SetValue(other.GetValue());
 
-    obje->Get()->SetId(ToString<void*>(this));
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetId(ToString<void*>(this));
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
 
     ConnectSignals();
     ResetEventInformations();
@@ -137,17 +133,16 @@ void ScaleObject::Init(const ScaleObject &other)
 
 void ScaleObject::RecreateWidget()
 {
-    if(!obje->Get())
+    if(!obj)
         return;
 
     float value = GetValue();
 
-    sfg::Scale::Ptr tmpObj = sfg::Scale::Create(GetMinimum(), GetMaximum(), GetIncrement(), orientation == 0 ? sfg::Scale::HORIZONTAL : sfg::Scale::VERTICAL);
-    obje = new WidgetWrapper<sfg::Scale>(tmpObj);
+    obj = sfg::Scale::Create(GetMinimum(), GetMaximum(), GetIncrement(), orientation == 0 ? sfg::Scale::HORIZONTAL : sfg::Scale::VERTICAL);
 
-    obje->Get()->SetId(ToString<void*>(this));
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
-    obje->Get()->SetValue(value);
+    obj->SetId(ToString<void*>(this));
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetValue(value);
 
     ConnectSignals();
     ResetEventInformations();
@@ -158,8 +153,8 @@ void ScaleObject::RecreateWidget()
 
 void ScaleObject::ConnectSignals()
 {
-    obje->Get()->OnMouseButtonRelease.Connect(&ScaleObject::OnMouseClick, this);
-    obje->Get()->OnStateChange.Connect(&ScaleObject::OnStateChanged, this);
+    obj->OnMouseButtonRelease.Connect(&ScaleObject::OnMouseClick, this);
+    obj->OnStateChange.Connect(&ScaleObject::OnStateChanged, this);
 }
 
 bool ScaleObject::SIG_OnStateChanged(const std::string &newStateVar, RuntimeScene &scene)
@@ -170,13 +165,13 @@ bool ScaleObject::SIG_OnStateChanged(const std::string &newStateVar, RuntimeScen
         if(newStateVar != "")
         {
             std::string newStateStr = "";
-            if(obje->Get()->GetState() == sfg::Widget::ACTIVE)
+            if(obj->GetState() == sfg::Widget::ACTIVE)
                 newStateStr = "Active";
-            else if(obje->Get()->GetState() == sfg::Widget::PRELIGHT)
+            else if(obj->GetState() == sfg::Widget::PRELIGHT)
                 newStateStr = "Hovered";
-            else if(obje->Get()->GetState() == sfg::Widget::NORMAL)
+            else if(obj->GetState() == sfg::Widget::NORMAL)
                 newStateStr = "Normal";
-            else if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+            else if(obj->GetState() == sfg::Widget::INSENSITIVE)
                 newStateStr = "Disabled";
             else
                 newStateStr = "Unknown";
@@ -253,15 +248,13 @@ ScaleObject::~ScaleObject()
     delete borderColor;
     delete troughColor;
     delete sliderColor;
-
-    delete obje;
 }
 
 void ScaleObject::UpdateSize()
 {
-    obje->Get()->SetRequisition();
-    obje->Get()->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
-    obje->Get()->SetAllocation(sf::FloatRect(GetX(), GetY(), GetWidth(), GetHeight()));
+    obj->SetRequisition();
+    obj->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
+    obj->SetAllocation(sf::FloatRect(GetX(), GetY(), GetWidth(), GetHeight()));
 }
 
 void ScaleObject::LoadFromXml(const TiXmlElement * elem)
@@ -407,7 +400,7 @@ bool ScaleObject::Draw( sf::RenderTarget & renderTarget )
     sfg::CullingTarget renderer(renderTarget);
     renderer.Cull(false);
 
-    obje->Get()->Expose(renderer);
+    obj->Expose(renderer);
 
     return true;
 }
@@ -421,7 +414,7 @@ bool ScaleObject::DrawEdittime(sf::RenderTarget & renderTarget)
     sfg::CullingTarget renderer(renderTarget);
     renderer.Cull(false);
 
-    obje->Get()->Expose(renderer);
+    obj->Expose(renderer);
 
     return true;
 }
@@ -465,13 +458,13 @@ void ScaleObject::GetPropertyForDebugger(unsigned int propertyNb, string & name,
     else if ( propertyNb == 4 )
     {
         name = _("Etat");
-        if(obje->Get()->GetState() == sfg::Widget::ACTIVE)
+        if(obj->GetState() == sfg::Widget::ACTIVE)
             value = _("Actif");
-        else if(obje->Get()->GetState() == sfg::Widget::PRELIGHT)
+        else if(obj->GetState() == sfg::Widget::PRELIGHT)
             value = _("Survolé");
-        else if(obje->Get()->GetState() == sfg::Widget::NORMAL)
+        else if(obj->GetState() == sfg::Widget::NORMAL)
             value = _("Normal");
-        else if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+        else if(obj->GetState() == sfg::Widget::INSENSITIVE)
             value = _("Désactivé");
         else
             value = _("Inconnu");
@@ -496,48 +489,48 @@ unsigned int ScaleObject::GetNumberOfProperties() const
 
 void ScaleObject::OnPositionChanged()
 {
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
-    obje->Get()->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
 }
 
 void ScaleObject::SetValue(float v)
 {
-    obje->Get()->SetValue(v);
+    obj->SetValue(v);
 }
 
 double ScaleObject::GetValue() const
 {
-    return obje->Get()->GetValue();
+    return obj->GetValue();
 }
 
 void ScaleObject::SetMinimum(float min)
 {
-    obje->Get()->GetAdjustment()->SetLower(min);
+    obj->GetAdjustment()->SetLower(min);
 }
 
 float ScaleObject::GetMinimum() const
 {
-    return obje->Get()->GetAdjustment()->GetLower();
+    return obj->GetAdjustment()->GetLower();
 }
 
 void ScaleObject::SetMaximum(float max)
 {
-    obje->Get()->GetAdjustment()->SetUpper(max);
+    obj->GetAdjustment()->SetUpper(max);
 }
 
 float ScaleObject::GetMaximum() const
 {
-    return obje->Get()->GetAdjustment()->GetUpper();
+    return obj->GetAdjustment()->GetUpper();
 }
 
 void ScaleObject::SetIncrement(float incre)
 {
-    obje->Get()->GetAdjustment()->SetMinorStep(incre);
+    obj->GetAdjustment()->SetMinorStep(incre);
 }
 
 float ScaleObject::GetIncrement() const
 {
-    return obje->Get()->GetAdjustment()->GetMinorStep();
+    return obj->GetAdjustment()->GetMinorStep();
 }
 
 /**
@@ -609,7 +602,7 @@ void ScaleObject::UpdateTime(float ElapsedTime)
 {
     ResetEventInformations();
 
-    if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+    if(obj->GetState() == sfg::Widget::INSENSITIVE)
         return;
 
     //Process all events received by the window
@@ -625,7 +618,7 @@ void ScaleObject::UpdateTime(float ElapsedTime)
             event.MouseButton.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).x;
             event.MouseButton.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else if(events[i].Type == sf::Event::MouseButtonReleased)
         {
@@ -635,7 +628,7 @@ void ScaleObject::UpdateTime(float ElapsedTime)
             event.MouseButton.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).x;
             event.MouseButton.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else if(events[i].Type == sf::Event::MouseMoved)
         {
@@ -644,10 +637,10 @@ void ScaleObject::UpdateTime(float ElapsedTime)
             event.MouseMove.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseMove.X, events[i].MouseMove.Y), GetLayer()).x;
             event.MouseMove.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseMove.X, events[i].MouseMove.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else
-            obje->Get()->HandleEvent(events[i]);
+            obj->HandleEvent(events[i]);
     }
 
 
@@ -657,41 +650,41 @@ void ScaleObject::UpdateTime(float ElapsedTime)
 void ScaleObject::UpdateProperties()
 {
     //Update BackgroundColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obje->Get()->GetId(), "TroughColor", troughColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obje->Get()->GetId() + ":PRELIGHT", "TroughColor", troughColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obje->Get()->GetId() + ":ACTIVE", "TroughColor", troughColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obje->Get()->GetId() + ":INSENSITIVE", "TroughColor", troughColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obj->GetId(), "TroughColor", troughColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obj->GetId() + ":PRELIGHT", "TroughColor", troughColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obj->GetId() + ":ACTIVE", "TroughColor", troughColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obj->GetId() + ":INSENSITIVE", "TroughColor", troughColor->disabledColor );
 
     //Update BorderColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obje->Get()->GetId(), "BorderColor", borderColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obje->Get()->GetId() + ":PRELIGHT", "BorderColor", borderColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obje->Get()->GetId() + ":ACTIVE", "BorderColor", borderColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obje->Get()->GetId() + ":INSENSITIVE", "BorderColor", borderColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obj->GetId(), "BorderColor", borderColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obj->GetId() + ":PRELIGHT", "BorderColor", borderColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obj->GetId() + ":ACTIVE", "BorderColor", borderColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obj->GetId() + ":INSENSITIVE", "BorderColor", borderColor->disabledColor );
 
     //Update sliderColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obje->Get()->GetId(), "SliderColor", sliderColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obje->Get()->GetId() + ":PRELIGHT", "SliderColor", sliderColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obje->Get()->GetId() + ":ACTIVE", "SliderColor", sliderColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obje->Get()->GetId() + ":INSENSITIVE", "SliderColor", sliderColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obj->GetId(), "SliderColor", sliderColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obj->GetId() + ":PRELIGHT", "SliderColor", sliderColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obj->GetId() + ":ACTIVE", "SliderColor", sliderColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Scale#" + obj->GetId() + ":INSENSITIVE", "SliderColor", sliderColor->disabledColor );
 
     //Update border width and padding
-    sfg::Context::Get().GetEngine().SetProperty<float>("Scale#" + obje->Get()->GetId(), "BorderWidth", static_cast<float>(GetBorderWidth()));
+    sfg::Context::Get().GetEngine().SetProperty<float>("Scale#" + obj->GetId(), "BorderWidth", static_cast<float>(GetBorderWidth()));
 
     //Update trough width
-    sfg::Context::Get().GetEngine().SetProperty<float>("Scale#" + obje->Get()->GetId(), "TroughWidth", static_cast<float>(GetTroughWidth()));
+    sfg::Context::Get().GetEngine().SetProperty<float>("Scale#" + obj->GetId(), "TroughWidth", static_cast<float>(GetTroughWidth()));
 }
 
 void ScaleObject::SetDisabled(bool is)
 {
     if(is)
-        obje->Get()->SetState(sfg::Widget::INSENSITIVE);
+        obj->SetState(sfg::Widget::INSENSITIVE);
     else
-        obje->Get()->SetState(sfg::Widget::NORMAL);
+        obj->SetState(sfg::Widget::NORMAL);
 }
 
 bool ScaleObject::IsDisabled()
 {
-    return (obje->Get()->GetState() == sfg::Widget::INSENSITIVE);
+    return (obj->GetState() == sfg::Widget::INSENSITIVE);
 }
 
 

@@ -15,6 +15,8 @@ Permission is granted to anyone to use this software for any purpose, including 
 #include "GDL/Version.h"
 #include "../Extension.h"
 
+#include "../checkbox/CheckBoxObject.h"
+
 void Extension::DeclareCheckBox()
 {
     DECLARE_OBJECT("CheckBox",

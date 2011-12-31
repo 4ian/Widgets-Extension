@@ -56,10 +56,7 @@ borderWidth(1),
 padding(5)
 {
     //Create the SFGUI CheckBox object
-    sfg::CheckButton::Ptr tmpObj = sfg::CheckButton::Create("Texte");
-    obje = new WidgetWrapper<sfg::CheckButton>(tmpObj);
-
-    //WidgetManager::getInstance()->mainWidget->Pack(obje->Get());
+    obj = sfg::CheckButton::Create("Texte");
 
     SetString("Case à cocher");
 
@@ -90,9 +87,9 @@ padding(5)
     SetBoxSize(14);
     SetCheckSignSize(6);
 
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
 
-    obje->Get()->SetId(ToString<void*>(this));
+    obj->SetId(ToString<void*>(this));
 
     ConnectSignals();
     ResetEventInformations();
@@ -119,8 +116,7 @@ void CheckBoxObject::Init(const CheckBoxObject &other)
 {
     position = other.position;
     fontName = other.fontName;
-    sfg::CheckButton::Ptr tmpObj = sfg::CheckButton::Create(other.obje->Get()->GetLabel());
-    obje = new WidgetWrapper<sfg::CheckButton>(tmpObj);
+    obj = sfg::CheckButton::Create(other.obj->GetLabel());
     backgroundColor = new ColorScheme(*(other.backgroundColor));
     borderColor = new ColorScheme(*(other.borderColor));
     textColor = new ColorScheme(*(other.textColor));
@@ -134,7 +130,7 @@ void CheckBoxObject::Init(const CheckBoxObject &other)
     boxSize = other.boxSize;
     checkSignSize = other.checkSignSize;
 
-    obje->Get()->SetId(ToString<void*>(this));
+    obj->SetId(ToString<void*>(this));
 
     ConnectSignals();
     ResetEventInformations();
@@ -145,9 +141,9 @@ void CheckBoxObject::Init(const CheckBoxObject &other)
 
 void CheckBoxObject::ConnectSignals()
 {
-    obje->Get()->OnClick.Connect(&CheckBoxObject::OnMouseClick, this);
-    obje->Get()->OnStateChange.Connect(&CheckBoxObject::OnStateChanged, this);
-    obje->Get()->OnToggle.Connect(&CheckBoxObject::OnCheckChanged, this);
+    obj->OnClick.Connect(&CheckBoxObject::OnMouseClick, this);
+    obj->OnStateChange.Connect(&CheckBoxObject::OnStateChanged, this);
+    obj->OnToggle.Connect(&CheckBoxObject::OnCheckChanged, this);
 }
 
 bool CheckBoxObject::SIG_OnStateChanged(const std::string &newStateVar, RuntimeScene &scene)
@@ -158,13 +154,13 @@ bool CheckBoxObject::SIG_OnStateChanged(const std::string &newStateVar, RuntimeS
         if(newStateVar != "")
         {
             std::string newStateStr = "";
-            if(obje->Get()->GetState() == sfg::Widget::ACTIVE)
+            if(obj->GetState() == sfg::Widget::ACTIVE)
                 newStateStr = "Active";
-            else if(obje->Get()->GetState() == sfg::Widget::PRELIGHT)
+            else if(obj->GetState() == sfg::Widget::PRELIGHT)
                 newStateStr = "Hovered";
-            else if(obje->Get()->GetState() == sfg::Widget::NORMAL)
+            else if(obj->GetState() == sfg::Widget::NORMAL)
                 newStateStr = "Normal";
-            else if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+            else if(obj->GetState() == sfg::Widget::INSENSITIVE)
                 newStateStr = "Disabled";
             else
                 newStateStr = "Unknown";
@@ -256,15 +252,13 @@ CheckBoxObject::~CheckBoxObject()
     delete backgroundColor;
     delete textColor;
     delete checkColor;
-
-    delete obje;
 }
 
 void CheckBoxObject::UpdateSize()
 {
-    obje->Get()->SetRequisition();
-    obje->Get()->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
-    obje->Get()->SetAllocation(sf::FloatRect(GetX(), GetY(), GetWidth(), GetHeight()));
+    obj->SetRequisition();
+    obj->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
+    obj->SetAllocation(sf::FloatRect(GetX(), GetY(), GetWidth(), GetHeight()));
 }
 
 void CheckBoxObject::LoadFromXml(const TiXmlElement * elem)
@@ -496,7 +490,7 @@ bool CheckBoxObject::Draw( sf::RenderTarget & renderTarget )
     sfg::CullingTarget renderer(renderTarget);
     renderer.Cull(false);
 
-    obje->Get()->Expose(renderer);
+    obj->Expose(renderer);
 
     return true;
 }
@@ -510,7 +504,7 @@ bool CheckBoxObject::DrawEdittime(sf::RenderTarget & renderTarget)
     sfg::CullingTarget renderer(renderTarget);
     renderer.Cull(false);
 
-    obje->Get()->Expose(renderer);
+    obj->Expose(renderer);
 
     return true;
 }
@@ -552,13 +546,13 @@ void CheckBoxObject::GetPropertyForDebugger(unsigned int propertyNb, string & na
     else if ( propertyNb == 2 )
     {
         name = _("Etat");
-        if(obje->Get()->GetState() == sfg::Widget::ACTIVE)
+        if(obj->GetState() == sfg::Widget::ACTIVE)
             value = _("Actif");
-        else if(obje->Get()->GetState() == sfg::Widget::PRELIGHT)
+        else if(obj->GetState() == sfg::Widget::PRELIGHT)
             value = _("Survolé");
-        else if(obje->Get()->GetState() == sfg::Widget::NORMAL)
+        else if(obj->GetState() == sfg::Widget::NORMAL)
             value = _("Normal");
-        else if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+        else if(obj->GetState() == sfg::Widget::INSENSITIVE)
             value = _("Désactivé");
         else
             value = _("Inconnu");
@@ -582,28 +576,28 @@ unsigned int CheckBoxObject::GetNumberOfProperties() const
 
 void CheckBoxObject::OnPositionChanged()
 {
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
-    obje->Get()->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
 }
 
 void CheckBoxObject::SetString(const std::string &str)
 {
-    obje->Get()->SetLabel(str);
+    obj->SetLabel(str);
 }
 
 std::string CheckBoxObject::GetString() const
 {
-    return obje->Get()->GetLabel().ToAnsiString();
+    return obj->GetLabel().ToAnsiString();
 }
 
 void CheckBoxObject::SetChecked(bool is)
 {
-    obje->Get()->SetActive(is);
+    obj->SetActive(is);
 }
 
 bool CheckBoxObject::IsChecked() const
 {
-    return obje->Get()->IsActive();
+    return obj->IsActive();
 }
 
 /**
@@ -699,7 +693,7 @@ void CheckBoxObject::UpdateTime(float ElapsedTime)
             event.MouseButton.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).x;
             event.MouseButton.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else if(events[i].Type == sf::Event::MouseButtonReleased)
         {
@@ -709,7 +703,7 @@ void CheckBoxObject::UpdateTime(float ElapsedTime)
             event.MouseButton.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).x;
             event.MouseButton.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else if(events[i].Type == sf::Event::MouseMoved)
         {
@@ -718,10 +712,10 @@ void CheckBoxObject::UpdateTime(float ElapsedTime)
             event.MouseMove.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseMove.X, events[i].MouseMove.Y), GetLayer()).x;
             event.MouseMove.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseMove.X, events[i].MouseMove.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else
-            obje->Get()->HandleEvent(events[i]);
+            obj->HandleEvent(events[i]);
     }
 
 
@@ -731,52 +725,52 @@ void CheckBoxObject::UpdateTime(float ElapsedTime)
 void CheckBoxObject::UpdateProperties()
 {
     //Update BackgroundColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId(), "BackgroundColor", backgroundColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId() + ":PRELIGHT", "BackgroundColor", backgroundColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId() + ":ACTIVE", "BackgroundColor", backgroundColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId() + ":INSENSITIVE", "BackgroundColor", backgroundColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId(), "BackgroundColor", backgroundColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId() + ":PRELIGHT", "BackgroundColor", backgroundColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId() + ":ACTIVE", "BackgroundColor", backgroundColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId() + ":INSENSITIVE", "BackgroundColor", backgroundColor->disabledColor );
 
     //Update BorderColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId(), "BorderColor", borderColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId() + ":PRELIGHT", "BorderColor", borderColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId() + ":ACTIVE", "BorderColor", borderColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId() + ":INSENSITIVE", "BorderColor", borderColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId(), "BorderColor", borderColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId() + ":PRELIGHT", "BorderColor", borderColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId() + ":ACTIVE", "BorderColor", borderColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId() + ":INSENSITIVE", "BorderColor", borderColor->disabledColor );
 
     //Update TextColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId() + "", "Color", textColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId() + ":PRELIGHT", "Color", textColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId() + ":ACTIVE", "Color", textColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId() + ":INSENSITIVE", "Color", textColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId() + "", "Color", textColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId() + ":PRELIGHT", "Color", textColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId() + ":ACTIVE", "Color", textColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId() + ":INSENSITIVE", "Color", textColor->disabledColor );
 
     //Update CheckColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId() + "", "CheckColor", checkColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId() + ":PRELIGHT", "CheckColor", checkColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId() + ":ACTIVE", "CheckColor", checkColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obje->Get()->GetId() + ":INSENSITIVE", "CheckColor", checkColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId() + "", "CheckColor", checkColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId() + ":PRELIGHT", "CheckColor", checkColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId() + ":ACTIVE", "CheckColor", checkColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "CheckButton#" + obj->GetId() + ":INSENSITIVE", "CheckColor", checkColor->disabledColor );
 
     //Update font size
-    sfg::Context::Get().GetEngine().SetProperty<unsigned int>("CheckButton#" + obje->Get()->GetId() + "", "FontSize", GetCharacterSize());
-    sfg::Context::Get().GetEngine().SetProperty<std::string>("CheckButton#" + obje->Get()->GetId(), "FontName", std::string("gdres:") + GetFont());
+    sfg::Context::Get().GetEngine().SetProperty<unsigned int>("CheckButton#" + obj->GetId() + "", "FontSize", GetCharacterSize());
+    sfg::Context::Get().GetEngine().SetProperty<std::string>("CheckButton#" + obj->GetId(), "FontName", std::string("gdres:") + GetFont());
 
     //Update border width and padding
-    sfg::Context::Get().GetEngine().SetProperty<float>("CheckButton#" + obje->Get()->GetId(), "BorderWidth", static_cast<float>(GetBorderWidth()));
-    sfg::Context::Get().GetEngine().SetProperty<float>("CheckButton#" + obje->Get()->GetId(), "Padding", static_cast<float>(GetPadding()));
-    sfg::Context::Get().GetEngine().SetProperty<float>("CheckButton#" + obje->Get()->GetId(), "BoxSize", static_cast<float>(GetBoxSize()));
-    sfg::Context::Get().GetEngine().SetProperty<float>("CheckButton#" + obje->Get()->GetId(), "CheckSize", static_cast<float>(GetCheckSignSize()));
+    sfg::Context::Get().GetEngine().SetProperty<float>("CheckButton#" + obj->GetId(), "BorderWidth", static_cast<float>(GetBorderWidth()));
+    sfg::Context::Get().GetEngine().SetProperty<float>("CheckButton#" + obj->GetId(), "Padding", static_cast<float>(GetPadding()));
+    sfg::Context::Get().GetEngine().SetProperty<float>("CheckButton#" + obj->GetId(), "BoxSize", static_cast<float>(GetBoxSize()));
+    sfg::Context::Get().GetEngine().SetProperty<float>("CheckButton#" + obj->GetId(), "CheckSize", static_cast<float>(GetCheckSignSize()));
 
 }
 
 void CheckBoxObject::SetDisabled(bool is)
 {
     if(is)
-        obje->Get()->SetState(sfg::Widget::INSENSITIVE);
+        obj->SetState(sfg::Widget::INSENSITIVE);
     else
-        obje->Get()->SetState(sfg::Widget::NORMAL);
+        obj->SetState(sfg::Widget::NORMAL);
 }
 
 bool CheckBoxObject::IsDisabled()
 {
-    return (obje->Get()->GetState() == sfg::Widget::INSENSITIVE);
+    return (obj->GetState() == sfg::Widget::INSENSITIVE);
 }
 
 

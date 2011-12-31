@@ -20,6 +20,7 @@ Permission is granted to anyone to use this software for any purpose, including 
 #include "GDL/ResourceWrapper.h"
 #include "SFML/Config.hpp"
 #include "SFML/System/Vector2.hpp"
+#include "SFGUI/SharedPtr.hpp"
 
 //GD Classes
 class ImageManager;
@@ -45,9 +46,6 @@ namespace sfg
     class ComboBox;
     class Widget;
 }
-
-template<class T>
-class WidgetWrapper;
 
 typedef std::vector<std::string> ElementList;
 
@@ -227,7 +225,7 @@ class GD_EXTENSION_API ComboBoxObject : public Object
         sf::Vector2f position; ///< Contains the position
 
         //Object
-        WidgetWrapper<sfg::ComboBox> *obje; ///< SFGUI widget stored in a Wrapper using itself std::shared_ptr
+        sfg::SharedPtr<sfg::ComboBox> obj;
 
         //Size
         float width; ///< Width of the widget

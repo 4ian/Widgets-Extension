@@ -15,6 +15,8 @@ Permission is granted to anyone to use this software for any purpose, including 
 #include "GDL/Version.h"
 #include "../Extension.h"
 
+#include "../button/ButtonObject.h"
+
 void Extension::DeclareButton()
 {
     DECLARE_OBJECT("Button",
