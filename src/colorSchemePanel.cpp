@@ -1,14 +1,33 @@
+/*
+Widgets Extension
+Extension providing graphical widgets.
+
+Copyright (c) 2011 Victor Levasseur <victorlevasseur01@orange.fr>
+
+This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
+    1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+    2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+    3. This notice may not be removed or altered from any source distribution.
+*/
+
 #if defined(GD_IDE_ONLY)
 
 #include "colorSchemePanel.h"
 
 #include "WidgetsCommonTools.h"
+#include "GDL/CommonTools.h"
 
 #ifdef CreateDialog
 #undef CreateDialog
 #endif
 
 #include <wx/colordlg.h>
+#include <wx/clipbrd.h>
+#include <wx/dataobj.h>
+#include <wx/log.h>
+
+#include "customwidgets/DataBitmapButton.h"
 
 void ColorSchemePanel::AddColorScheme(const std::string &name, const wxString &label, const ColorScheme &defautColor, int properties)
 {
@@ -102,6 +121,30 @@ void ColorSchemePanel::AddColorScheme(const std::string &name, const wxString &l
         colorSchemeSizer->AddGrowableRow(0);
     }
 
+    //Bouton de copie
+    long copyButtonID = wxNewId();
+    DataBitmapButton<std::string> *copyButton = new DataBitmapButton<std::string>(this, copyButtonID, wxBitmap("res/copyicon.png", wxBITMAP_TYPE_PNG));
+    copyButton->SetDataStored(name);
+    copyButton->SetToolTip("Copier les couleurs de cette ligne");
+
+    Connect(copyButtonID,
+            wxEVT_COMMAND_BUTTON_CLICKED,
+            (wxObjectEventFunction)&ColorSchemePanel::CopyColorSchemeContent);
+
+    colorSchemeSizer->Add(copyButton, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+
+    //Bouton de collage
+    long pasteButtonID = wxNewId();
+    DataBitmapButton<std::string> *pasteButton = new DataBitmapButton<std::string>(this, pasteButtonID, wxBitmap("res/pasteicon.png", wxBITMAP_TYPE_PNG));
+    pasteButton->SetDataStored(name);
+    pasteButton->SetToolTip("Coller les couleurs copiées dans cette ligne");
+
+    Connect(pasteButtonID,
+            wxEVT_COMMAND_BUTTON_CLICKED,
+            (wxObjectEventFunction)&ColorSchemePanel::PasteColorSchemeContent);
+
+    colorSchemeSizer->Add(pasteButton, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 0);
+
     mainGrid->Add(colorSchemeSizer);
 }
 
@@ -186,6 +229,87 @@ ColorScheme& ColorSchemePanel::GetColorScheme(const std::string &name)
     }
 
     return newColorScheme;
+}
+
+void ColorSchemePanel::SetColorScheme(const std::string &name, const ColorScheme &color)
+{
+    if(listOfButtons.count(name) == 0)
+        return;
+
+    int properties = listOfProperties[name];
+
+    if((properties & CSP_HasAlwaysColorBt) != 0)
+    {
+        wxASSERT(listOfButtons[name]["always"] != 0);
+
+        listOfButtons[name]["always"]->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(color.unfocusedColor));
+    }
+    else
+    {
+        if((properties & CSP_HasFocusedColorBt) != 0)
+        {
+            listOfButtons[name]["focused"]->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(color.focusedColor));
+        }
+
+        if((properties & CSP_HasHoveredColorBt) != 0)
+        {
+            listOfButtons[name]["hovered"]->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(color.hoveredColor));
+        }
+
+        if((properties & CSP_HasUnfocusedColorBt) != 0)
+        {
+            listOfButtons[name]["normal"]->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(color.unfocusedColor));
+        }
+
+        if((properties & CSP_HasDisabledColorBt) != 0)
+        {
+            listOfButtons[name]["disabled"]->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(color.disabledColor));
+        }
+    }
+}
+
+void ColorSchemePanel::CopyColorSchemeContent(wxCommandEvent& event)
+{
+    DataBitmapButton<std::string> *button = dynamic_cast<DataBitmapButton<std::string>* >(event.GetEventObject());
+    if(!button)
+        return;
+
+    std::string name = button->GetDataStored();
+
+    ColorScheme colorScheme = GetColorScheme(name);
+
+    if(wxTheClipboard->Open())
+    {
+        wxTheClipboard->Clear();
+
+        wxTheClipboard->SetData(new wxTextDataObject(colorScheme.ToWxString()));
+        wxTheClipboard->Close();
+    }
+}
+
+void ColorSchemePanel::PasteColorSchemeContent(wxCommandEvent& event)
+{
+    DataBitmapButton<std::string> *button = dynamic_cast<DataBitmapButton<std::string>* >(event.GetEventObject());
+    if(!button)
+        return;
+
+    std::string name = button->GetDataStored();
+
+    if (wxTheClipboard->Open())
+    {
+        if (wxTheClipboard->IsSupported( wxDF_TEXT ))
+        {
+            wxTextDataObject dataStored;
+            wxTheClipboard->GetData( dataStored );
+            wxString schemeStr = dataStored.GetText();
+
+            ColorScheme newColorScheme(sf::Color(255, 255, 255, 255));
+            newColorScheme.FromWxString(schemeStr);
+
+            SetColorScheme(name, newColorScheme);
+        }
+        wxTheClipboard->Close();
+    }
 }
 
 #endif

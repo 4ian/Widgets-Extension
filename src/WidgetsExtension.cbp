@@ -56,6 +56,7 @@
 					<Add option="-DwxUSE_UNICODE=0" />
 					<Add option="-D__WXDEBUG__" />
 					<Add option="-DWXUSINGDLL" />
+					<Add option="-DWIDGETS_CS_NEED_CSTRUC" />
 					<Add directory="..\..\..\ExtLibs\wxwidgets\lib\gcc_dll\mswd" />
 					<Add directory="..\..\..\ExtLibs\wxwidgets\include" />
 				</Compiler>
@@ -157,6 +158,7 @@
 					<Add option="-DwxUSE_UNICODE=0" />
 					<Add option="-DWXUSINGDLL" />
 					<Add option="-DBOOST_DISABLE_ASSERTS" />
+					<Add option="-DWIDGETS_CS_NEED_CSTRUC" />
 					<Add directory="..\..\..\ExtLibs\wxwidgets\lib\gcc_dll\msw" />
 					<Add directory="..\..\..\ExtLibs\wxwidgets\include" />
 					<Add directory="..\extlibs\SFGUI\include" />
@@ -262,6 +264,7 @@
 					<Add option="-DwxUSE_UNICODE=0" />
 					<Add option="-DWXUSINGDLL" />
 					<Add option="-DBOOST_DISABLE_ASSERTS" />
+					<Add option="-DWIDGETS_CS_NEED_CSTRUC" />
 					<Add directory="..\..\..\ExtLibs\wxwidgets\lib\gcc_dll\msw" />
 					<Add directory="..\..\..\ExtLibs\wxwidgets\include" />
 				</Compiler>
@@ -372,6 +375,7 @@
 					<Add option="-DLINUX" />
 					<Add option="-DSFML_DYNAMIC" />
 					<Add option="-DBOOST_DISABLE_ASSERTS" />
+					<Add option="-DWIDGETS_CS_NEED_CSTRUC" />
 					<Add directory="extlibs\SFGUI\include" />
 				</Compiler>
 				<Linker>
@@ -416,6 +420,7 @@
 					<Add option="-DDEBUG" />
 					<Add option="-DLINUX" />
 					<Add option="-DSFML_DYNAMIC" />
+					<Add option="-DWIDGETS_CS_NEED_CSTRUC" />
 				</Compiler>
 				<Linker>
 					<Add option="-lgdl" />
@@ -576,7 +581,6 @@
 		<Unit filename="GettingStartedDialog.h" />
 		<Unit filename="Manager.cpp" />
 		<Unit filename="Manager.h" />
-		<Unit filename="WidgetWrapper.h" />
 		<Unit filename="WidgetsCommonTools.cpp" />
 		<Unit filename="WidgetsCommonTools.h" />
 		<Unit filename="WidgetsMacros.h" />
@@ -596,6 +600,9 @@
 		<Unit filename="combobox\ComboBoxObject.h" />
 		<Unit filename="combobox\ComboBoxObjectEditor.cpp" />
 		<Unit filename="combobox\ComboBoxObjectEditor.h" />
+		<Unit filename="customwidgets\DataBitmapButton.cpp" />
+		<Unit filename="customwidgets\DataBitmapButton.h" />
+		<Unit filename="customwidgets\DataBitmapButton.inl" />
 		<Unit filename="progressbar\ProgressBarObject.cpp" />
 		<Unit filename="progressbar\ProgressBarObject.h" />
 		<Unit filename="progressbar\ProgressBarObjectEditor.cpp" />

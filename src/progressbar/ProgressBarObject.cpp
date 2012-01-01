@@ -37,8 +37,6 @@ Permission is granted to anyone to use this software for any purpose, including 
 #include "SFGUI/Context.hpp"
 #include "SFGUI/CullingTarget.hpp"
 
-#include "../WidgetWrapper.h"
-
 #include <string>
 #include "ProgressBarObject.h"
 

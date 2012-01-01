@@ -84,7 +84,7 @@ object(object_)
 	wxFlexGridSizer* FlexGridSizer13;
 	wxFlexGridSizer* FlexGridSizer1;
 	wxFlexGridSizer* FlexGridSizer11;
-
+	
 	Create(parent, wxID_ANY, _("Editer le bouton"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxMAXIMIZE_BOX, _T("wxID_ANY"));
 	SetClientSize(wxSize(482,301));
 	FlexGridSizer1 = new wxFlexGridSizer(1, 1, 0, 0);
@@ -102,7 +102,7 @@ object(object_)
 	StaticText7 = new wxStaticText(Core, ID_STATICTEXT7, _("Permet de capter le clic de l\'utilisateur sur ce dernier."), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT7"));
 	FlexGridSizer8->Add(StaticText7, 1, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 	FlexGridSizer11->Add(FlexGridSizer8, 1, wxTOP|wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 2);
-	Notebook1 = new wxNotebook(Core, ID_NOTEBOOK1, wxDefaultPosition, wxSize(492,237), 0, _T("ID_NOTEBOOK1"));
+	Notebook1 = new wxNotebook(Core, ID_NOTEBOOK1, wxDefaultPosition, wxSize(577,237), 0, _T("ID_NOTEBOOK1"));
 	Panel1 = new wxPanel(Notebook1, ID_PANEL1, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL1"));
 	FlexGridSizer9 = new wxFlexGridSizer(5, 1, 0, 0);
 	FlexGridSizer9->AddGrowableCol(0);
@@ -175,7 +175,7 @@ object(object_)
 	FlexGridSizer1->Add(Core, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 0);
 	SetSizer(FlexGridSizer1);
 	FlexGridSizer1->SetSizeHints(this);
-
+	
 	Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OnfontBtClick);
 	Connect(ID_SPINCTRL1,wxEVT_COMMAND_SPINCTRL_UPDATED,(wxObjectEventFunction)&ButtonObjectEditor::OnSizeEditChange);
 	Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OnButton1Click);

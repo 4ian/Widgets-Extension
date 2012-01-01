@@ -13,7 +13,6 @@ Permission is granted to anyone to use this software for any purpose, including 
 
 #include <map>
 
-#include "WidgetWrapper.h"
 #include "GDL/RuntimeScene.h"
 
 #ifndef WIDGETMANAGER_H

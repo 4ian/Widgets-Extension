@@ -38,11 +38,13 @@
 			</object>
 			<object class="sizeritem">
 				<object class="wxNotebook" name="ID_NOTEBOOK1" variable="Notebook1" member="yes">
+					<size>546,202</size>
 					<object class="notebookpage">
 						<object class="wxPanel" name="ID_PANEL2" variable="Panel2" member="yes">
 							<object class="wxFlexGridSizer" variable="FlexGridSizer10" member="no">
 								<cols>2</cols>
 								<rows>6</rows>
+								<growablecols>1</growablecols>
 								<object class="spacer">
 									<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 									<border>5</border>

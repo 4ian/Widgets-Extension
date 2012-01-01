@@ -34,8 +34,6 @@ Permission is granted to anyone to use this software for any purpose, including 
 #include "SFGUI/Engine.hpp"
 #include "SFGUI/Context.hpp"
 
-#include "../WidgetWrapper.h"
-
 #include <string>
 #include "CheckBoxObject.h"
 
