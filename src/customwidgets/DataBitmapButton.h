@@ -44,15 +44,15 @@ class DataBitmapButton : public wxBitmapButton
 protected:
 
     void Init() {
-        // init widget's internals...
+
     }
 
     virtual wxSize DoGetBestSize() const {
-        return wxBitmapButton::DoGetBestSize();
+        return wxButton::DoGetBestSize();
     }
 
     void OnPaint(wxPaintEvent &ev) {
-        wxBitmapButton::OnPaint(ev);
+        wxButton::OnPaint(ev);
     }
 
 private:

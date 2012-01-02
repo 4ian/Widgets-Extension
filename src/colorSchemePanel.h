@@ -17,10 +17,12 @@ Permission is granted to anyone to use this software for any purpose, including 
 #if defined(GD_IDE_ONLY)
 
 #include <wx/panel.h>
+#include <wx/frame.h>
 #include <wx/button.h>
 
 #include <wx/stattext.h>
 #include <wx/sizer.h>
+#include <wx/menu.h>
 
 #include <string>
 #include <map>
@@ -70,11 +72,7 @@ public:
 
 protected:
 
-    virtual void Init()
-    {
-        mainGrid = new wxFlexGridSizer(0, 2, 0, 0);
-        SetSizer(mainGrid);
-    }
+    virtual void Init();
 
     virtual wxSize DoGetBestSize() const
     {
@@ -89,8 +87,11 @@ protected:
     void SetNewColorToButton(wxCommandEvent& event);
     void AdaptFontColor(wxButton *button);
 
+    void PopupAdvancedFeatureMenu(wxCommandEvent& event);
+
     void CopyColorSchemeContent(wxCommandEvent& event);
     void PasteColorSchemeContent(wxCommandEvent& event);
+    void GenerateColorScheme(wxCommandEvent& event);
 
 private:
 
@@ -98,6 +99,14 @@ private:
     std::map< std::string, int> listOfProperties;
 
     wxFlexGridSizer *mainGrid;
+
+    wxMenu *advanceFeatureMenu;
+        wxMenuItem *copyBt;
+        long copyBtID;
+        wxMenuItem *pasteBt;
+        long pasteBtID;
+        wxMenuItem *generateColorsBt;
+        long generateColorsBtID;
 };
 
 #endif
