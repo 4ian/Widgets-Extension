@@ -79,10 +79,10 @@ protected:
         return wxPanel::DoGetBestSize();
     }
 
-    virtual void OnPaint(wxPaintEvent &ev)
+    /*virtual void OnPaint(wxPaintEvent &ev)
     {
         wxPanel::OnPaint(ev);
-    }
+    }*/
 
     void SetNewColorToButton(wxCommandEvent& event);
     void AdaptFontColor(wxButton *button);

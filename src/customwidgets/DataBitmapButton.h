@@ -51,9 +51,9 @@ protected:
         return wxButton::DoGetBestSize();
     }
 
-    void OnPaint(wxPaintEvent &ev) {
+    /*void OnPaint(wxPaintEvent &ev) {
         wxButton::OnPaint(ev);
-    }
+    }*/
 
 private:
 
