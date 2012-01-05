@@ -7,8 +7,8 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{BB9ECA48-4F71-4A01-B7AE-B786445D464D}
 AppName=Extension Widget
-AppVersion=1.1RC
-;AppVerName=Extension Widget 1.1RC
+AppVersion=1.1
+;AppVerName=Extension Widget 1.1
 AppPublisher=Victor Levasseur
 AppPublisherURL=http://www.levasseursoftware.net/index.php/extension-widgets
 AppSupportURL=http://www.levasseursoftware.net/index.php/extension-widgets
@@ -17,7 +17,7 @@ DefaultDirName={pf}\Compil Games\Game Develop
 DefaultGroupName=Extension Widget
 LicenseFile=D:\Développement\GD2\GDLSDK\Extensions\WidgetsExtension\tools\windows-installer\LICENSE-WIDGETEXTENSION-EN.txt
 OutputDir=D:\Développement\GD2\GDLSDK\Extensions\WidgetsExtension\tools\windows-installer\dataInstaller
-OutputBaseFilename=Data-WidgetsExtension-1.1RC
+OutputBaseFilename=Data-WidgetsExtension-1.1
 WizardImageFile=WidgetsLogo.bmp
 WizardSmallImageFile=WidgetsLogoSmall.bmp
 

@@ -2,7 +2,7 @@
 Widgets Extension
 Extension providing graphical widgets.
 
-Copyright (c) 2011 Victor Levasseur <victorlevasseur01@orange.fr>
+Copyright (c) 2011-2012 Victor Levasseur <victorlevasseur01@orange.fr>
 
 This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
 Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
@@ -52,22 +52,6 @@ const long ButtonObjectEditor::ID_BUTTON4 = wxNewId();
 const long ButtonObjectEditor::ID_STATICTEXT4 = wxNewId();
 const long ButtonObjectEditor::ID_SPINCTRL1 = wxNewId();
 const long ButtonObjectEditor::ID_PANEL1 = wxNewId();
-const long ButtonObjectEditor::ID_STATICTEXT3 = wxNewId();
-const long ButtonObjectEditor::ID_BUTTON5 = wxNewId();
-const long ButtonObjectEditor::ID_BUTTON2 = wxNewId();
-const long ButtonObjectEditor::ID_BUTTON7 = wxNewId();
-const long ButtonObjectEditor::ID_BUTTON6 = wxNewId();
-const long ButtonObjectEditor::ID_STATICTEXT5 = wxNewId();
-const long ButtonObjectEditor::ID_BUTTON8 = wxNewId();
-const long ButtonObjectEditor::ID_BUTTON9 = wxNewId();
-const long ButtonObjectEditor::ID_BUTTON10 = wxNewId();
-const long ButtonObjectEditor::ID_BUTTON11 = wxNewId();
-const long ButtonObjectEditor::ID_STATICTEXT8 = wxNewId();
-const long ButtonObjectEditor::ID_BUTTON12 = wxNewId();
-const long ButtonObjectEditor::ID_BUTTON13 = wxNewId();
-const long ButtonObjectEditor::ID_BUTTON14 = wxNewId();
-const long ButtonObjectEditor::ID_BUTTON15 = wxNewId();
-const long ButtonObjectEditor::ID_PANEL2 = wxNewId();
 const long ButtonObjectEditor::ID_STATICTEXT1 = wxNewId();
 const long ButtonObjectEditor::ID_SPINCTRL2 = wxNewId();
 const long ButtonObjectEditor::ID_STATICTEXT9 = wxNewId();
@@ -96,16 +80,13 @@ object(object_)
 	wxFlexGridSizer* FlexGridSizer5;
 	wxFlexGridSizer* FlexGridSizer9;
 	wxFlexGridSizer* FlexGridSizer2;
-	wxFlexGridSizer* FlexGridSizer7;
-	wxGridSizer* GridSizer1;
 	wxFlexGridSizer* FlexGridSizer8;
 	wxFlexGridSizer* FlexGridSizer13;
-	wxFlexGridSizer* FlexGridSizer6;
 	wxFlexGridSizer* FlexGridSizer1;
 	wxFlexGridSizer* FlexGridSizer11;
 
 	Create(parent, wxID_ANY, _("Editer le bouton"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxMAXIMIZE_BOX, _T("wxID_ANY"));
-	SetClientSize(wxSize(640,301));
+	SetClientSize(wxSize(482,301));
 	FlexGridSizer1 = new wxFlexGridSizer(1, 1, 0, 0);
 	FlexGridSizer1->AddGrowableCol(0);
 	FlexGridSizer1->AddGrowableRow(0);
@@ -121,7 +102,7 @@ object(object_)
 	StaticText7 = new wxStaticText(Core, ID_STATICTEXT7, _("Permet de capter le clic de l\'utilisateur sur ce dernier."), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT7"));
 	FlexGridSizer8->Add(StaticText7, 1, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 	FlexGridSizer11->Add(FlexGridSizer8, 1, wxTOP|wxLEFT|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 2);
-	Notebook1 = new wxNotebook(Core, ID_NOTEBOOK1, wxDefaultPosition, wxDefaultSize, 0, _T("ID_NOTEBOOK1"));
+	Notebook1 = new wxNotebook(Core, ID_NOTEBOOK1, wxDefaultPosition, wxSize(577,237), 0, _T("ID_NOTEBOOK1"));
 	Panel1 = new wxPanel(Notebook1, ID_PANEL1, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL1"));
 	FlexGridSizer9 = new wxFlexGridSizer(5, 1, 0, 0);
 	FlexGridSizer9->AddGrowableCol(0);
@@ -164,45 +145,6 @@ object(object_)
 	Panel1->SetSizer(FlexGridSizer9);
 	FlexGridSizer9->Fit(Panel1);
 	FlexGridSizer9->SetSizeHints(Panel1);
-	Panel2 = new wxPanel(Notebook1, ID_PANEL2, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL2"));
-	FlexGridSizer7 = new wxFlexGridSizer(2, 1, 0, 0);
-	GridSizer1 = new wxGridSizer(0, 3, 0, 0);
-	FlexGridSizer7->Add(GridSizer1, 1, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
-	FlexGridSizer6 = new wxFlexGridSizer(3, 5, 0, 0);
-	StaticText3 = new wxStaticText(Panel2, ID_STATICTEXT3, _("Fond :"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT3"));
-	FlexGridSizer6->Add(StaticText3, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
-	focusedBackgroundBt = new wxButton(Panel2, ID_BUTTON5, _("Actif"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON5"));
-	FlexGridSizer6->Add(focusedBackgroundBt, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	hoveredBackgroundBt = new wxButton(Panel2, ID_BUTTON2, _("Survolé"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
-	FlexGridSizer6->Add(hoveredBackgroundBt, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	normalBackgroundBt = new wxButton(Panel2, ID_BUTTON7, _("Normal"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON7"));
-	FlexGridSizer6->Add(normalBackgroundBt, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	disabledBackgroundBt = new wxButton(Panel2, ID_BUTTON6, _("Désactivé"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON6"));
-	FlexGridSizer6->Add(disabledBackgroundBt, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	StaticText5 = new wxStaticText(Panel2, ID_STATICTEXT5, _("Bordure :"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT5"));
-	FlexGridSizer6->Add(StaticText5, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
-	focusedBorderBt = new wxButton(Panel2, ID_BUTTON8, _("Actif"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON8"));
-	FlexGridSizer6->Add(focusedBorderBt, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	hoveredBorderBt = new wxButton(Panel2, ID_BUTTON9, _("Survolé"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON9"));
-	FlexGridSizer6->Add(hoveredBorderBt, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	normalBorderBt = new wxButton(Panel2, ID_BUTTON10, _("Normal"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON10"));
-	FlexGridSizer6->Add(normalBorderBt, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	disabledBorderBt = new wxButton(Panel2, ID_BUTTON11, _("Désactivé"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON11"));
-	FlexGridSizer6->Add(disabledBorderBt, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	StaticText8 = new wxStaticText(Panel2, ID_STATICTEXT8, _("Texte :"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT8"));
-	FlexGridSizer6->Add(StaticText8, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
-	focusedTextBt = new wxButton(Panel2, ID_BUTTON12, _("Actif"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON12"));
-	FlexGridSizer6->Add(focusedTextBt, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	hoveredTextBt = new wxButton(Panel2, ID_BUTTON13, _("Survolé"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON13"));
-	FlexGridSizer6->Add(hoveredTextBt, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	normalTextBt = new wxButton(Panel2, ID_BUTTON14, _("Normal"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON14"));
-	FlexGridSizer6->Add(normalTextBt, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	disabledTextBt = new wxButton(Panel2, ID_BUTTON15, _("Désactivé"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON15"));
-	FlexGridSizer6->Add(disabledTextBt, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	FlexGridSizer7->Add(FlexGridSizer6, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 0);
-	Panel2->SetSizer(FlexGridSizer7);
-	FlexGridSizer7->Fit(Panel2);
-	FlexGridSizer7->SetSizeHints(Panel2);
 	Panel3 = new wxPanel(Notebook1, ID_PANEL3, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL3"));
 	FlexGridSizer3 = new wxFlexGridSizer(0, 2, 0, 0);
 	FlexGridSizer3->AddGrowableCol(1);
@@ -220,7 +162,6 @@ object(object_)
 	FlexGridSizer3->Fit(Panel3);
 	FlexGridSizer3->SetSizeHints(Panel3);
 	Notebook1->AddPage(Panel1, _("Texte"), false);
-	Notebook1->AddPage(Panel2, _("Couleurs"), false);
 	Notebook1->AddPage(Panel3, _("Tailles"), false);
 	FlexGridSizer11->Add(Notebook1, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	FlexGridSizer2 = new wxFlexGridSizer(1, 2, 0, 0);
@@ -237,18 +178,6 @@ object(object_)
 
 	Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OnfontBtClick);
 	Connect(ID_SPINCTRL1,wxEVT_COMMAND_SPINCTRL_UPDATED,(wxObjectEventFunction)&ButtonObjectEditor::OnSizeEditChange);
-	Connect(ID_BUTTON5,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OnfocusedBackgroundBtClick);
-	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OnhoveredBackgroundBtClick);
-	Connect(ID_BUTTON7,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OnnormalBackgroundBtClick);
-	Connect(ID_BUTTON6,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OndisabledBackgroundBtClick);
-	Connect(ID_BUTTON8,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OnfocusedBorderBtClick);
-	Connect(ID_BUTTON9,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OnhoveredBorderBtClick);
-	Connect(ID_BUTTON10,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OnnormalBorderBtClick);
-	Connect(ID_BUTTON11,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OndisabledBorderBtClick);
-	Connect(ID_BUTTON12,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OnfocusedTextBtClick);
-	Connect(ID_BUTTON13,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OnhoveredTextBtClick);
-	Connect(ID_BUTTON14,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OnnormalTextBtClick);
-	Connect(ID_BUTTON15,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OndisabledTextBtClick);
 	Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OnButton1Click);
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ButtonObjectEditor::OnokBtClick);
 	//*)
@@ -258,33 +187,6 @@ object(object_)
 
 	fontEdit->ChangeValue(object.GetFont());
 	sizeEdit->SetValue(object.GetCharacterSize());
-
-	focusedBackgroundBt->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(object.GetBackgroundColorScheme().focusedColor));
-	UseCorrectForeground(focusedBackgroundBt);
-	hoveredBackgroundBt->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(object.GetBackgroundColorScheme().hoveredColor));
-	UseCorrectForeground(hoveredBackgroundBt);
-	normalBackgroundBt->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(object.GetBackgroundColorScheme().unfocusedColor));
-    UseCorrectForeground(normalBackgroundBt);
-    disabledBackgroundBt->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(object.GetBackgroundColorScheme().disabledColor));
-    UseCorrectForeground(disabledBackgroundBt);
-
-    focusedBorderBt->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(object.GetBorderColorScheme().focusedColor));
-	UseCorrectForeground(focusedBorderBt);
-	hoveredBorderBt->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(object.GetBorderColorScheme().hoveredColor));
-	UseCorrectForeground(hoveredBorderBt);
-	normalBorderBt->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(object.GetBorderColorScheme().unfocusedColor));
-    UseCorrectForeground(normalBorderBt);
-    disabledBorderBt->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(object.GetBorderColorScheme().disabledColor));
-    UseCorrectForeground(disabledBorderBt);
-
-    focusedTextBt->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(object.GetTextColorScheme().focusedColor));
-	UseCorrectForeground(focusedTextBt);
-	hoveredTextBt->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(object.GetTextColorScheme().hoveredColor));
-	UseCorrectForeground(hoveredTextBt);
-	normalTextBt->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(object.GetTextColorScheme().unfocusedColor));
-    UseCorrectForeground(normalTextBt);
-    disabledTextBt->SetBackgroundColour(WidgetsCommonTools::GetWxColourFromSfColor(object.GetTextColorScheme().disabledColor));
-    UseCorrectForeground(disabledTextBt);
 
     borderWidthSpinCtrl->SetValue(object.GetBorderWidth());
     paddingSpinCtrl->SetValue(object.GetPadding());
@@ -300,10 +202,17 @@ object(object_)
 	//Init wxAuiManager with two pane : the editor and the image bank editor
     m_mgr.SetManagedWindow( this );
     m_mgr.AddPane( Core, wxAuiPaneInfo().Name( wxT( "Core" ) ).Center().CaptionVisible(false) );
-    m_mgr.AddPane( editorImagesPnl, wxAuiPaneInfo().Name( wxT( "EI" ) ).Right().Caption( _T( "Editeur de la banque d'images" ) ).MaximizeButton( true ).MinimizeButton( false ).Show(true).MinSize(150, 100) );
+    m_mgr.AddPane( editorImagesPnl, wxAuiPaneInfo().Name( wxT( "EI" ) ).Right().Caption( _T( "Editeur de la banque d'images" ) ).MaximizeButton( true ).MinimizeButton( false ).Show(false).MinSize(150, 100) );
     m_mgr.SetFlags( wxAUI_MGR_ALLOW_FLOATING | wxAUI_MGR_ALLOW_ACTIVE_PANE | wxAUI_MGR_TRANSPARENT_HINT
                     | wxAUI_MGR_TRANSPARENT_DRAG | wxAUI_MGR_HINT_FADE | wxAUI_MGR_NO_VENETIAN_BLINDS_FADE );
     m_mgr.Update();
+
+    colorsPanel = new ColorSchemePanel(Notebook1, wxID_ANY);
+    colorsPanel->AddColorScheme("background", _("Fond"), object.GetBackgroundColorScheme());
+    colorsPanel->AddColorScheme("border", _("Bordure"), object.GetBorderColorScheme());
+    colorsPanel->AddColorScheme("text", _("Texte"), object.GetTextColorScheme());
+
+    Notebook1->AddPage(colorsPanel, "Couleurs");
 }
 
 ButtonObjectEditor::~ButtonObjectEditor()
@@ -313,37 +222,15 @@ ButtonObjectEditor::~ButtonObjectEditor()
 	//*)
 }
 
-void ButtonObjectEditor::UseCorrectForeground(wxButton *bt)
-{
-    if(bt->GetBackgroundColour().Red() < 128 && bt->GetBackgroundColour().Green() < 128 && bt->GetBackgroundColour().Blue() < 128)
-        bt->SetForegroundColour(wxColour(255, 255, 255));
-    else
-        bt->SetForegroundColour(wxColour(0, 0, 0));
-}
-
 
 void ButtonObjectEditor::OnokBtClick(wxCommandEvent& event)
 {
     object.SetFont(string(ToString(fontEdit->GetValue().mb_str())));
     object.SetCharacterSize(sizeEdit->GetValue());
 
-    ColorScheme backgroundColorScheme(WidgetsCommonTools::GetSfColorFromWxColour(focusedBackgroundBt->GetBackgroundColour()),
-                                      WidgetsCommonTools::GetSfColorFromWxColour(normalBackgroundBt->GetBackgroundColour()),
-                                      WidgetsCommonTools::GetSfColorFromWxColour(hoveredBackgroundBt->GetBackgroundColour()),
-                                      WidgetsCommonTools::GetSfColorFromWxColour(disabledBackgroundBt->GetBackgroundColour()));
-    object.SetBackgroundColorScheme(backgroundColorScheme);
-
-    ColorScheme borderColorScheme(WidgetsCommonTools::GetSfColorFromWxColour(focusedBorderBt->GetBackgroundColour()),
-                                  WidgetsCommonTools::GetSfColorFromWxColour(normalBorderBt->GetBackgroundColour()),
-                                  WidgetsCommonTools::GetSfColorFromWxColour(hoveredBorderBt->GetBackgroundColour()),
-                                  WidgetsCommonTools::GetSfColorFromWxColour(disabledBorderBt->GetBackgroundColour()));
-    object.SetBorderColorScheme(borderColorScheme);
-
-    ColorScheme textColorScheme(WidgetsCommonTools::GetSfColorFromWxColour(focusedTextBt->GetBackgroundColour()),
-                                WidgetsCommonTools::GetSfColorFromWxColour(normalTextBt->GetBackgroundColour()),
-                                WidgetsCommonTools::GetSfColorFromWxColour(hoveredTextBt->GetBackgroundColour()),
-                                WidgetsCommonTools::GetSfColorFromWxColour(disabledTextBt->GetBackgroundColour()));
-    object.SetTextColorScheme(textColorScheme);
+    object.SetBackgroundColorScheme(colorsPanel->GetColorScheme("background"));
+    object.SetBorderColorScheme(colorsPanel->GetColorScheme("border"));
+    object.SetTextColorScheme(colorsPanel->GetColorScheme("text"));
 
     object.SetBorderWidth(borderWidthSpinCtrl->GetValue());
     object.SetPadding(paddingSpinCtrl->GetValue());
@@ -369,209 +256,6 @@ void ButtonObjectEditor::OnSizeEditChange(wxSpinEvent& event)
 {
 }
 
-void ButtonObjectEditor::OnfocusedBackgroundBtClick(wxCommandEvent& event)
-{
-    wxColour color = wxGetColourFromUser(this, focusedBackgroundBt->GetBackgroundColour());
-    if ( color.IsOk() )
-        focusedBackgroundBt->SetBackgroundColour(color);
-
-    if ( color.IsOk() )
-    {
-        if(color.Red() < 128 && color.Green() < 128 && color.Blue() < 128)
-            focusedBackgroundBt->SetForegroundColour(wxColour(255, 255, 255));
-        else
-            focusedBackgroundBt->SetForegroundColour(wxColour(0, 0, 0));
-    }
-
-    return;
-}
-
-void ButtonObjectEditor::OnhoveredBackgroundBtClick(wxCommandEvent& event)
-{
-    wxColour color = wxGetColourFromUser(this, hoveredBackgroundBt->GetBackgroundColour());
-    if ( color.IsOk() )
-        hoveredBackgroundBt->SetBackgroundColour(color);
-
-    if ( color.IsOk() )
-    {
-        if(color.Red() < 128 && color.Green() < 128 && color.Blue() < 128)
-            hoveredBackgroundBt->SetForegroundColour(wxColour(255, 255, 255));
-        else
-            hoveredBackgroundBt->SetForegroundColour(wxColour(0, 0, 0));
-    }
-
-    return;
-}
-
-void ButtonObjectEditor::OnnormalBackgroundBtClick(wxCommandEvent& event)
-{
-    wxColour color = wxGetColourFromUser(this, normalBackgroundBt->GetBackgroundColour());
-    if ( color.IsOk() )
-        normalBackgroundBt->SetBackgroundColour(color);
-
-    if ( color.IsOk() )
-    {
-        if(color.Red() < 128 && color.Green() < 128 && color.Blue() < 128)
-            normalBackgroundBt->SetForegroundColour(wxColour(255, 255, 255));
-        else
-            normalBackgroundBt->SetForegroundColour(wxColour(0, 0, 0));
-    }
-
-    return;
-}
-
-void ButtonObjectEditor::OndisabledBackgroundBtClick(wxCommandEvent& event)
-{
-    wxColour color = wxGetColourFromUser(this, disabledBackgroundBt->GetBackgroundColour());
-    if ( color.IsOk() )
-        disabledBackgroundBt->SetBackgroundColour(color);
-
-    if ( color.IsOk() )
-    {
-        if(color.Red() < 128 && color.Green() < 128 && color.Blue() < 128)
-            disabledBackgroundBt->SetForegroundColour(wxColour(255, 255, 255));
-        else
-            disabledBackgroundBt->SetForegroundColour(wxColour(0, 0, 0));
-    }
-
-    return;
-}
-
-void ButtonObjectEditor::OnfocusedBorderBtClick(wxCommandEvent& event)
-{
-    wxColour color = wxGetColourFromUser(this, focusedBorderBt->GetBackgroundColour());
-    if ( color.IsOk() )
-        focusedBorderBt->SetBackgroundColour(color);
-
-    if ( color.IsOk() )
-    {
-        if(color.Red() < 128 && color.Green() < 128 && color.Blue() < 128)
-            focusedBorderBt->SetForegroundColour(wxColour(255, 255, 255));
-        else
-            focusedBorderBt->SetForegroundColour(wxColour(0, 0, 0));
-    }
-
-    return;
-}
-
-void ButtonObjectEditor::OnhoveredBorderBtClick(wxCommandEvent& event)
-{
-    wxColour color = wxGetColourFromUser(this, hoveredBorderBt->GetBackgroundColour());
-    if ( color.IsOk() )
-        hoveredBorderBt->SetBackgroundColour(color);
-
-    if ( color.IsOk() )
-    {
-        if(color.Red() < 128 && color.Green() < 128 && color.Blue() < 128)
-            hoveredBorderBt->SetForegroundColour(wxColour(255, 255, 255));
-        else
-            hoveredBorderBt->SetForegroundColour(wxColour(0, 0, 0));
-    }
-
-    return;
-}
-
-void ButtonObjectEditor::OnnormalBorderBtClick(wxCommandEvent& event)
-{
-    wxColour color = wxGetColourFromUser(this, normalBorderBt->GetBackgroundColour());
-    if ( color.IsOk() )
-        normalBorderBt->SetBackgroundColour(color);
-
-    if ( color.IsOk() )
-    {
-        if(color.Red() < 128 && color.Green() < 128 && color.Blue() < 128)
-            normalBorderBt->SetForegroundColour(wxColour(255, 255, 255));
-        else
-            normalBorderBt->SetForegroundColour(wxColour(0, 0, 0));
-    }
-
-    return;
-}
-
-void ButtonObjectEditor::OndisabledBorderBtClick(wxCommandEvent& event)
-{
-    wxColour color = wxGetColourFromUser(this, disabledBorderBt->GetBackgroundColour());
-    if ( color.IsOk() )
-        disabledBorderBt->SetBackgroundColour(color);
-
-    if ( color.IsOk() )
-    {
-        if(color.Red() < 128 && color.Green() < 128 && color.Blue() < 128)
-            disabledBorderBt->SetForegroundColour(wxColour(255, 255, 255));
-        else
-            disabledBorderBt->SetForegroundColour(wxColour(0, 0, 0));
-    }
-
-    return;
-}
-
-void ButtonObjectEditor::OnfocusedTextBtClick(wxCommandEvent& event)
-{
-    wxColour color = wxGetColourFromUser(this, focusedTextBt->GetBackgroundColour());
-    if ( color.IsOk() )
-        focusedTextBt->SetBackgroundColour(color);
-
-    if ( color.IsOk() )
-    {
-        if(color.Red() < 128 && color.Green() < 128 && color.Blue() < 128)
-            focusedTextBt->SetForegroundColour(wxColour(255, 255, 255));
-        else
-            focusedTextBt->SetForegroundColour(wxColour(0, 0, 0));
-    }
-
-    return;
-}
-
-void ButtonObjectEditor::OnhoveredTextBtClick(wxCommandEvent& event)
-{
-    wxColour color = wxGetColourFromUser(this, hoveredTextBt->GetBackgroundColour());
-    if ( color.IsOk() )
-        hoveredTextBt->SetBackgroundColour(color);
-
-    if ( color.IsOk() )
-    {
-        if(color.Red() < 128 && color.Green() < 128 && color.Blue() < 128)
-            hoveredTextBt->SetForegroundColour(wxColour(255, 255, 255));
-        else
-            hoveredTextBt->SetForegroundColour(wxColour(0, 0, 0));
-    }
-
-    return;
-}
-
-void ButtonObjectEditor::OnnormalTextBtClick(wxCommandEvent& event)
-{
-    wxColour color = wxGetColourFromUser(this, normalTextBt->GetBackgroundColour());
-    if ( color.IsOk() )
-        normalTextBt->SetBackgroundColour(color);
-
-    if ( color.IsOk() )
-    {
-        if(color.Red() < 128 && color.Green() < 128 && color.Blue() < 128)
-            normalTextBt->SetForegroundColour(wxColour(255, 255, 255));
-        else
-            normalTextBt->SetForegroundColour(wxColour(0, 0, 0));
-    }
-
-    return;
-}
-
-void ButtonObjectEditor::OndisabledTextBtClick(wxCommandEvent& event)
-{
-    wxColour color = wxGetColourFromUser(this, disabledTextBt->GetBackgroundColour());
-    if ( color.IsOk() )
-        disabledTextBt->SetBackgroundColour(color);
-
-    if ( color.IsOk() )
-    {
-        if(color.Red() < 128 && color.Green() < 128 && color.Blue() < 128)
-            disabledTextBt->SetForegroundColour(wxColour(255, 255, 255));
-        else
-            disabledTextBt->SetForegroundColour(wxColour(0, 0, 0));
-    }
-
-    return;
-}
 
 void ButtonObjectEditor::OnButton1Click(wxCommandEvent& event)
 {
@@ -580,7 +264,7 @@ void ButtonObjectEditor::OnButton1Click(wxCommandEvent& event)
 
 void ButtonObjectEditor::OnNotebook1PageChanged(wxNotebookEvent& event)
 {
-    if(Notebook1->GetSelection() == 0)
+    /*if(Notebook1->GetSelection() == 0)
     {
         m_mgr.GetPane(editorImagesPnl).Show(true);
     }
@@ -588,7 +272,7 @@ void ButtonObjectEditor::OnNotebook1PageChanged(wxNotebookEvent& event)
     {
         m_mgr.GetPane(editorImagesPnl).Show(false);
     }
-    m_mgr.Update();
+    m_mgr.Update();*/
 }
 
 void ButtonObjectEditor::OnButton2Click(wxCommandEvent& event)

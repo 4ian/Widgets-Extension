@@ -2,7 +2,7 @@
 Widgets Extension
 Extension providing graphical widgets.
 
-Copyright (c) 2011 Victor Levasseur <victorlevasseur01@orange.fr>
+Copyright (c) 2011-2012 Victor Levasseur <victorlevasseur01@orange.fr>
 
 This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
 Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
@@ -33,8 +33,6 @@ Permission is granted to anyone to use this software for any purpose, including 
 #include "SFGUI/Engine.hpp"
 #include "SFGUI/Context.hpp"
 
-#include "../WidgetWrapper.h"
-
 #include <string>
 #include "ComboBoxObject.h"
 
@@ -55,8 +53,7 @@ borderWidth(1),
 padding(5)
 {
     //Create the SFGUI ComboBox object
-    sfg::ComboBox::Ptr tmpObj = sfg::ComboBox::Create();
-    obje = new WidgetWrapper<sfg::ComboBox>(tmpObj);
+    obj = sfg::ComboBox::Create();
 
     //Default size of the object
     SetWidth(250);
@@ -90,9 +87,9 @@ padding(5)
                                   sf::Color(61, 123, 173, 255),
                                   sf::Color(173, 173, 173, 255));
 
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
 
-    obje->Get()->SetId(ToString<void*>(this));
+    obj->SetId(ToString<void*>(this));
 
     ConnectSignals();
     ResetEventInformations();
@@ -119,8 +116,7 @@ void ComboBoxObject::Init(const ComboBoxObject &other)
 {
     position = other.position;
     fontName = other.fontName;
-    sfg::ComboBox::Ptr tmpObj = sfg::ComboBox::Create();
-    obje = new WidgetWrapper<sfg::ComboBox>(tmpObj);
+    obj = sfg::ComboBox::Create();
     backgroundColor = new ColorScheme(*(other.backgroundColor));
     borderColor = new ColorScheme(*(other.borderColor));
     textColor = new ColorScheme(*(other.textColor));
@@ -132,7 +128,7 @@ void ComboBoxObject::Init(const ComboBoxObject &other)
     borderWidth = other.borderWidth;
     padding = other.padding;
 
-    obje->Get()->SetId(ToString<void*>(this));
+    obj->SetId(ToString<void*>(this));
 
     ClearAndSetElements(other.GetAllElements());
     SelectElement(other.GetSelectedElement());
@@ -146,8 +142,8 @@ void ComboBoxObject::Init(const ComboBoxObject &other)
 
 void ComboBoxObject::ConnectSignals()
 {
-    obje->Get()->OnMouseButtonRelease.Connect(&ComboBoxObject::OnMouseClick, this);
-    obje->Get()->OnStateChange.Connect(&ComboBoxObject::OnStateChanged, this);
+    obj->OnMouseButtonRelease.Connect(&ComboBoxObject::OnMouseClick, this);
+    obj->OnStateChange.Connect(&ComboBoxObject::OnStateChanged, this);
 }
 
 bool ComboBoxObject::SIG_OnStateChanged(const std::string &newStateVar, RuntimeScene &scene)
@@ -158,13 +154,13 @@ bool ComboBoxObject::SIG_OnStateChanged(const std::string &newStateVar, RuntimeS
         if(newStateVar != "")
         {
             std::string newStateStr = "";
-            if(obje->Get()->GetState() == sfg::Widget::ACTIVE)
+            if(obj->GetState() == sfg::Widget::ACTIVE)
                 newStateStr = "Active";
-            else if(obje->Get()->GetState() == sfg::Widget::PRELIGHT)
+            else if(obj->GetState() == sfg::Widget::PRELIGHT)
                 newStateStr = "Hovered";
-            else if(obje->Get()->GetState() == sfg::Widget::NORMAL)
+            else if(obj->GetState() == sfg::Widget::NORMAL)
                 newStateStr = "Normal";
-            else if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+            else if(obj->GetState() == sfg::Widget::INSENSITIVE)
                 newStateStr = "Disabled";
             else
                 newStateStr = "Unknown";
@@ -245,15 +241,13 @@ ComboBoxObject::~ComboBoxObject()
     delete textColor;
     delete arrowColor;
     delete highlightColor;
-
-    delete obje;
 }
 
 void ComboBoxObject::UpdateSize()
 {
-    obje->Get()->SetRequisition();
-    obje->Get()->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
-    obje->Get()->SetAllocation(sf::FloatRect(GetX(), GetY(), GetWidth(), GetHeight()));
+    obj->SetRequisition();
+    obj->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
+    obj->SetAllocation(sf::FloatRect(GetX(), GetY(), GetWidth(), GetHeight()));
 }
 
 void ComboBoxObject::LoadFromXml(const TiXmlElement * elem)
@@ -465,7 +459,7 @@ bool ComboBoxObject::Draw( sf::RenderTarget & renderTarget )
     sfg::CullingTarget renderer(renderTarget);
     renderer.Cull(false);
 
-    obje->Get()->Expose(renderer);
+    obj->Expose(renderer);
 
     return true;
 }
@@ -479,7 +473,7 @@ bool ComboBoxObject::DrawEdittime(sf::RenderTarget & renderTarget)
     sfg::CullingTarget renderer(renderTarget);
     renderer.Cull(false);
 
-    obje->Get()->Expose(renderer);
+    obj->Expose(renderer);
 
     return true;
 }
@@ -520,13 +514,13 @@ void ComboBoxObject::GetPropertyForDebugger(unsigned int propertyNb, string & na
     else if ( propertyNb == 1 )
     {
         name = _("Etat");
-        if(obje->Get()->GetState() == sfg::Widget::ACTIVE)
+        if(obj->GetState() == sfg::Widget::ACTIVE)
             value = _("Actif");
-        else if(obje->Get()->GetState() == sfg::Widget::PRELIGHT)
+        else if(obj->GetState() == sfg::Widget::PRELIGHT)
             value = _("Survolé");
-        else if(obje->Get()->GetState() == sfg::Widget::NORMAL)
+        else if(obj->GetState() == sfg::Widget::NORMAL)
             value = _("Normal");
-        else if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+        else if(obj->GetState() == sfg::Widget::INSENSITIVE)
             value = _("Désactivé");
         else
             value = _("Inconnu");
@@ -550,8 +544,8 @@ unsigned int ComboBoxObject::GetNumberOfProperties() const
 
 void ComboBoxObject::OnPositionChanged()
 {
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
-    obje->Get()->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
 }
 
 /**
@@ -634,7 +628,7 @@ void ComboBoxObject::UpdateTime(float ElapsedTime)
 {
     ResetEventInformations();
 
-    if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+    if(obj->GetState() == sfg::Widget::INSENSITIVE)
         return;
 
     //Process all events received by the window
@@ -650,7 +644,7 @@ void ComboBoxObject::UpdateTime(float ElapsedTime)
             event.MouseButton.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).x;
             event.MouseButton.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else if(events[i].Type == sf::Event::MouseButtonReleased)
         {
@@ -660,7 +654,7 @@ void ComboBoxObject::UpdateTime(float ElapsedTime)
             event.MouseButton.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).x;
             event.MouseButton.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else if(events[i].Type == sf::Event::MouseMoved)
         {
@@ -669,10 +663,10 @@ void ComboBoxObject::UpdateTime(float ElapsedTime)
             event.MouseMove.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseMove.X, events[i].MouseMove.Y), GetLayer()).x;
             event.MouseMove.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseMove.X, events[i].MouseMove.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else
-            obje->Get()->HandleEvent(events[i]);
+            obj->HandleEvent(events[i]);
     }
 
 
@@ -682,66 +676,66 @@ void ComboBoxObject::UpdateTime(float ElapsedTime)
 void ComboBoxObject::UpdateProperties()
 {
     //Update BackgroundColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId(), "BackgroundColor", backgroundColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId() + ":PRELIGHT", "BackgroundColor", backgroundColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId() + ":ACTIVE", "BackgroundColor", backgroundColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId() + ":INSENSITIVE", "BackgroundColor", backgroundColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId(), "BackgroundColor", backgroundColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId() + ":PRELIGHT", "BackgroundColor", backgroundColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId() + ":ACTIVE", "BackgroundColor", backgroundColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId() + ":INSENSITIVE", "BackgroundColor", backgroundColor->disabledColor );
 
     //Update BorderColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId(), "BorderColor", borderColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId() + ":PRELIGHT", "BorderColor", borderColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId() + ":ACTIVE", "BorderColor", borderColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId() + ":INSENSITIVE", "BorderColor", borderColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId(), "BorderColor", borderColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId() + ":PRELIGHT", "BorderColor", borderColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId() + ":ACTIVE", "BorderColor", borderColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId() + ":INSENSITIVE", "BorderColor", borderColor->disabledColor );
 
     //Update TextColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId(), "Color", textColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId() + ":PRELIGHT", "Color", textColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId() + ":ACTIVE", "Color", textColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId() + ":INSENSITIVE", "Color", textColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId(), "Color", textColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId() + ":PRELIGHT", "Color", textColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId() + ":ACTIVE", "Color", textColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId() + ":INSENSITIVE", "Color", textColor->disabledColor );
 
     //Update ArrowColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId(), "ArrowColor", arrowColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId() + ":PRELIGHT", "ArrowColor", arrowColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId() + ":ACTIVE", "ArrowColor", arrowColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId() + ":INSENSITIVE", "ArrowColor", arrowColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId(), "ArrowColor", arrowColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId() + ":PRELIGHT", "ArrowColor", arrowColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId() + ":ACTIVE", "ArrowColor", arrowColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId() + ":INSENSITIVE", "ArrowColor", arrowColor->disabledColor );
 
     //Update HightlightColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obje->Get()->GetId(), "HighlightedColor", highlightColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "ComboBox#" + obj->GetId(), "HighlightedColor", highlightColor->focusedColor );
 
     //Update font size
-    sfg::Context::Get().GetEngine().SetProperty<unsigned int>("ComboBox#" + obje->Get()->GetId(), "FontSize", GetCharacterSize());
-    sfg::Context::Get().GetEngine().SetProperty<std::string>("ComboBox#" + obje->Get()->GetId(), "FontName", std::string("gdres:") + GetFont());
+    sfg::Context::Get().GetEngine().SetProperty<unsigned int>("ComboBox#" + obj->GetId(), "FontSize", GetCharacterSize());
+    sfg::Context::Get().GetEngine().SetProperty<std::string>("ComboBox#" + obj->GetId(), "FontName", std::string("gdres:") + GetFont());
 
     //Update border width and padding
-    sfg::Context::Get().GetEngine().SetProperty<float>("ComboBox#" + obje->Get()->GetId(), "BorderWidth", static_cast<float>(GetBorderWidth()));
-    sfg::Context::Get().GetEngine().SetProperty<float>("ComboBox#" + obje->Get()->GetId(), "Padding", static_cast<float>(GetPadding()));
+    sfg::Context::Get().GetEngine().SetProperty<float>("ComboBox#" + obj->GetId(), "BorderWidth", static_cast<float>(GetBorderWidth()));
+    sfg::Context::Get().GetEngine().SetProperty<float>("ComboBox#" + obj->GetId(), "Padding", static_cast<float>(GetPadding()));
 
 }
 
 void ComboBoxObject::SetActive(bool is)
 {
-    if(obje->Get()->GetState() != sfg::Widget::INSENSITIVE && is)
-        obje->Get()->SetState(sfg::Widget::ACTIVE);
-    else if(obje->Get()->GetState() != sfg::Widget::INSENSITIVE && !is)
-        obje->Get()->SetState(sfg::Widget::NORMAL);
+    if(obj->GetState() != sfg::Widget::INSENSITIVE && is)
+        obj->SetState(sfg::Widget::ACTIVE);
+    else if(obj->GetState() != sfg::Widget::INSENSITIVE && !is)
+        obj->SetState(sfg::Widget::NORMAL);
 }
 
 bool ComboBoxObject::IsActive()
 {
-    return (obje->Get()->GetState() == sfg::Widget::ACTIVE);
+    return (obj->GetState() == sfg::Widget::ACTIVE);
 }
 
 void ComboBoxObject::SetDisabled(bool is)
 {
     if(is)
-        obje->Get()->SetState(sfg::Widget::INSENSITIVE);
+        obj->SetState(sfg::Widget::INSENSITIVE);
     else
-        obje->Get()->SetState(sfg::Widget::NORMAL);
+        obj->SetState(sfg::Widget::NORMAL);
 }
 
 bool ComboBoxObject::IsDisabled()
 {
-    return (obje->Get()->GetState() == sfg::Widget::INSENSITIVE);
+    return (obj->GetState() == sfg::Widget::INSENSITIVE);
 }
 
 
@@ -896,9 +890,9 @@ const ElementList& ComboBoxObject::GetAllElements() const
     listOfElements.clear();
 
     unsigned int a = 0;
-    for (a = 0; a < obje->Get()->GetItemCount(); a++)
+    for (a = 0; a < obj->GetItemCount(); a++)
     {
-        listOfElements.push_back(obje->Get()->GetItem(a));
+        listOfElements.push_back(obj->GetItem(a));
     }
 
     return listOfElements;
@@ -906,15 +900,15 @@ const ElementList& ComboBoxObject::GetAllElements() const
 
 void ComboBoxObject::ClearAndSetElements(const ElementList &list)
 {
-    while(obje->Get()->GetItemCount() > 0)
+    while(obj->GetItemCount() > 0)
     {
-        obje->Get()->RemoveItem(0);
+        obj->RemoveItem(0);
     }
 
     unsigned int a = 0;
     for(a = 0; a < list.size(); a++)
     {
-        obje->Get()->AppendItem(sf::String(list.at(a)));
+        obj->AppendItem(sf::String(list.at(a)));
     }
 }
 
@@ -935,10 +929,10 @@ void ComboBoxObject::LoadElementsFromXml(const TiXmlElement *elem)
 
 void ComboBoxObject::SaveElementsToXml(TiXmlElement *elem)
 {
-    for(unsigned int a = 0; a < obje->Get()->GetItemCount(); a++)
+    for(unsigned int a = 0; a < obj->GetItemCount(); a++)
     {
         TiXmlElement *subElem = new TiXmlElement("Element");
-        TiXmlText *textElem = new TiXmlText(obje->Get()->GetItem(a).ToAnsiString().c_str());
+        TiXmlText *textElem = new TiXmlText(obj->GetItem(a).ToAnsiString().c_str());
         subElem->LinkEndChild(textElem);
 
         elem->LinkEndChild(subElem);
@@ -947,39 +941,39 @@ void ComboBoxObject::SaveElementsToXml(TiXmlElement *elem)
 
 int ComboBoxObject::GetSelectedElement() const
 {
-    return obje->Get()->GetSelectedItem() != sfg::ComboBox::NONE ? obje->Get()->GetSelectedItem() : -1;
+    return obj->GetSelectedItem() != sfg::ComboBox::NONE ? obj->GetSelectedItem() : -1;
 }
 
 void ComboBoxObject::SelectElement(unsigned int ele)
 {
-    obje->Get()->SelectItem(ele);
+    obj->SelectItem(ele);
 }
 
 std::string ComboBoxObject::GetElementString(unsigned int ele) const
 {
-    return obje->Get()->GetItem(ele).ToAnsiString();
+    return obj->GetItem(ele).ToAnsiString();
 }
 
 void ComboBoxObject::SetElementString(unsigned int ele, const std::string &str)
 {
-    obje->Get()->ChangeItem(ele, sf::String(str));
+    obj->ChangeItem(ele, sf::String(str));
 }
 
 unsigned int ComboBoxObject::GetElementsCount() const
 {
-    return obje->Get()->GetItemCount();
+    return obj->GetItemCount();
 }
 
 void ComboBoxObject::AddElement(unsigned int index, const std::string &str)
 {
-    if(index <= obje->Get()->GetItemCount())
-        obje->Get()->InsertItem(index, sf::String(str));
+    if(index <= obj->GetItemCount())
+        obj->InsertItem(index, sf::String(str));
 }
 
 void ComboBoxObject::DeleteElement(unsigned int index)
 {
-    if(index < obje->Get()->GetItemCount())
-        obje->Get()->RemoveItem(index);
+    if(index < obj->GetItemCount())
+        obj->RemoveItem(index);
 }
 
 /**

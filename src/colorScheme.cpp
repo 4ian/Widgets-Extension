@@ -2,7 +2,7 @@
 Widgets Extension
 Extension providing graphical widgets.
 
-Copyright (c) 2011 Victor Levasseur <victorlevasseur01@orange.fr>
+Copyright (c) 2011-2012 Victor Levasseur <victorlevasseur01@orange.fr>
 
 This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
 Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
@@ -16,6 +16,11 @@ Permission is granted to anyone to use this software for any purpose, including 
 #include "colorScheme.h"
 
 #include "GDL/tinyxml.h"
+#include "GDL/CommonTools.h"
+
+#if defined(GD_IDE_ONLY)
+#include <wx/string.h>
+#endif
 
 using namespace std;
 
@@ -163,4 +168,67 @@ void ColorScheme::SaveToXml(TiXmlElement * elem)
     disabledColorElem->SetAttribute("g", disabledColor.g);
     disabledColorElem->SetAttribute("b", disabledColor.b);
 }
+#endif
+
+#if defined(GD_IDE_ONLY)
+
+const wxString& ColorScheme::ToWxString()
+{
+    static wxString result;
+
+    result = "";
+
+    result += wxString(ToString<int>(focusedColor.r).c_str()) + ";" + wxString(ToString<int>(focusedColor.g).c_str()) + ";" + wxString(ToString<int>(focusedColor.b).c_str()) + ";" + wxString(ToString<int>(focusedColor.a).c_str()) + "/";
+    result += wxString(ToString<int>(hoveredColor.r).c_str()) + ";" + wxString(ToString<int>(hoveredColor.g).c_str()) + ";" + wxString(ToString<int>(hoveredColor.b).c_str()) + ";" + wxString(ToString<int>(hoveredColor.a).c_str()) + "/";
+    result += wxString(ToString<int>(unfocusedColor.r).c_str()) + ";" + wxString(ToString<int>(unfocusedColor.g).c_str()) + ";" + wxString(ToString<int>(unfocusedColor.b).c_str()) + ";" + wxString(ToString<int>(unfocusedColor.a).c_str()) + "/";
+    result += wxString(ToString<int>(disabledColor.r).c_str()) + ";" + wxString(ToString<int>(disabledColor.g).c_str()) + ";" + wxString(ToString<int>(disabledColor.b).c_str()) + ";" + wxString(ToString<int>(disabledColor.a).c_str());
+
+    return result;
+}
+
+void ColorScheme::FromWxString(wxString &str)
+{
+    std::vector<std::string> colorsVector = SplitString<std::string>(ToString(str), '/');
+
+    for(unsigned int a = 0; a < 4; a++)
+    {
+        if(colorsVector.size() < a)
+            return;
+
+        std::vector<std::string> composantVector = SplitString<std::string>(colorsVector[a], ';');
+
+        if(composantVector.size() < 4)
+            return;
+
+        if(a == 0)
+        {
+            focusedColor.r = ToInt(composantVector[0]);
+            focusedColor.g = ToInt(composantVector[1]);
+            focusedColor.b = ToInt(composantVector[2]);
+            focusedColor.a = ToInt(composantVector[3]);
+        }
+        else if(a == 1)
+        {
+            hoveredColor.r = ToInt(composantVector[0]);
+            hoveredColor.g = ToInt(composantVector[1]);
+            hoveredColor.b = ToInt(composantVector[2]);
+            hoveredColor.a = ToInt(composantVector[3]);
+        }
+        else if(a == 2)
+        {
+            unfocusedColor.r = ToInt(composantVector[0]);
+            unfocusedColor.g = ToInt(composantVector[1]);
+            unfocusedColor.b = ToInt(composantVector[2]);
+            unfocusedColor.a = ToInt(composantVector[3]);
+        }
+        else if(a == 3)
+        {
+            disabledColor.r = ToInt(composantVector[0]);
+            disabledColor.g = ToInt(composantVector[1]);
+            disabledColor.b = ToInt(composantVector[2]);
+            disabledColor.a = ToInt(composantVector[3]);
+        }
+    }
+}
+
 #endif

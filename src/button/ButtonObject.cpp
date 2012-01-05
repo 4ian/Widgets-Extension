@@ -2,7 +2,7 @@
 Widgets Extension
 Extension providing graphical widgets.
 
-Copyright (c) 2011 Victor Levasseur <victorlevasseur01@orange.fr>
+Copyright (c) 2011-2012 Victor Levasseur <victorlevasseur01@orange.fr>
 
 This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
 Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
@@ -36,8 +36,6 @@ Permission is granted to anyone to use this software for any purpose, including 
 #include "SFGUI/Engine.hpp"
 #include "SFGUI/Context.hpp"
 
-#include "../WidgetWrapper.h"
-
 #include <string>
 #include "ButtonObject.h"
 
@@ -59,12 +57,7 @@ borderWidth(1),
 padding(5)
 {
     //Create the SFGUI Button object
-    //obje->Get() = ;
-    sfg::Button::Ptr tmpObj = sfg::Button::Create("Texte");
-    obje = new WidgetWrapper<sfg::Button>(tmpObj);
-
-    //WidgetManager::getInstance()->mainWidget->Pack(obje->Get());
-
+    obj = sfg::Button::Create("Texte");
     SetString("Bouton");
 
     //Default size of the object
@@ -89,9 +82,9 @@ padding(5)
                                 sf::Color(0, 0, 0, 255),
                                 sf::Color(100, 100, 100, 255));
 
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
 
-    obje->Get()->SetId(ToString<void*>(this));
+    obj->SetId(ToString<void*>(this));
 
     ConnectSignals();
     ResetEventInformations();
@@ -118,8 +111,7 @@ void ButtonObject::Init(const ButtonObject &other)
 {
     position = other.position;
     fontName = other.fontName;
-    sfg::Button::Ptr tmpObj = sfg::Button::Create(other.obje->Get()->GetLabel());
-    obje = new WidgetWrapper<sfg::Button>(tmpObj);
+    obj = sfg::Button::Create(other.obj->GetLabel());
     backgroundColor = new ColorScheme(*(other.backgroundColor));
     borderColor = new ColorScheme(*(other.borderColor));
     textColor = new ColorScheme(*(other.textColor));
@@ -130,7 +122,7 @@ void ButtonObject::Init(const ButtonObject &other)
     padding = other.padding;
     imageName = other.imageName;
 
-    obje->Get()->SetId(ToString<void*>(this));
+    obj->SetId(ToString<void*>(this));
 
     ConnectSignals();
     ResetEventInformations();
@@ -141,8 +133,8 @@ void ButtonObject::Init(const ButtonObject &other)
 
 void ButtonObject::ConnectSignals()
 {
-    obje->Get()->OnClick.Connect(&ButtonObject::OnMouseClick, this);
-    obje->Get()->OnStateChange.Connect(&ButtonObject::OnStateChanged, this);
+    obj->OnClick.Connect(&ButtonObject::OnMouseClick, this);
+    obj->OnStateChange.Connect(&ButtonObject::OnStateChanged, this);
 }
 
 bool ButtonObject::SIG_OnStateChanged(const std::string &newStateVar, RuntimeScene &scene)
@@ -153,13 +145,13 @@ bool ButtonObject::SIG_OnStateChanged(const std::string &newStateVar, RuntimeSce
         if(newStateVar != "")
         {
             std::string newStateStr = "";
-            if(obje->Get()->GetState() == sfg::Widget::ACTIVE)
+            if(obj->GetState() == sfg::Widget::ACTIVE)
                 newStateStr = "Active";
-            else if(obje->Get()->GetState() == sfg::Widget::PRELIGHT)
+            else if(obj->GetState() == sfg::Widget::PRELIGHT)
                 newStateStr = "Hovered";
-            else if(obje->Get()->GetState() == sfg::Widget::NORMAL)
+            else if(obj->GetState() == sfg::Widget::NORMAL)
                 newStateStr = "Normal";
-            else if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+            else if(obj->GetState() == sfg::Widget::INSENSITIVE)
                 newStateStr = "Disabled";
             else
                 newStateStr = "Unknown";
@@ -236,15 +228,13 @@ ButtonObject::~ButtonObject()
     delete borderColor;
     delete backgroundColor;
     delete textColor;
-
-    delete obje;
 }
 
 void ButtonObject::UpdateSize()
 {
-    obje->Get()->SetRequisition();
-    obje->Get()->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
-    obje->Get()->SetAllocation(sf::FloatRect(GetX(), GetY(), GetWidth(), GetHeight()));
+    obj->SetRequisition();
+    obj->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
+    obj->SetAllocation(sf::FloatRect(GetX(), GetY(), GetWidth(), GetHeight()));
 }
 
 void ButtonObject::LoadFromXml(const TiXmlElement * elem)
@@ -427,7 +417,7 @@ bool ButtonObject::Draw( sf::RenderTarget & renderTarget )
     sfg::CullingTarget renderer(renderTarget);
     renderer.Cull(false);
 
-    obje->Get()->Expose(renderer);
+    obj->Expose(renderer);
 
     return true;
 }
@@ -441,7 +431,7 @@ bool ButtonObject::DrawEdittime(sf::RenderTarget & renderTarget)
     sfg::CullingTarget renderer(renderTarget);
     renderer.Cull(false);
 
-    obje->Get()->Expose(renderer);
+    obj->Expose(renderer);
 
     return true;
 }
@@ -483,13 +473,13 @@ void ButtonObject::GetPropertyForDebugger(unsigned int propertyNb, string & name
     else if ( propertyNb == 1 )
     {
         name = _("Etat");
-        if(obje->Get()->GetState() == sfg::Widget::ACTIVE)
+        if(obj->GetState() == sfg::Widget::ACTIVE)
             value = _("Actif");
-        else if(obje->Get()->GetState() == sfg::Widget::PRELIGHT)
+        else if(obj->GetState() == sfg::Widget::PRELIGHT)
             value = _("Survolé");
-        else if(obje->Get()->GetState() == sfg::Widget::NORMAL)
+        else if(obj->GetState() == sfg::Widget::NORMAL)
             value = _("Normal");
-        else if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+        else if(obj->GetState() == sfg::Widget::INSENSITIVE)
             value = _("Désactivé");
         else
             value = _("Inconnu");
@@ -513,40 +503,40 @@ unsigned int ButtonObject::GetNumberOfProperties() const
 
 float ButtonObject::GetWidth() const
 {
-    return obje->Get()->GetAllocation().Width;
+    return obj->GetAllocation().Width;
 }
 
 float ButtonObject::GetHeight() const
 {
-    return obje->Get()->GetAllocation().Height;
+    return obj->GetAllocation().Height;
 }
 
 void ButtonObject::SetWidth(float s)
 {
     width = s;
-    obje->Get()->SetAllocation(sf::FloatRect(GetX(), GetY(), s, GetHeight()));
+    obj->SetAllocation(sf::FloatRect(GetX(), GetY(), s, GetHeight()));
 }
 
 void ButtonObject::SetHeight(float s)
 {
     height = s;
-    obje->Get()->SetAllocation(sf::FloatRect(GetX(), GetY(), GetWidth(), s));
+    obj->SetAllocation(sf::FloatRect(GetX(), GetY(), GetWidth(), s));
 }
 
 void ButtonObject::OnPositionChanged()
 {
-    obje->Get()->SetPosition( sf::Vector2f( GetX(), GetY() ) );
-    obje->Get()->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
+    obj->SetPosition( sf::Vector2f( GetX(), GetY() ) );
+    obj->SetRequisition( sf::Vector2f( GetWidth() , GetHeight() ) );
 }
 
 void ButtonObject::SetString(const std::string &str)
 {
-    obje->Get()->SetLabel(str);
+    obj->SetLabel(str);
 }
 
 std::string ButtonObject::GetString() const
 {
-    return obje->Get()->GetLabel().ToAnsiString();
+    return obj->GetLabel().ToAnsiString();
 }
 
 /**
@@ -629,7 +619,7 @@ void ButtonObject::UpdateTime(float ElapsedTime)
 {
     ResetEventInformations();
 
-    if(obje->Get()->GetState() == sfg::Widget::INSENSITIVE)
+    if(obj->GetState() == sfg::Widget::INSENSITIVE)
         return;
 
     //Process all events received by the window
@@ -645,7 +635,7 @@ void ButtonObject::UpdateTime(float ElapsedTime)
             event.MouseButton.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).x;
             event.MouseButton.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else if(events[i].Type == sf::Event::MouseButtonReleased)
         {
@@ -655,7 +645,7 @@ void ButtonObject::UpdateTime(float ElapsedTime)
             event.MouseButton.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).x;
             event.MouseButton.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseButton.X, events[i].MouseButton.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else if(events[i].Type == sf::Event::MouseMoved)
         {
@@ -664,10 +654,10 @@ void ButtonObject::UpdateTime(float ElapsedTime)
             event.MouseMove.X = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseMove.X, events[i].MouseMove.Y), GetLayer()).x;
             event.MouseMove.Y = WidgetsCommonTools::GetViewsPosition(*m_scene, sf::Vector2i(events[i].MouseMove.X, events[i].MouseMove.Y), GetLayer()).y;
 
-            obje->Get()->HandleEvent(event);
+            obj->HandleEvent(event);
         }
         else
-            obje->Get()->HandleEvent(events[i]);
+            obj->HandleEvent(events[i]);
     }
 
 
@@ -677,44 +667,44 @@ void ButtonObject::UpdateTime(float ElapsedTime)
 void ButtonObject::UpdateProperties()
 {
     //Update BackgroundColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obje->Get()->GetId(), "BackgroundColor", backgroundColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obje->Get()->GetId() + ":PRELIGHT", "BackgroundColor", backgroundColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obje->Get()->GetId() + ":ACTIVE", "BackgroundColor", backgroundColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obje->Get()->GetId() + ":INSENSITIVE", "BackgroundColor", backgroundColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obj->GetId(), "BackgroundColor", backgroundColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obj->GetId() + ":PRELIGHT", "BackgroundColor", backgroundColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obj->GetId() + ":ACTIVE", "BackgroundColor", backgroundColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obj->GetId() + ":INSENSITIVE", "BackgroundColor", backgroundColor->disabledColor );
 
     //Update BorderColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obje->Get()->GetId(), "BorderColor", borderColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obje->Get()->GetId() + ":PRELIGHT", "BorderColor", borderColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obje->Get()->GetId() + ":ACTIVE", "BorderColor", borderColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obje->Get()->GetId() + ":INSENSITIVE", "BorderColor", borderColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obj->GetId(), "BorderColor", borderColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obj->GetId() + ":PRELIGHT", "BorderColor", borderColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obj->GetId() + ":ACTIVE", "BorderColor", borderColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obj->GetId() + ":INSENSITIVE", "BorderColor", borderColor->disabledColor );
 
     //Update TextColor
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obje->Get()->GetId() + "", "Color", textColor->unfocusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obje->Get()->GetId() + ":PRELIGHT", "Color", textColor->hoveredColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obje->Get()->GetId() + ":ACTIVE", "Color", textColor->focusedColor );
-    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obje->Get()->GetId() + ":INSENSITIVE", "Color", textColor->disabledColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obj->GetId() + "", "Color", textColor->unfocusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obj->GetId() + ":PRELIGHT", "Color", textColor->hoveredColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obj->GetId() + ":ACTIVE", "Color", textColor->focusedColor );
+    sfg::Context::Get().GetEngine().SetProperty<sf::Color>( "Button#" + obj->GetId() + ":INSENSITIVE", "Color", textColor->disabledColor );
 
     //Update font size
-    sfg::Context::Get().GetEngine().SetProperty<unsigned int>("Button#" + obje->Get()->GetId() + "", "FontSize", GetCharacterSize());
-    sfg::Context::Get().GetEngine().SetProperty<std::string>("Button#" + obje->Get()->GetId(), "FontName", std::string("gdres:") + GetFont());
+    sfg::Context::Get().GetEngine().SetProperty<unsigned int>("Button#" + obj->GetId() + "", "FontSize", GetCharacterSize());
+    sfg::Context::Get().GetEngine().SetProperty<std::string>("Button#" + obj->GetId(), "FontName", std::string("gdres:") + GetFont());
 
     //Update border width and padding
-    sfg::Context::Get().GetEngine().SetProperty<float>("Button#" + obje->Get()->GetId(), "BorderWidth", static_cast<float>(GetBorderWidth()));
-    sfg::Context::Get().GetEngine().SetProperty<float>("Button#" + obje->Get()->GetId(), "Padding", static_cast<float>(GetPadding()));
+    sfg::Context::Get().GetEngine().SetProperty<float>("Button#" + obj->GetId(), "BorderWidth", static_cast<float>(GetBorderWidth()));
+    sfg::Context::Get().GetEngine().SetProperty<float>("Button#" + obj->GetId(), "Padding", static_cast<float>(GetPadding()));
 
 }
 
 void ButtonObject::SetDisabled(bool is)
 {
     if(is)
-        obje->Get()->SetState(sfg::Widget::INSENSITIVE);
+        obj->SetState(sfg::Widget::INSENSITIVE);
     else
-        obje->Get()->SetState(sfg::Widget::NORMAL);
+        obj->SetState(sfg::Widget::NORMAL);
 }
 
 bool ButtonObject::IsDisabled()
 {
-    return (obje->Get()->GetState() == sfg::Widget::INSENSITIVE);
+    return (obj->GetState() == sfg::Widget::INSENSITIVE);
 }
 
 
@@ -732,20 +722,18 @@ void ButtonObject::LoadPicture(const ImageManager &imgMan)
 {
     if(imageName == "" || !(imgMan.HasImage(imageName)))
     {
-        obje->Get()->ClearImage();
+        obj->ClearImage();
     }
     else
     {
         boost::shared_ptr<SFMLTextureWrapper> imgPtr = imgMan.GetSFMLTexture(imageName);
 
-        sfg::Image::Ptr tempImg = sfg::Image::Create(imgPtr->image);
-        buttonPic = new WidgetWrapper<sfg::Image>(tempImg);
-
-        obje->Get()->SetImage(buttonPic->Get());
+        buttonPic = sfg::Image::Create(imgPtr->image);
+        obj->SetImage(buttonPic);
     }
 
     UpdateSize();
-    obje->Get()->Refresh();
+    obj->Refresh();
 }
 
 

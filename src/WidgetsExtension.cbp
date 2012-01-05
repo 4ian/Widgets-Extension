@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="..\..\..\Runtime\bin\debug\Widgets.xgdw" prefix_auto="1" extension_auto="0" />
-				<Option object_output="obj\Debug\" />
+				<Option output="../../../Runtime/bin/debug/Widgets.xgdw" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Debug/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
@@ -33,12 +33,12 @@
 					<Add option="-lsfml-system-d" />
 					<Add library="opengl32" />
 					<Add library="glu32" />
-					<Add directory="..\..\..\Runtime\bin\debug" />
+					<Add directory="../../../Runtime/bin/debug" />
 				</Linker>
 			</Target>
 			<Target title="Debug - Edittime">
-				<Option output="..\..\..\IDE\bin\debug\Extensions\Widgets.xgdwe" prefix_auto="1" extension_auto="0" />
-				<Option object_output="obj\Debug Edittime\" />
+				<Option output="../../../IDE/bin/debug/Extensions/Widgets.xgdwe" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Debug Edittime/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
@@ -56,8 +56,9 @@
 					<Add option="-DwxUSE_UNICODE=0" />
 					<Add option="-D__WXDEBUG__" />
 					<Add option="-DWXUSINGDLL" />
-					<Add directory="..\..\..\ExtLibs\wxwidgets\lib\gcc_dll\mswd" />
-					<Add directory="..\..\..\ExtLibs\wxwidgets\include" />
+					<Add option="-DWIDGETS_CS_NEED_CSTRUC" />
+					<Add directory="../../../ExtLibs/wxwidgets/lib/gcc_dll/mswd" />
+					<Add directory="../../../ExtLibs/wxwidgets/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-pg -lgmon" />
@@ -100,14 +101,14 @@
 					<Add option="-loleaut32" />
 					<Add library="opengl32" />
 					<Add library="glu32" />
-					<Add directory="..\..\..\IDE\bin\debug" />
-					<Add directory="..\..\..\ExtLibs\wxwidgets\lib\gcc_dll\mswd" />
-					<Add directory="..\..\..\ExtLibs\wxwidgets\lib\gcc_dll\" />
+					<Add directory="../../../IDE/bin/debug" />
+					<Add directory="../../../ExtLibs/wxwidgets/lib/gcc_dll/mswd" />
+					<Add directory="../../../ExtLibs/wxwidgets/lib/gcc_dll/" />
 				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="..\build\release\Widgets.xgdw" prefix_auto="1" extension_auto="0" />
-				<Option object_output="..\build\obj\Release\" />
+				<Option output="../build/release/Widgets.xgdw" prefix_auto="1" extension_auto="0" />
+				<Option object_output="../build/obj/Release/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
@@ -121,7 +122,7 @@
 					<Add option="-DWINDOWS" />
 					<Add option="-DSFML_DYNAMIC" />
 					<Add option="-DBOOST_DISABLE_ASSERTS" />
-					<Add directory="..\extlibs\SFGUI\include" />
+					<Add directory="../extlibs/SFGUI/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -133,14 +134,14 @@
 					<Add option="-lsfml-system" />
 					<Add library="opengl32" />
 					<Add library="glu32" />
-					<Add library="..\extlibs\SFGUI\lib\libsfgui.a" />
-					<Add directory="..\..\..\Runtime\bin\release" />
-					<Add directory="..\extlibs\SFGUI\lib" />
+					<Add library="../extlibs/SFGUI/lib/libsfgui.a" />
+					<Add directory="../../../Runtime/bin/release" />
+					<Add directory="../extlibs/SFGUI/lib" />
 				</Linker>
 			</Target>
 			<Target title="Release - Edittime">
-				<Option output="..\build\releaseedittime\Widgets.xgdwe" prefix_auto="1" extension_auto="0" />
-				<Option object_output="..\build\obj\Release Edittime\" />
+				<Option output="../build/releaseedittime/Widgets.xgdwe" prefix_auto="1" extension_auto="0" />
+				<Option object_output="../build/obj/Release Edittime/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
@@ -157,12 +158,13 @@
 					<Add option="-DwxUSE_UNICODE=0" />
 					<Add option="-DWXUSINGDLL" />
 					<Add option="-DBOOST_DISABLE_ASSERTS" />
-					<Add directory="..\..\..\ExtLibs\wxwidgets\lib\gcc_dll\msw" />
-					<Add directory="..\..\..\ExtLibs\wxwidgets\include" />
-					<Add directory="..\extlibs\SFGUI\include" />
+					<Add option="-DWIDGETS_CS_NEED_CSTRUC" />
+					<Add directory="../../../ExtLibs/wxwidgets/lib/gcc_dll/msw" />
+					<Add directory="../../../ExtLibs/wxwidgets/include" />
+					<Add directory="../extlibs/SFGUI/include" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="extlibs\SFGUI\include" />
+					<Add directory="extlibs/SFGUI/include" />
 				</ResourceCompiler>
 				<Linker>
 					<Add option="-s" />
@@ -205,16 +207,16 @@
 					<Add option="-loleaut32" />
 					<Add library="opengl32" />
 					<Add library="glu32" />
-					<Add library="..\extlibs\SFGUI\lib\libsfgui.a" />
-					<Add directory="..\..\..\IDE\bin\release" />
-					<Add directory="..\..\..\ExtLibs\wxwidgets\lib\gcc_dll\msw" />
-					<Add directory="..\..\..\ExtLibs\wxwidgets\lib\gcc_dll\" />
-					<Add directory="..\extlibs\SFGUI\lib" />
+					<Add library="../extlibs/SFGUI/lib/libsfgui.a" />
+					<Add directory="../../../IDE/bin/release" />
+					<Add directory="../../../ExtLibs/wxwidgets/lib/gcc_dll/msw" />
+					<Add directory="../../../ExtLibs/wxwidgets/lib/gcc_dll/" />
+					<Add directory="../extlibs/SFGUI/lib" />
 				</Linker>
 			</Target>
 			<Target title="Development">
-				<Option output="..\..\..\Runtime\bin\dev\Widgets.xgdw" prefix_auto="1" extension_auto="0" />
-				<Option object_output="obj\Dev\" />
+				<Option output="../../../Runtime/bin/dev/Widgets.xgdw" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Dev/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
@@ -239,12 +241,12 @@
 					<Add option="-lsfml-system" />
 					<Add library="opengl32" />
 					<Add library="glu32" />
-					<Add directory="..\..\..\Runtime\bin\dev" />
+					<Add directory="../../../Runtime/bin/dev" />
 				</Linker>
 			</Target>
 			<Target title="Development - Edittime">
-				<Option output="..\..\..\IDE\bin\dev\Extensions\Widgets.xgdwe" prefix_auto="1" extension_auto="0" />
-				<Option object_output="obj\Dev Edittime\" />
+				<Option output="../../../IDE/bin/dev/Extensions/Widgets.xgdwe" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Dev Edittime/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
@@ -262,8 +264,9 @@
 					<Add option="-DwxUSE_UNICODE=0" />
 					<Add option="-DWXUSINGDLL" />
 					<Add option="-DBOOST_DISABLE_ASSERTS" />
-					<Add directory="..\..\..\ExtLibs\wxwidgets\lib\gcc_dll\msw" />
-					<Add directory="..\..\..\ExtLibs\wxwidgets\include" />
+					<Add option="-DWIDGETS_CS_NEED_CSTRUC" />
+					<Add directory="../../../ExtLibs/wxwidgets/lib/gcc_dll/msw" />
+					<Add directory="../../../ExtLibs/wxwidgets/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -306,14 +309,14 @@
 					<Add option="-loleaut32" />
 					<Add library="opengl32" />
 					<Add library="glu32" />
-					<Add directory="..\..\..\IDE\bin\dev" />
-					<Add directory="..\..\..\ExtLibs\wxwidgets\lib\gcc_dll\msw" />
-					<Add directory="..\..\..\ExtLibs\wxwidgets\lib\gcc_dll\" />
+					<Add directory="../../../IDE/bin/dev" />
+					<Add directory="../../../ExtLibs/wxwidgets/lib/gcc_dll/msw" />
+					<Add directory="../../../ExtLibs/wxwidgets/lib/gcc_dll/" />
 				</Linker>
 			</Target>
 			<Target title="Linux - Release">
-				<Option output="..\..\..\Runtime\bin\release\Widgets.xgdl" prefix_auto="1" extension_auto="0" />
-				<Option object_output="obj\Release\" />
+				<Option output="../build/release/Widgets.xgdl" prefix_auto="1" extension_auto="0" />
+				<Option object_output="../build/obj/Release/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
@@ -328,7 +331,7 @@
 					<Add option="-DLINUX" />
 					<Add option="-DSFML_DYNAMIC" />
 					<Add option="-DBOOST_DISABLE_ASSERTS" />
-					<Add directory="extlibs\SFGUI\include" />
+					<Add directory="../extlibs/SFGUI/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -342,18 +345,18 @@
 					<Add option="-lFLAC" />
 					<Add option="-lGL" />
 					<Add option="-lpthread" />
-					<Add library="extlibs\SFGUI\lib\libsfgui.so" />
-					<Add library="..\..\..\ExtLibs\SFML\build-linux\lib\libsfml-audio.so" />
-					<Add library="..\..\..\ExtLibs\SFML\build-linux\lib\libsfml-graphics.so" />
-					<Add library="..\..\..\ExtLibs\SFML\build-linux\lib\libsfml-system.so" />
-					<Add library="..\..\..\ExtLibs\SFML\build-linux\lib\libsfml-window.so" />
-					<Add directory="..\..\..\Runtime\bin\release" />
-					<Add directory="..\..\..\ExtLibs\SFML\build-linux\lib" />
+					<Add library="../extlibs/SFGUI/lib/libsfgui.so" />
+					<Add library="../../../ExtLibs/SFML/build-linux/lib/libsfml-audio.so" />
+					<Add library="../../../ExtLibs/SFML/build-linux/lib/libsfml-graphics.so" />
+					<Add library="../../../ExtLibs/SFML/build-linux/lib/libsfml-system.so" />
+					<Add library="../../../ExtLibs/SFML/build-linux/lib/libsfml-window.so" />
+					<Add directory="../../../Runtime/bin/release" />
+					<Add directory="../../../ExtLibs/SFML/build-linux/lib" />
 				</Linker>
 			</Target>
 			<Target title="Linux - Release - Edittime">
-				<Option output="..\..\..\IDE\bin\release\Extensions\Widgets.xgdle" prefix_auto="1" extension_auto="0" />
-				<Option object_output="obj\Release Edittime\" />
+				<Option output="../build/releaseedittime/Widgets.xgdle" prefix_auto="1" extension_auto="0" />
+				<Option object_output="../build/obj/Release Edittime/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
@@ -372,7 +375,8 @@
 					<Add option="-DLINUX" />
 					<Add option="-DSFML_DYNAMIC" />
 					<Add option="-DBOOST_DISABLE_ASSERTS" />
-					<Add directory="extlibs\SFGUI\include" />
+					<Add option="-DWIDGETS_CS_NEED_CSTRUC" />
+					<Add directory="../extlibs/SFGUI/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -387,18 +391,18 @@
 					<Add option="-lFLAC" />
 					<Add option="-lGL" />
 					<Add option="-lpthread" />
-					<Add library="extlibs\SFGUI\lib\libsfgui.so" />
-					<Add library="..\..\..\ExtLibs\SFML\build-linux\lib\libsfml-audio.so" />
-					<Add library="..\..\..\ExtLibs\SFML\build-linux\lib\libsfml-graphics.so" />
-					<Add library="..\..\..\ExtLibs\SFML\build-linux\lib\libsfml-system.so" />
-					<Add library="..\..\..\ExtLibs\SFML\build-linux\lib\libsfml-window.so" />
-					<Add directory="..\..\..\IDE\bin\release" />
-					<Add directory="..\..\..\ExtLibs\SFML\build-linux\lib" />
+					<Add library="../extlibs/SFGUI/lib/libsfgui.so" />
+					<Add library="../../../ExtLibs/SFML/build-linux/lib/libsfml-audio.so" />
+					<Add library="../../../ExtLibs/SFML/build-linux/lib/libsfml-graphics.so" />
+					<Add library="../../../ExtLibs/SFML/build-linux/lib/libsfml-system.so" />
+					<Add library="../../../ExtLibs/SFML/build-linux/lib/libsfml-window.so" />
+					<Add directory="../../../IDE/bin/release" />
+					<Add directory="../../../ExtLibs/SFML/build-linux/lib" />
 				</Linker>
 			</Target>
 			<Target title="Linux - Debug - Edittime">
-				<Option output="..\..\..\IDE\bin\debug\Extensions\Widgets.xgdle" prefix_auto="1" extension_auto="0" />
-				<Option object_output="obj\Debug Edittime\" />
+				<Option output="../../../IDE/bin/debug/Extensions/Widgets.xgdle" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Debug Edittime/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
@@ -416,6 +420,7 @@
 					<Add option="-DDEBUG" />
 					<Add option="-DLINUX" />
 					<Add option="-DSFML_DYNAMIC" />
+					<Add option="-DWIDGETS_CS_NEED_CSTRUC" />
 				</Compiler>
 				<Linker>
 					<Add option="-lgdl" />
@@ -433,13 +438,13 @@
 					<Add option="-lFLAC" />
 					<Add option="-lGL" />
 					<Add option="-lpthread" />
-					<Add directory="..\..\..\IDE\bin\debug" />
-					<Add directory="..\..\..\ExtLibs\SFML\build-linux\lib" />
+					<Add directory="../../../IDE/bin/debug" />
+					<Add directory="../../../ExtLibs/SFML/build-linux/lib" />
 				</Linker>
 			</Target>
 			<Target title="Linux - Debug">
-				<Option output="..\..\..\Runtime\bin\debug\Widgets.xgdl" prefix_auto="1" extension_auto="0" />
-				<Option object_output="obj\Debug\" />
+				<Option output="../../../Runtime/bin/debug/Widgets.xgdl" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Debug/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
@@ -471,13 +476,13 @@
 					<Add option="-lFLAC" />
 					<Add option="-lGL" />
 					<Add option="-lpthread" />
-					<Add directory="..\..\..\Runtime\bin\debug" />
-					<Add directory="..\..\..\ExtLibs\SFML\build-linux\lib" />
+					<Add directory="../../../Runtime/bin/debug" />
+					<Add directory="../../../ExtLibs/SFML/build-linux/lib" />
 				</Linker>
 			</Target>
 			<Target title="Mac - Release">
-				<Option output="..\..\..\Runtime\bin\release\Widgets.xgdm" prefix_auto="1" extension_auto="0" />
-				<Option object_output="obj\Release\" />
+				<Option output="../../../Runtime/bin/release/Widgets.xgdm" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Release/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
@@ -492,8 +497,8 @@
 					<Add option="-DMAC" />
 					<Add option="-DSFML_DYNAMIC" />
 					<Add option="-DBOOST_DISABLE_ASSERTS" />
-					<Add directory="..\..\..\ExtLibs\boost" />
-					<Add directory="..\..\..\ExtLibs\SFML\include" />
+					<Add directory="../../../ExtLibs/boost" />
+					<Add directory="../../../ExtLibs/SFML/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -504,11 +509,11 @@
 					<Add option="-lsfml-system" />
 					<Add option="-framework OpenGL" />
 					<Add option="-dynamiclib" />
-					<Add library="..\..\..\ExtLibs\SFML\extlibs\libs-osx\Frameworks\sndfile.framework\sndfile" />
-					<Add library="..\..\..\ExtLibs\SFML\extlibs\libs-osx\lib\libGLEW.a" />
-					<Add library="..\..\..\ExtLibs\SFML\extlibs\libs-osx\lib\libjpeg.a" />
-					<Add directory="..\..\..\Runtime\bin\release" />
-					<Add directory="..\..\..\ExtLibs\SFML\build-mac\lib" />
+					<Add library="../../../ExtLibs/SFML/extlibs/libs-osx/Frameworks/sndfile.framework/sndfile" />
+					<Add library="../../../ExtLibs/SFML/extlibs/libs-osx/lib/libGLEW.a" />
+					<Add library="../../../ExtLibs/SFML/extlibs/libs-osx/lib/libjpeg.a" />
+					<Add directory="../../../Runtime/bin/release" />
+					<Add directory="../../../ExtLibs/SFML/build-mac/lib" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="install_name_tool -change ../Runtime/bin/release/libgdl.dylib libgdl.dylib ../../Runtime/bin/release/Widgets.xgdm" />
@@ -516,8 +521,8 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="Mac - Debug">
-				<Option output="..\..\..\Runtime\bin\debug\Widgets.xgdm" prefix_auto="1" extension_auto="0" />
-				<Option object_output="obj\Debug\" />
+				<Option output="../../../Runtime/bin/debug/Widgets.xgdm" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Debug/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createStaticLib="1" />
@@ -532,8 +537,8 @@
 					<Add option="-DDEBUG" />
 					<Add option="-DMAC" />
 					<Add option="-DSFML_DYNAMIC" />
-					<Add directory="..\..\..\ExtLibs\boost" />
-					<Add directory="..\..\..\ExtLibs\SFML\include" />
+					<Add directory="../../../ExtLibs/boost" />
+					<Add directory="../../../ExtLibs/SFML/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-pg" />
@@ -546,11 +551,11 @@
 					<Add option="-lsfml-system-d" />
 					<Add option="-framework OpenGL" />
 					<Add option="-dynamiclib" />
-					<Add library="..\..\..\ExtLibs\SFML\extlibs\libs-osx\Frameworks\sndfile.framework\sndfile" />
-					<Add library="..\..\..\ExtLibs\SFML\extlibs\libs-osx\lib\libGLEW.a" />
-					<Add library="..\..\..\ExtLibs\SFML\extlibs\libs-osx\lib\libjpeg.a" />
-					<Add directory="..\..\..\Runtime\bin\debug" />
-					<Add directory="..\..\..\ExtLibs\SFML\build-mac\lib" />
+					<Add library="../../../ExtLibs/SFML/extlibs/libs-osx/Frameworks/sndfile.framework/sndfile" />
+					<Add library="../../../ExtLibs/SFML/extlibs/libs-osx/lib/libGLEW.a" />
+					<Add library="../../../ExtLibs/SFML/extlibs/libs-osx/lib/libjpeg.a" />
+					<Add directory="../../../Runtime/bin/debug" />
+					<Add directory="../../../ExtLibs/SFML/build-mac/lib" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="install_name_tool -change ../Runtime/bin/release/libgdl.dylib libgdl.dylib ../../Runtime/bin/debug/Widgets.xgdm" />
@@ -560,13 +565,13 @@
 		</Build>
 		<Compiler>
 			<Add option="-DIS_COMPILE_TIME" />
-			<Add directory="..\..\..\GDL" />
-			<Add directory="..\..\..\ExtLibs\SFML\include" />
-			<Add directory="..\..\..\ExtLibs\boost" />
+			<Add directory="../../../GDL" />
+			<Add directory="../../../ExtLibs/SFML/include" />
+			<Add directory="../../../ExtLibs/boost" />
 		</Compiler>
 		<Linker>
-			<Add directory="..\..\..\ExtLibs\SFML\build-mingw-debug\lib" />
-			<Add directory="..\..\..\ExtLibs\SFML\build-mingw-release\lib" />
+			<Add directory="../../../ExtLibs/SFML/build-mingw-debug/lib" />
+			<Add directory="../../../ExtLibs/SFML/build-mingw-release/lib" />
 		</Linker>
 		<Unit filename="Extension.cpp" />
 		<Unit filename="Extension.h" />
@@ -576,43 +581,47 @@
 		<Unit filename="GettingStartedDialog.h" />
 		<Unit filename="Manager.cpp" />
 		<Unit filename="Manager.h" />
-		<Unit filename="WidgetWrapper.h" />
 		<Unit filename="WidgetsCommonTools.cpp" />
 		<Unit filename="WidgetsCommonTools.h" />
 		<Unit filename="WidgetsMacros.h" />
-		<Unit filename="button\ButtonObject.cpp" />
-		<Unit filename="button\ButtonObject.h" />
-		<Unit filename="button\ButtonObjectEditor.cpp" />
-		<Unit filename="button\ButtonObjectEditor.h" />
-		<Unit filename="checkbox\CheckBoxObject.cpp" />
-		<Unit filename="checkbox\CheckBoxObject.h" />
-		<Unit filename="checkbox\CheckBoxObjectEditor.cpp" />
-		<Unit filename="checkbox\CheckBoxObjectEditor.h" />
+		<Unit filename="button/ButtonObject.cpp" />
+		<Unit filename="button/ButtonObject.h" />
+		<Unit filename="button/ButtonObjectEditor.cpp" />
+		<Unit filename="button/ButtonObjectEditor.h" />
+		<Unit filename="checkbox/CheckBoxObject.cpp" />
+		<Unit filename="checkbox/CheckBoxObject.h" />
+		<Unit filename="checkbox/CheckBoxObjectEditor.cpp" />
+		<Unit filename="checkbox/CheckBoxObjectEditor.h" />
 		<Unit filename="colorScheme.cpp" />
 		<Unit filename="colorScheme.h" />
-		<Unit filename="combobox\ComboBoxObject.cpp" />
-		<Unit filename="combobox\ComboBoxObject.h" />
-		<Unit filename="combobox\ComboBoxObjectEditor.cpp" />
-		<Unit filename="combobox\ComboBoxObjectEditor.h" />
-		<Unit filename="progressbar\ProgressBarObject.cpp" />
-		<Unit filename="progressbar\ProgressBarObject.h" />
-		<Unit filename="progressbar\ProgressBarObjectEditor.cpp" />
-		<Unit filename="progressbar\ProgressBarObjectEditor.h" />
-		<Unit filename="scale\ScaleObject.cpp" />
-		<Unit filename="scale\ScaleObject.h" />
-		<Unit filename="scale\ScaleObjectEditor.cpp" />
-		<Unit filename="scale\ScaleObjectEditor.h" />
-		<Unit filename="subdeclarations\WidgetsDeclareButton.cpp" />
-		<Unit filename="subdeclarations\WidgetsDeclareCheckBox.cpp" />
-		<Unit filename="subdeclarations\WidgetsDeclareComboBox.cpp" />
-		<Unit filename="subdeclarations\WidgetsDeclareMacros.h" />
-		<Unit filename="subdeclarations\WidgetsDeclareProgressBar.cpp" />
-		<Unit filename="subdeclarations\WidgetsDeclareScale.cpp" />
-		<Unit filename="subdeclarations\WidgetsDeclareTextBox.cpp" />
-		<Unit filename="textbox\TextAreaObject.cpp" />
-		<Unit filename="textbox\TextAreaObject.h" />
-		<Unit filename="textbox\TextAreaObjectEditor.cpp" />
-		<Unit filename="textbox\TextAreaObjectEditor.h" />
+		<Unit filename="colorSchemePanel.cpp" />
+		<Unit filename="colorSchemePanel.h" />
+		<Unit filename="combobox/ComboBoxObject.cpp" />
+		<Unit filename="combobox/ComboBoxObject.h" />
+		<Unit filename="combobox/ComboBoxObjectEditor.cpp" />
+		<Unit filename="combobox/ComboBoxObjectEditor.h" />
+		<Unit filename="customwidgets/DataBitmapButton.cpp" />
+		<Unit filename="customwidgets/DataBitmapButton.h" />
+		<Unit filename="customwidgets/DataBitmapButton.inl" />
+		<Unit filename="progressbar/ProgressBarObject.cpp" />
+		<Unit filename="progressbar/ProgressBarObject.h" />
+		<Unit filename="progressbar/ProgressBarObjectEditor.cpp" />
+		<Unit filename="progressbar/ProgressBarObjectEditor.h" />
+		<Unit filename="scale/ScaleObject.cpp" />
+		<Unit filename="scale/ScaleObject.h" />
+		<Unit filename="scale/ScaleObjectEditor.cpp" />
+		<Unit filename="scale/ScaleObjectEditor.h" />
+		<Unit filename="subdeclarations/WidgetsDeclareButton.cpp" />
+		<Unit filename="subdeclarations/WidgetsDeclareCheckBox.cpp" />
+		<Unit filename="subdeclarations/WidgetsDeclareComboBox.cpp" />
+		<Unit filename="subdeclarations/WidgetsDeclareMacros.h" />
+		<Unit filename="subdeclarations/WidgetsDeclareProgressBar.cpp" />
+		<Unit filename="subdeclarations/WidgetsDeclareScale.cpp" />
+		<Unit filename="subdeclarations/WidgetsDeclareTextBox.cpp" />
+		<Unit filename="textbox/TextAreaObject.cpp" />
+		<Unit filename="textbox/TextAreaObject.h" />
+		<Unit filename="textbox/TextAreaObjectEditor.cpp" />
+		<Unit filename="textbox/TextAreaObjectEditor.h" />
 		<Unit filename="version.h" />
 		<Extensions>
 			<code_completion />

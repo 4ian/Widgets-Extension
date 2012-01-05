@@ -1,0 +1,17 @@
+INSTALL YOUR OWN VERSION OF WIDGETS EXTENSION IN GAME DEVELOP
+=============================================================
+
+To install your own version of the Widgets Extension in Game Develop, you need first to compile the extension (see README.txt for further informations).
+
+Note : 	GDDIR designated the folder containing Game Develop.
+	The "?" symbol in files depends of your operating system ("w" on Windows, "l" on Linux)
+
+When you have compiled the extension, you have to copy the following files :
+  - build/releaseedittime/Widgets.xgd?e to GDDIR/Extensions/
+  - build/release/Widgets.xgd? to GDDIR/Extensions/
+  - extlibs/SFGUI/include/SFGUI (entire folder) to GDDIR/include/GDL/ (paste as a sub-folder of this)
+  - extlibs/SFGUI/sfgui.dll (or libsfgui.so on Linux) to GDDIR/
+  - src/*.h (all files ending with .h) to GDDIR/Extensions/include/Widgets
+  - all the sub-folders of src/ to GDDIR/Extensions/include/Widgets (paste as sub-folder of this)
+
+Then, start Game Develop. If Game Develop doesn't report any errors, the extension is ready to use.
